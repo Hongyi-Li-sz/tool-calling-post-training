@@ -2,91 +2,160 @@
 
 ## 项目背景
 
-Tool Calling（工具调用）是 LLM Agent 的核心能力之一——模型需要根据用户意图，准确选择工具并以规范的 JSON 格式输出参数。然而，小模型在指令遵循和格式化输出方面往往不够稳定，容易出现 JSON 格式错误、工具选择错误、参数缺失等问题。
+Tool Calling（工具调用）是 LLM Agent 的核心能力——模型需要根据用户意图，准确选择工具并以规范的 JSON 格式输出参数。小模型（<1B）在指令遵循和格式化输出方面不够稳定，常出现 JSON 格式错误、工具选择错误、参数缺失等问题。
 
-本项目通过 **监督微调（SFT）+ 偏好优化（DPO）** 的后训练方案，显著提升小模型在中文 Tool Calling 场景下的表现。
+本项目通过 **SFT（监督微调）+ DPO（偏好优化）** 的后训练方案，将 Qwen2.5-0.5B 的 **JSON 合法率从 82% 提升至 100%，完全正确率从 28% 提升至 54%**。
 
 ## 项目目标
 
-让小模型（Qwen 0.5B/1.5B）能够：
-1. 根据用户问题正确选择工具（或不调用工具）
+基于 Qwen2.5-0.5B-Instruct，通过两阶段后训练实现：
+1. 根据用户问题正确选择工具（或正确拒绝）
 2. 稳定输出合法 JSON 格式的工具调用参数
-3. 在参数缺失时主动追问用户
+3. 参数缺失时主动追问而非编造
 
 ## 方法
 
 ```
 Base Model (Qwen2.5-0.5B) → SFT (监督微调) → DPO (偏好优化) → Evaluation (自动评测)
+         ↓                        ↓                    ↓                ↓
+    JSON 合法 82%           JSON 合法 100%       rewards/margin    错误分类 ×7
+    完全正确 28%            完全正确 54%          4.55              分析报告
 ```
 
 ## 工具设计
 
-定义了 5 个常见业务工具：
+定义了 5 个常见业务工具，遵循标准 JSON Schema：
 
-| 工具名 | 用途 | 参数 |
-|--------|------|------|
+| 工具 | 用途 | 必填参数 |
+|------|------|---------|
 | `search_docs` | 检索知识库 | `query` |
 | `calculator` | 计算数学表达式 | `expression` |
 | `query_order` | 查询订单状态 | `order_id` |
 | `book_meeting` | 预约会议 | `date`, `time`, `topic` |
 | `send_email` | 发送邮件 | `recipient`, `subject`, `content` |
 
-详见 [tools_schema.json](tools_schema.json)
+输出格式：`{"tool": "工具名", "arguments": {...}}`，不调用工具时输出 `{"tool": "none", "arguments": {}}`。
 
 ## 数据构造
 
-- **SFT 数据**: 500+ 条指令数据，覆盖单工具调用、拒调用、参数追问、干扰问题等场景
-- **DPO 数据**: 300+ 对偏好数据（chosen/rejected），覆盖 JSON 格式错误、工具选错、参数缺失等错误类型
+### SFT 数据（573 条）
+
+采用模板 + 随机参数填充生成，覆盖 5 种场景：
+
+| 场景 | 数量 | 说明 |
+|------|------|------|
+| 单工具调用 | 400 | 5 个工具 × 80 条，16+ 种句式变体 |
+| 不需要工具 | 87 | 闲聊、常识、问候 → `{"tool": "none"}` |
+| 参数缺失追问 | 40 | 缺参数时输出 `need_clarification: true` |
+| 格式强化 | 20 | 确定性样本巩固 JSON 输出模式 |
+| 干扰/复合请求 | 26 | 多意图混杂，只处理首要意图 |
+
+### DPO 数据（760 对）
+
+从 SFT 数据出发，程序化生成 10 种错误类型作为 rejected：
+
+| 错误类型 | 数量 | 示例 |
+|---------|------|------|
+| 输出自然语言 | 130 | 用"好的，我来处理"代替 JSON |
+| 多余解释文本 | 130 | JSON 前后加自然语言 |
+| JSON 格式错误 | 112 | 缺引号、多余逗号 |
+| 编造参数 | 80 | 添加不存在的字段 |
+| 该调却输出 none | 79 | 需要工具却说不需要 |
+| 参数名错误 | 74 | `order_id` → `data` |
+| 工具选错 | 60 | 发邮件 → 预约会议 |
+| 该追问却调工具 | 32 | 缺参数时编造 |
+| 不该调却调工具 | 32 | 闲聊 → 调用工具 |
+| 参数缺失 | 31 | 少必填参数 |
 
 ## 训练配置
 
-- 模型: Qwen2.5-0.5B-Instruct
-- 训练方法: LoRA / QLoRA
-- 框架: LLaMA-Factory
-- 硬件: 3× RTX 4090 (24GB)
+### SFT 训练
 
-详细配置见 [configs/](configs/)
+| 参数 | 值 |
+|------|-----|
+| 框架 | TRL SFTTrainer |
+| 量化 | 4-bit QLoRA (NF4) |
+| LoRA | rank=8, alpha=16 |
+| Epochs | 8 |
+| 有效 batch size | 2 |
+| Learning rate | 5e-5 (cosine) |
+| 可训练参数 | 4,399,104 (~1%) |
+| 训练时间 | 140s (RTX 4090) |
+| Final loss | 0.43 |
 
-## 评测指标
+### DPO 训练
 
-| 指标 | 说明 |
-|------|------|
-| JSON 合法率 | `json.loads` 是否成功 |
-| 工具选择准确率 | `tool` 字段是否正确 |
-| 参数准确率 | `arguments` 是否完整且正确 |
-| 拒调用准确率 | 不该调用工具时是否正确拒绝 |
+| 参数 | 值 |
+|------|-----|
+| 框架 | TRL DPOTrainer |
+| 基准模型 | SFT merged |
+| LoRA | rank=8, alpha=16 |
+| Epochs | 3 |
+| DPO beta | 0.1 |
+| Learning rate | 5e-6 (cosine) |
+| 训练时间 | 455s (RTX 4090) |
+| Final loss | 0.14 |
+| Rewards margin | 4.55 |
 
 ## 实验结果
 
-| 模型 | JSON 合法率 | 工具准确率 | 参数准确率 | 拒调用准确率 |
-|------|-------------|------------|------------|--------------|
-| Base | - | - | - | - |
-| SFT | - | - | - | - |
-| DPO | - | - | - | - |
+### 50 条标注评测集结果
+
+| 指标 | Base | SFT | DPO |
+|------|------|-----|-----|
+| JSON 合法率 | 82.0% | **100.0%** | 98.0% |
+| 完全正确率 | 28.0% | **54.0%** | 42.0% |
+| Bad Cases | 36 | **23** | 29 |
+
+### 错误类型演变
+
+| 错误类型 | Base | SFT | DPO |
+|---------|------|-----|-----|
+| JSON 格式错误 | 9 | **0** | 2 |
+| 该拒未拒 | 14 | 11 | **7** |
+| 不必要的追问 | 0 | 5 | 10 |
+| 该追问却调工具 | 5 | 5 | 7 |
+| 参数值错误 | 5 | **2** | 3 |
+
+### 核心发现
+
+1. **SFT 是最佳模型**：100% JSON 合法率，54% 完全正确率
+2. **SFT 建立了拒调用能力**："你是谁？"从自然语言变为 `{"tool": "none"}`
+3. **DPO 改善了拒调用**（14→7），但引入副作用"过度追问"（0→10）
+4. **参数追问是三模型共同盲区**（0/5），需更多针对性数据
 
 ## 项目结构
 
 ```
 .
-├── data/               # 数据集
-│   ├── raw/            # 原始数据
-│   ├── sft/            # SFT 训练数据
-│   ├── dpo/            # DPO 训练数据
-│   └── eval/           # 评测数据
-├── configs/            # 训练配置文件
-├── src/                # 源代码
-│   ├── build_sft_data.py
-│   ├── build_dpo_data.py
-│   ├── train_sft.py
-│   ├── train_dpo.py
-│   ├── evaluate.py
-│   └── infer.py
-├── models/             # 模型权重
-├── outputs/            # 训练输出
-├── reports/            # 实验报告
-├── tools_schema.json   # 工具定义
-├── README.md
-└── PROGRESS.md
+├── data/
+│   ├── sft/train.json        # 573 条 SFT 训练数据
+│   ├── dpo/train.json        # 760 对 DPO 偏好数据
+│   └── eval/test_set.json    # 50 条标注评测集
+├── configs/
+│   └── sft.yaml              # SFT 训练超参数
+├── src/
+│   ├── build_sft_data.py     # SFT 数据构造脚本
+│   ├── build_dpo_data.py     # DPO 数据构造脚本
+│   ├── train_sft.py          # SFT 训练脚本
+│   ├── train_dpo.py          # DPO 训练脚本
+│   ├── infer.py              # 单模型推理脚本
+│   ├── eval_compare.py       # Base vs SFT 对比
+│   ├── eval_three_way.py     # Base vs SFT vs DPO 三方对比
+│   └── evaluate.py           # 自动评测（4指标 + 7错误分类）
+├── models/                   # 模型权重（.gitignore）
+├── outputs/
+│   ├── sft/adapter/          # SFT LoRA adapter (~17MB)
+│   └── dpo/adapter/          # DPO LoRA adapter (~17MB)
+├── reports/
+│   ├── error_analysis.md     # Bad Case 深度分析报告
+│   ├── evaluation_full.json  # 完整评测数据
+│   └── bad_cases_*.json      # 三模型 bad cases 详情
+├── tools_schema.json         # 5 个工具的 JSON Schema 定义
+├── requirements.txt
+├── CLAUDE.md
+├── PROGRESS.md               # 7 天进度记录
+└── README.md
 ```
 
 ## 快速开始
@@ -97,21 +166,45 @@ conda create -n tool-calling python=3.11 -y
 conda activate tool-calling
 pip install -r requirements.txt
 
-# 2. 下载模型
-# modelscope download --model Qwen/Qwen2.5-0.5B-Instruct --local_dir models/Qwen2.5-0.5B-Instruct
+# 2. 下载模型（需 HuggingFace 网络）
+huggingface-cli download Qwen/Qwen2.5-0.5B-Instruct --local-dir models/Qwen2.5-0.5B-Instruct
 
-# 3. 推理测试
+# 3. Base Model 推理测试
 python src/infer.py --model_path models/Qwen2.5-0.5B-Instruct
 
-# 4. 训练
-# ...（详见各阶段文档）
+# 4. 构造 SFT 数据
+python src/build_sft_data.py
+
+# 5. SFT 训练
+python src/train_sft.py
+
+# 6. 构造 DPO 数据
+python src/build_dpo_data.py
+
+# 7. DPO 训练
+python src/train_dpo.py
+
+# 8. 自动评测
+python src/evaluate.py
 ```
+
+## 技术栈
+
+- **模型**: Qwen2.5-0.5B-Instruct
+- **训练框架**: TRL (SFTTrainer + DPOTrainer)
+- **高效微调**: PEFT LoRA + QLoRA (4-bit NF4 量化)
+- **可训练参数**: ~440 万（仅占模型 1%）
+- **硬件**: 单卡 RTX 4090 (24GB)
+- **显存占用**: ~4GB（QLoRA 训练时）
 
 ## 下一步优化
 
-- 扩展更多工具
-- 支持多工具并行调用
-- 支持多轮参数补全
-- 引入 RAG 检索工具
-- 增加人工偏好数据
-- 上传模型 adapter 到 HuggingFace
+- **数据层面**: 增加参数追问型数据（当前仅 7%），减少过度追问
+- **训练层面**: 迭代 DPO 数据，针对性修复"过度追问"回退
+- **功能层面**: 支持多工具并行调用、多轮参数补全
+- **评估层面**: 引入 GPT-4 作为 judge 进行语义级评测
+- **部署层面**: Gradio Demo、上传 adapter 到 HuggingFace
+
+## 面试亮点
+
+> 基于 Qwen2.5-0.5B 构建中文 Tool Calling 后训练项目，设计 5 类业务工具及 JSON Schema，通过模板生成构造 573 条 SFT 指令数据和 760 对 DPO 偏好数据，使用 QLoRA 完成监督微调与偏好优化。SFT 模型 JSON 合法率从 82% 提升至 100%，完全正确率从 28% 提升至 54%。实现了支持 4 项指标 + 7 类错误的自动评测脚本，并对三阶段模型进行了系统性 Bad Case 分析，识别出"过度追问"是 DPO 的主要副作用、参数追问是三模型共同盲区。

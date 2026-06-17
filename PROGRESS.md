@@ -10,7 +10,7 @@
 | - | Day 4 | 构造 DPO 偏好数据 | ✅ 完成 |
 | - | Day 5 | 跑 DPO 训练 | ✅ 完成 |
 | 2026-06-17 | Day 6 | 自动评测 + Bad Case 分析 | ✅ 完成 |
-| - | Day 7 | 整理 README + 实验报告 | ⬜ 待开始 |
+| 2026-06-17 | Day 7 | 整理 README + 实验报告 | ✅ 完成 |
 
 ---
 
@@ -310,8 +310,38 @@
 - [x] `reports/evaluation_full.json` — 完整评测数据
 - [x] `reports/error_analysis.md` — Bad Case 深度分析报告
 
-## Day 7：整理 README + 实验报告
-⬜ 待开始
+## Day 7 (2026-06-17)：整理 README + 实验报告 ✅
 
-## Day 7：整理 README + 实验报告
-⬜ 待开始
+### 任务清单
+- [x] 重写 README.md — 填入全部真实实验结果
+- [x] 撰写实验报告 `reports/sft_vs_dpo.md`
+- [x] 添加面试亮点总结
+
+### 产出物
+- [x] `README.md` — 完整项目说明书（含实验结果、数据统计、快速开始）
+- [x] `reports/sft_vs_dpo.md` — SFT vs DPO 完整对比实验报告
+
+### 项目最终成果
+
+| 指标 | Base | SFT | DPO |
+|------|------|-----|-----|
+| JSON 合法率 | 82% | **100%** | 98% |
+| 完全正确率 | 28% | **54%** | 42% |
+
+### 7 天完整提交记录
+
+```
+0d33fe4 Day 6: 自动评测 + Bad Case 分析
+6c6f2e5 Day 5: DPO 偏好优化
+d41364b Day 4: 构造 DPO 偏好数据
+6669b74 Day 3: SFT QLoRA 训练
+3eb71ab 更新 Day 2 进度记录
+8a1c9bd Day 2: 构造 SFT 训练数据
+68ec052 更新 Day 1 进度记录
+141788a Day 1: 项目初始化
+```
+
+### 🎉 项目完成！
+
+**简历描述**：
+> 基于 Qwen2.5-0.5B 构建中文 Tool Calling 后训练项目。设计 5 类业务工具及 JSON Schema，通过模板生成构造 573 条 SFT 指令数据和 760 对 DPO 偏好数据，使用 QLoRA 完成两阶段训练。SFT 模型 JSON 合法率从 82% 提升至 100%，完全正确率从 28% 提升至 54%。实现了 4 项指标 + 7 类错误的自动评测脚本，对三阶段模型进行了系统性 Bad Case 分析。
