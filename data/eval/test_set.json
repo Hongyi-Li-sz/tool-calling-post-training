@@ -1,0 +1,62 @@
+[
+  {"instruction": "查一下订单 B20456 的状态", "expected_tool": "query_order", "expected_arguments": {"order_id": "B20456"}, "category": "单工具-查询订单"},
+  {"instruction": "帮我查订单号 D45678", "expected_tool": "query_order", "expected_arguments": {"order_id": "D45678"}, "category": "单工具-查询订单"},
+  {"instruction": "订单 F12345 现在什么状态", "expected_tool": "query_order", "expected_arguments": {"order_id": "F12345"}, "category": "单工具-查询订单"},
+  {"instruction": "物流跟踪 G98765", "expected_tool": "query_order", "expected_arguments": {"order_id": "G98765"}, "category": "单工具-查询订单"},
+
+  {"instruction": "帮我算一下 888 + 999", "expected_tool": "calculator", "expected_arguments": {"expression": "888 + 999"}, "category": "单工具-计算"},
+  {"instruction": "3.14 * 6.28 结果是多少", "expected_tool": "calculator", "expected_arguments": {"expression": "3.14 * 6.28"}, "category": "单工具-计算"},
+  {"instruction": "计算 (50 - 30) * 7", "expected_tool": "calculator", "expected_arguments": {"expression": "(50 - 30) * 7"}, "category": "单工具-计算"},
+  {"instruction": "45 + 55 - 20 帮我算出来", "expected_tool": "calculator", "expected_arguments": {"expression": "45 + 55 - 20"}, "category": "单工具-计算"},
+
+  {"instruction": "搜索关于 Linux 常用命令的资料", "expected_tool": "search_docs", "expected_arguments": {"query": "Linux 常用命令"}, "category": "单工具-搜索"},
+  {"instruction": "帮我找一下 CUDA 编程入门", "expected_tool": "search_docs", "expected_arguments": {"query": "CUDA 编程入门"}, "category": "单工具-搜索"},
+  {"instruction": "检索 Redis 缓存策略", "expected_tool": "search_docs", "expected_arguments": {"query": "Redis 缓存策略"}, "category": "单工具-搜索"},
+  {"instruction": "有没有推荐系统算法的教程", "expected_tool": "search_docs", "expected_arguments": {"query": "推荐系统算法"}, "category": "单工具-搜索"},
+
+  {"instruction": "帮我预约 2026-07-01 上午 10:00 的技术方案讨论", "expected_tool": "book_meeting", "expected_arguments": {"date": "2026-07-01", "time": "10:00", "topic": "技术方案讨论"}, "category": "单工具-预约会议"},
+  {"instruction": "在 2026-08-15 14:30 帮我安排代码审查", "expected_tool": "book_meeting", "expected_arguments": {"date": "2026-08-15", "time": "14:30", "topic": "代码审查"}, "category": "单工具-预约会议"},
+  {"instruction": "预定 2026-09-20 09:00 的季度规划会", "expected_tool": "book_meeting", "expected_arguments": {"date": "2026-09-20", "time": "09:00", "topic": "季度规划"}, "category": "单工具-预约会议"},
+
+  {"instruction": "发邮件给 zhangsan@example.com，主题是项目进度报告", "expected_tool": "send_email", "expected_arguments": {"recipient": "zhangsan@example.com", "subject": "项目进度报告", "content": "__any__"}, "category": "单工具-发邮件"},
+  {"instruction": "向 hr@corp.cn 发送请假申请邮件", "expected_tool": "send_email", "expected_arguments": {"recipient": "hr@corp.cn", "subject": "请假申请", "content": "__any__"}, "category": "单工具-发邮件"},
+  {"instruction": "给经理发一封周报邮件", "expected_tool": "send_email", "expected_arguments": {"recipient": "manager@team.org", "subject": "周报", "content": "__any__"}, "category": "单工具-发邮件"},
+
+  {"instruction": "你好", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-问候"},
+  {"instruction": "今天天气怎么样", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-闲聊"},
+  {"instruction": "讲个笑话给我听", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-闲聊"},
+  {"instruction": "Python 是哪个国家发明的", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-常识"},
+  {"instruction": "推荐一本好看的小说", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-闲聊"},
+  {"instruction": "解释一下什么是微积分", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-常识"},
+  {"instruction": "你觉得 AI 会取代人类吗", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-哲学"},
+  {"instruction": "给我一些学英语的建议", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-建议"},
+  {"instruction": "早饭吃什么比较健康", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-生活"},
+  {"instruction": "怎么才能早睡早起", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-生活"},
+  {"instruction": "为什么天空是蓝色的", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-常识"},
+  {"instruction": "谢谢", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-礼貌"},
+  {"instruction": "帮我写一首诗", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-创作"},
+  {"instruction": "什么是区块链", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-常识"},
+  {"instruction": "你能做些什么", "expected_tool": "none", "expected_arguments": {}, "category": "拒调用-元问题"},
+
+  {"instruction": "帮我预约个会议", "expected_tool": "none", "expected_arguments": {}, "expected_clarify": true, "category": "追问-缺参数"},
+  {"instruction": "查一下订单", "expected_tool": "none", "expected_arguments": {}, "expected_clarify": true, "category": "追问-缺参数"},
+  {"instruction": "帮我发个邮件", "expected_tool": "none", "expected_arguments": {}, "expected_clarify": true, "category": "追问-缺参数"},
+  {"instruction": "帮我搜索一下", "expected_tool": "none", "expected_arguments": {}, "expected_clarify": true, "category": "追问-缺参数"},
+  {"instruction": "算一下", "expected_tool": "none", "expected_arguments": {}, "expected_clarify": true, "category": "追问-缺参数"},
+
+  {"instruction": "帮我查订单顺便搜一下资料", "expected_tool": "query_order", "expected_arguments": {"order_id": "__any__"}, "category": "干扰-复合请求"},
+  {"instruction": "先发邮件再计算 100+200", "expected_tool": "send_email", "expected_arguments": {"recipient": "__any__", "subject": "__any__"}, "category": "干扰-复合请求"},
+  {"instruction": "搜资料然后预约会议", "expected_tool": "search_docs", "expected_arguments": {"query": "__any__"}, "category": "干扰-复合请求"},
+
+  {"instruction": "今天是几月几号", "expected_tool": "none", "expected_arguments": {}, "category": "语义-日期询问"},
+  {"instruction": "现在是什么时间", "expected_tool": "none", "expected_arguments": {}, "category": "语义-时间询问"},
+  {"instruction": "明天星期几", "expected_tool": "none", "expected_arguments": {}, "category": "语义-日期询问"},
+
+  {"instruction": "能帮我处理个事情吗", "expected_tool": "none", "expected_arguments": {}, "expected_clarify": true, "category": "追问-模糊意图"},
+  {"instruction": "我需要帮忙", "expected_tool": "none", "expected_arguments": {}, "expected_clarify": true, "category": "追问-模糊意图"},
+  {"instruction": "有个事想麻烦你", "expected_tool": "none", "expected_arguments": {}, "expected_clarify": true, "category": "追问-模糊意图"},
+
+  {"instruction": "查一下 H34567 的单子", "expected_tool": "query_order", "expected_arguments": {"order_id": "H34567"}, "category": "单工具-口语化表达"},
+  {"instruction": "算算 7 乘 8 乘 9", "expected_tool": "calculator", "expected_arguments": {"expression": "7 * 8 * 9"}, "category": "单工具-口语化表达"},
+  {"instruction": "搜搜 Docker 怎么用", "expected_tool": "search_docs", "expected_arguments": {"query": "Docker 怎么用"}, "category": "单工具-口语化表达"}
+]

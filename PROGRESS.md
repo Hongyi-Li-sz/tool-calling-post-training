@@ -9,7 +9,7 @@
 | 2026-06-17 | Day 3 | 跑 SFT 训练 | ✅ 完成 |
 | - | Day 4 | 构造 DPO 偏好数据 | ✅ 完成 |
 | - | Day 5 | 跑 DPO 训练 | ✅ 完成 |
-| - | Day 6 | 自动评测 + Bad Case 分析 | ⬜ 待开始 |
+| 2026-06-17 | Day 6 | 自动评测 + Bad Case 分析 | ✅ 完成 |
 | - | Day 7 | 整理 README + 实验报告 | ⬜ 待开始 |
 
 ---
@@ -271,7 +271,46 @@
 - [x] `src/eval_three_way.py` — 三方对比评测脚本
 - [x] `reports/three_way_comparison.json` — 详细对比数据
 
-## Day 6：自动评测 + Bad Case 分析
+## Day 6 (2026-06-17)：自动评测 + Bad Case 分析 ✅
+
+### 任务清单
+- [x] 创建标注评测数据集 `data/eval/test_set.json`（50 条，6 类场景）
+- [x] 编写自动评测脚本 `src/evaluate.py`
+- [x] 运行 Base/SFT/DPO 三模型评测
+- [x] 写 Bad Case 分析报告 `reports/error_analysis.md`
+
+### 评测结果（50 条标注测试集）
+
+| 指标 | Base | SFT | DPO |
+|------|------|-----|-----|
+| JSON 合法率 | 82% | **100%** | 98% |
+| 完全正确率 | 28% | **54%** | 42% |
+| Bad Cases | 36 | **23** | 29 |
+
+### 错误类型演变
+
+| 错误类型 | Base | SFT | DPO | 趋势 |
+|---------|------|-----|-----|------|
+| JSON 格式错误 | 9 | **0** | 2 | SFT✅ DPO⚠️ |
+| 该拒未拒 | 14 | 11 | **7** | 持续改进 |
+| 不必要的追问 | 0 | 5 | **10** | ⚠️ 新问题 |
+| 该追问却调工具 | 5 | 5 | 7 | 始终未解决 |
+| 参数值错误 | 5 | **2** | 3 | SFT 大幅改善 |
+
+### 核心发现
+1. **SFT 是最佳模型**（54% 完全正确率，100% JSON 合法率）
+2. **DPO 有得有失**：改善"该拒未拒"（14→7），但引入"不必要的追问"（0→10）
+3. **参数追问场景是三模型共同盲区**（0/5 正确）
+4. **小模型语义理解上限明显**：日期询问均错误调用 query_order
+
+### 产出物
+- [x] `data/eval/test_set.json` — 50 条标注评测集
+- [x] `src/evaluate.py` — 自动评测脚本（4 项指标 + 7 类错误分类）
+- [x] `reports/bad_cases_*.json` — 三模型 bad cases 详情
+- [x] `reports/evaluation_full.json` — 完整评测数据
+- [x] `reports/error_analysis.md` — Bad Case 深度分析报告
+
+## Day 7：整理 README + 实验报告
 ⬜ 待开始
 
 ## Day 7：整理 README + 实验报告

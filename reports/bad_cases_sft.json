@@ -1,0 +1,545 @@
+[
+  {
+    "id": 12,
+    "instruction": "帮我预约 2026-07-01 上午 10:00 的技术方案讨论",
+    "category": "单工具-预约会议",
+    "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"10:00\", \"topic\": \"技术方案\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "book_meeting",
+      "arguments": {
+        "date": "2026-07-01",
+        "time": "10:00",
+        "topic": "技术方案"
+      }
+    },
+    "expected_tool": "book_meeting",
+    "expected_arguments": {
+      "date": "2026-07-01",
+      "time": "10:00",
+      "topic": "技术方案讨论"
+    },
+    "expected_clarify": false,
+    "actual_tool": "book_meeting",
+    "actual_arguments": {
+      "date": "2026-07-01",
+      "time": "10:00",
+      "topic": "技术方案"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 topic: 期望 '技术方案讨论'，实际 '技术方案'",
+    "is_correct": false
+  },
+  {
+    "id": 17,
+    "instruction": "给经理发一封周报邮件",
+    "category": "单工具-发邮件",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@example.com\", \"subject\": \"本周工作报告\", \"content\": \"尊敬的领导，您好。关于项目进度和预算情况，请提供详细报告。\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "manager@example.com",
+        "subject": "本周工作报告",
+        "content": "尊敬的领导，您好。关于项目进度和预算情况，请提供详细报告。"
+      }
+    },
+    "expected_tool": "send_email",
+    "expected_arguments": {
+      "recipient": "manager@team.org",
+      "subject": "周报",
+      "content": "__any__"
+    },
+    "expected_clarify": false,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "manager@example.com",
+      "subject": "本周工作报告",
+      "content": "尊敬的领导，您好。关于项目进度和预算情况，请提供详细报告。"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 recipient: 期望 'manager@team.org'，实际 'manager@example.com'",
+    "is_correct": false
+  },
+  {
+    "id": 18,
+    "instruction": "你好",
+    "category": "拒调用-问候",
+    "response": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您是客户还是客服？\"}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "none",
+      "arguments": {},
+      "need_clarification": true,
+      "question": "请问您是客户还是客服？"
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "none",
+    "actual_arguments": {},
+    "error_type": "unnecessary_clarify",
+    "error_detail": "不需要追问但输出了 need_clarification",
+    "is_correct": false
+  },
+  {
+    "id": 19,
+    "instruction": "今天天气怎么样",
+    "category": "拒调用-闲聊",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"sum(temperature_in_celsius, temperature_in_fahrenheit)\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "sum(temperature_in_celsius, temperature_in_fahrenheit)"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "sum(temperature_in_celsius, temperature_in_fahrenheit)"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 20,
+    "instruction": "讲个笑话给我听",
+    "category": "拒调用-闲聊",
+    "response": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您想听什么类型的笑话？比如双关语、常识性问答等。\"}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "none",
+      "arguments": {},
+      "need_clarification": true,
+      "question": "请问您想听什么类型的笑话？比如双关语、常识性问答等。"
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "none",
+    "actual_arguments": {},
+    "error_type": "unnecessary_clarify",
+    "error_detail": "不需要追问但输出了 need_clarification",
+    "is_correct": false
+  },
+  {
+    "id": 21,
+    "instruction": "Python 是哪个国家发明的",
+    "category": "拒调用-常识",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python 是哪个国家发明的\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "Python 是哪个国家发明的"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "Python 是哪个国家发明的"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 22,
+    "instruction": "推荐一本好看的小说",
+    "category": "拒调用-闲聊",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"好看的小说\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "好看的小说"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "好看的小说"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 23,
+    "instruction": "解释一下什么是微积分",
+    "category": "拒调用-常识",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"微积分\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "微积分"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "微积分"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 24,
+    "instruction": "你觉得 AI 会取代人类吗",
+    "category": "拒调用-哲学",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"AI 会取代人类吗\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "AI 会取代人类吗"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "AI 会取代人类吗"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 25,
+    "instruction": "给我一些学英语的建议",
+    "category": "拒调用-建议",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"学英语的建议\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "学英语的建议"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "学英语的建议"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 27,
+    "instruction": "怎么才能早睡早起",
+    "category": "拒调用-生活",
+    "response": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供睡眠时间和起床时间的相关信息。\"}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "none",
+      "arguments": {},
+      "need_clarification": true,
+      "question": "请提供睡眠时间和起床时间的相关信息。"
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "none",
+    "actual_arguments": {},
+    "error_type": "unnecessary_clarify",
+    "error_detail": "不需要追问但输出了 need_clarification",
+    "is_correct": false
+  },
+  {
+    "id": 28,
+    "instruction": "为什么天空是蓝色的",
+    "category": "拒调用-常识",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"天空是蓝色的\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "天空是蓝色的"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "天空是蓝色的"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 29,
+    "instruction": "谢谢",
+    "category": "拒调用-礼貌",
+    "response": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问有什么可以帮助您的？\"}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "none",
+      "arguments": {},
+      "need_clarification": true,
+      "question": "请问有什么可以帮助您的？"
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "none",
+    "actual_arguments": {},
+    "error_type": "unnecessary_clarify",
+    "error_detail": "不需要追问但输出了 need_clarification",
+    "is_correct": false
+  },
+  {
+    "id": 31,
+    "instruction": "什么是区块链",
+    "category": "拒调用-常识",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"区块链\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "区块链"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "区块链"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 32,
+    "instruction": "你能做些什么",
+    "category": "拒调用-元问题",
+    "response": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"你能做些什么？\"}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "none",
+      "arguments": {},
+      "need_clarification": true,
+      "question": "你能做些什么？"
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "none",
+    "actual_arguments": {},
+    "error_type": "unnecessary_clarify",
+    "error_detail": "不需要追问但输出了 need_clarification",
+    "is_correct": false
+  },
+  {
+    "id": 33,
+    "instruction": "帮我预约个会议",
+    "category": "追问-缺参数",
+    "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-18\", \"time\": \"10:00\", \"topic\": \"项目讨论\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "book_meeting",
+      "arguments": {
+        "date": "2026-07-18",
+        "time": "10:00",
+        "topic": "项目讨论"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "book_meeting",
+    "actual_arguments": {
+      "date": "2026-07-18",
+      "time": "10:00",
+      "topic": "项目讨论"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 book_meeting",
+    "is_correct": false
+  },
+  {
+    "id": 34,
+    "instruction": "查一下订单",
+    "category": "追问-缺参数",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"CJ123456\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "CJ123456"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "CJ123456"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 35,
+    "instruction": "帮我发个邮件",
+    "category": "追问-缺参数",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"项目进度更新\", \"content\": \"尊敬的客户，您的订单将于下个月发货，请查收。\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "admin@company.com",
+        "subject": "项目进度更新",
+        "content": "尊敬的客户，您的订单将于下个月发货，请查收。"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "admin@company.com",
+      "subject": "项目进度更新",
+      "content": "尊敬的客户，您的订单将于下个月发货，请查收。"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 send_email",
+    "is_correct": false
+  },
+  {
+    "id": 36,
+    "instruction": "帮我搜索一下",
+    "category": "追问-缺参数",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"基础知识\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "基础知识"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "基础知识"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 37,
+    "instruction": "算一下",
+    "category": "追问-缺参数",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"10 + 20\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "10 + 20"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "10 + 20"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 41,
+    "instruction": "今天是几月几号",
+    "category": "语义-日期询问",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"20261231\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "20261231"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "20261231"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 42,
+    "instruction": "现在是什么时间",
+    "category": "语义-时间询问",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"now\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "now"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "now"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 43,
+    "instruction": "明天星期几",
+    "category": "语义-日期询问",
+    "response": "{\"tool\": \"query_date\", \"arguments\": {\"date\": \"2026-07-18\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_date",
+      "arguments": {
+        "date": "2026-07-18"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "query_date",
+    "actual_arguments": {
+      "date": "2026-07-18"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 query_date",
+    "is_correct": false
+  }
+]
