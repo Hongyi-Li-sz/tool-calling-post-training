@@ -8,7 +8,7 @@
 | - | Day 2 | 构造 SFT 数据 | ✅ 完成 |
 | 2026-06-17 | Day 3 | 跑 SFT 训练 | ✅ 完成 |
 | - | Day 4 | 构造 DPO 偏好数据 | ✅ 完成 |
-| - | Day 5 | 跑 DPO 训练 | ⬜ 待开始 |
+| - | Day 5 | 跑 DPO 训练 | ✅ 完成 |
 | - | Day 6 | 自动评测 + Bad Case 分析 | ⬜ 待开始 |
 | - | Day 7 | 整理 README + 实验报告 | ⬜ 待开始 |
 
@@ -213,8 +213,63 @@
 - [x] `src/build_dpo_data.py` — DPO 数据构造脚本
 - [x] `data/dpo/train.json` — 760 对偏好数据
 
-## Day 5：跑 DPO 训练
-⬜ 待开始
+## Day 5 (2026-06-17)：跑 DPO 训练 ✅
+
+### 任务清单
+- [x] 编写 DPO 训练脚本 `src/train_dpo.py`
+- [x] 加载 SFT 模型作为基准 + 新建 LoRA adapter
+- [x] 运行 DPO 训练（760 对，3 epoch，1140 steps）
+- [x] 三方对比评测 Base vs SFT vs DPO
+
+### 训练配置
+| 参数 | 值 |
+|------|-----|
+| 框架 | TRL DPOTrainer |
+| 基准模型 | SFT merged (4-bit QLoRA) |
+| LoRA | rank=8, alpha=16 (新建) |
+| 数据 | 760 对偏好数据 |
+| Epochs | 3 |
+| Batch size | 2 |
+| Learning rate | 5e-6 (cosine schedule) |
+| DPO beta | 0.1 |
+| 训练时间 | 455s (1140 steps, RTX 4090) |
+| Final loss | 0.14 |
+| Rewards margin | **4.55** (chosen vs rejected) |
+| Rewards accuracy | **1.0** (始终偏好 chosen) |
+
+### 三方评测：Base vs SFT vs DPO
+
+| # | 用例 | 预期 | Base | SFT | DPO |
+|---|------|------|------|-----|-----|
+| 1 | 查订单 | query_order | ✅ | ✅ | ✅ |
+| 2 | 计算 | calculator | ✅ | ✅ | ✅ |
+| 3 | 搜索 | search_docs | ✅ | ✅ | ✅ |
+| 4 | 拒调用 | none | ~ 自然语言 | ✅ | ✅ |
+| 5 | 预约会议 | book_meeting | ✅ | ✅ | ✅ |
+| 6 | 发邮件 | send_email | ✅ | ✅ | ✅ |
+| 7 | 缺失参数 | none+clarify | ⚠️ 编造 | ⚠️ 编造 | ⚠️ 编造 |
+| 8 | 复合意图 | search_docs | ✅ | ✅ | ✅ |
+| 9 | 语义干扰 | none | ⚠️ 误调用 | ⚠️ 误调用 | ⚠️ 误调用 |
+
+| 指标 | Base | SFT | DPO |
+|------|------|-----|-----|
+| ✅ 完全正确 | 6 | 7 | 7 |
+| ⚠️ 格式对工具错 | 2 | 2 | 2 |
+| ❌ 错误 | 0 | 0 | 0 |
+| JSON 合法率 | 89% | **100%** | **100%** |
+
+### 关键发现
+1. **DPO 守住了 SFT 的改进**（拒调用、JSON 合法性均保持 100%）
+2. **rewards/margin=4.55** → 模型已学会强烈偏好正确输出
+3. **两个边界 case 仍然未解决**：
+   - 参数缺失时仍编造而非追问（需要更多澄清型训练数据）
+   - "今天是几号" 语义理解偏差（需要语义理解类数据）
+
+### 产出物
+- [x] `src/train_dpo.py` — DPO 训练脚本
+- [x] `outputs/dpo/adapter/` — DPO LoRA adapter
+- [x] `src/eval_three_way.py` — 三方对比评测脚本
+- [x] `reports/three_way_comparison.json` — 详细对比数据
 
 ## Day 6：自动评测 + Bad Case 分析
 ⬜ 待开始
