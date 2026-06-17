@@ -6,7 +6,7 @@
 |------|------|------|------|
 | 2026-06-17 | Day 1 | 项目范围 + 搭建仓库 | ✅ 完成 |
 | - | Day 2 | 构造 SFT 数据 | ✅ 完成 |
-| - | Day 3 | 跑 SFT 训练 | ⬜ 待开始 |
+| 2026-06-17 | Day 3 | 跑 SFT 训练 | ✅ 完成 |
 | - | Day 4 | 构造 DPO 偏好数据 | ⬜ 待开始 |
 | - | Day 5 | 跑 DPO 训练 | ⬜ 待开始 |
 | - | Day 6 | 自动评测 + Bad Case 分析 | ⬜ 待开始 |
@@ -113,8 +113,64 @@
 ### Git 提交
 - `8a1c9bd` Day 2: 构造 SFT 训练数据
 
-## Day 3：跑 SFT 训练
-⬜ 待开始
+## Day 3 (2026-06-17)：跑 SFT 训练 ✅
+
+### 任务清单
+- [x] 编写训练脚本 `src/train_sft.py` (TRL SFTTrainer + PEFT LoRA)
+- [x] 创建训练配置 `configs/sft.yaml`
+- [x] 运行 SFT 训练 (QLoRA 4bit, LoRA rank=8, 8 epochs)
+- [x] 对比评测 Base vs SFT
+- [x] 发现并解决 4-bit merge 推理质量问题
+
+### 训练配置
+| 参数 | 值 |
+|------|-----|
+| 框架 | TRL SFTTrainer |
+| 量化 | 4-bit QLoRA (NF4) |
+| LoRA rank | 8, alpha=16 |
+| Epochs | 8 |
+| Batch size | 2 (无 grad accum) |
+| Learning rate | 5e-5 (cosine schedule) |
+| 可训练参数 | 4,399,104 (~1% 原模型) |
+| 训练时间 | 140s (288 steps, RTX 4090) |
+| Final loss | 0.43 |
+| Final token accuracy | 98.8% |
+
+### 评测结果：Base vs SFT
+
+| # | 测试用例 | Base | SFT |
+|---|---------|------|-----|
+| 1 | 查订单 A10293 | ✅ query_order | ✅ query_order |
+| 2 | 计算 123*456 | ✅ calculator | ✅ calculator |
+| 3 | 搜索大模型后训练 | ✅ search_docs | ✅ search_docs |
+| 4 | 你是谁？ | ❌ 自然语言 | ✅ **{"tool": "none"}** 🎉 |
+| 5 | 预约明天会议 | ✅ book_meeting | ✅ book_meeting (日期正确!) |
+| 6 | 发系统升级通知邮件 | ✅ send_email | ✅ send_email |
+| 7 | 帮我预约个会议 | ⚠️ 编造参数 | ⚠️ 仍编造参数 |
+| 8 | 搜Python+发邮件 | ✅ search_docs | ✅ search_docs |
+| 9 | 今天是几号 | ❌ 调query_order | ❌ 仍调query_order |
+
+| 指标 | Base | SFT |
+|------|------|-----|
+| JSON 合法率 | 88.9% | **100%** |
+| 工具选择正确 | ~78% | ~89% |
+
+### 关键发现
+1. **"你是谁？" → {"tool": "none"}** 生效了！SFT 教会了模型拒绝不相关请求
+2. **日期幻觉已修复**：从 2023-04-07 → 2026-07-18（正确识别"明天"）
+3. **4-bit merged 模型有舍入误差** → 推理时应使用 float16 加载 base + adapter
+4. **剩余问题**（留给 DPO）：参数缺失仍编造、语义理解偏差
+
+### 产出物
+- [x] `src/train_sft.py` — SFT 训练脚本
+- [x] `configs/sft.yaml` — 训练超参数记录
+- [x] `outputs/sft/adapter/` — LoRA adapter 权重
+- [x] `outputs/sft/merged/` — 合并模型（float16 推理用）
+- [x] `src/eval_compare.py` — 对比评测脚本
+- [x] `reports/sft_vs_base.json` — 详细对比数据
+
+### Git 提交
+- 待提交
 
 ## Day 4：构造 DPO 偏好数据
 ⬜ 待开始

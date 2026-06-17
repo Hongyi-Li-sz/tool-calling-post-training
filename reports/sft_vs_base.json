@@ -1,0 +1,211 @@
+{
+  "base": [
+    {
+      "query": "帮我查一下订单 A10293 的状态",
+      "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "query_order",
+        "arguments": {
+          "order_id": "A10293"
+        }
+      }
+    },
+    {
+      "query": "计算 123 * 456 等于多少",
+      "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"123 * 456\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "calculator",
+        "arguments": {
+          "expression": "123 * 456"
+        }
+      }
+    },
+    {
+      "query": "帮我搜索一下大模型后训练的资料",
+      "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"大模型后训练资料\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "search_docs",
+        "arguments": {
+          "query": "大模型后训练资料"
+        }
+      }
+    },
+    {
+      "query": "你是谁？",
+      "response": "我是阿里云开发的智能助手，我叫通义千问。有什么可以帮助你的吗？",
+      "json_valid": false,
+      "parsed": null
+    },
+    {
+      "query": "帮我预约明天下午3点的项目评审会议",
+      "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2023-04-15\", \"time\": \"13:00\", \"topic\": \"项目评审\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "book_meeting",
+        "arguments": {
+          "date": "2023-04-15",
+          "time": "13:00",
+          "topic": "项目评审"
+        }
+      }
+    },
+    {
+      "query": "给 admin@company.com 发一封关于系统升级的通知邮件",
+      "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"系统升级通知\", \"content\": \"尊敬的管理员，我们很高兴地宣布我们的系统即将进行升级。请于2023年10月1日之前将您的账号信息更新至最新版本。感谢您的配合！\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "send_email",
+        "arguments": {
+          "recipient": "admin@company.com",
+          "subject": "系统升级通知",
+          "content": "尊敬的管理员，我们很高兴地宣布我们的系统即将进行升级。请于2023年10月1日之前将您的账号信息更新至最新版本。感谢您的配合！"
+        }
+      }
+    },
+    {
+      "query": "帮我预约个会议",
+      "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2023-04-15\", \"time\": \"14:00\", \"topic\": \"项目讨论\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "book_meeting",
+        "arguments": {
+          "date": "2023-04-15",
+          "time": "14:00",
+          "topic": "项目讨论"
+        }
+      }
+    },
+    {
+      "query": "搜一下 Python 教程，然后帮我发邮件给经理",
+      "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python教程\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "search_docs",
+        "arguments": {
+          "query": "Python教程"
+        }
+      }
+    },
+    {
+      "query": "今天是几号",
+      "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"今天的日期\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "query_order",
+        "arguments": {
+          "order_id": "今天的日期"
+        }
+      }
+    }
+  ],
+  "sft": [
+    {
+      "query": "帮我查一下订单 A10293 的状态",
+      "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "query_order",
+        "arguments": {
+          "order_id": "A10293"
+        }
+      }
+    },
+    {
+      "query": "计算 123 * 456 等于多少",
+      "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"123 * 456\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "calculator",
+        "arguments": {
+          "expression": "123 * 456"
+        }
+      }
+    },
+    {
+      "query": "帮我搜索一下大模型后训练的资料",
+      "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"大模型后训练\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "search_docs",
+        "arguments": {
+          "query": "大模型后训练"
+        }
+      }
+    },
+    {
+      "query": "你是谁？",
+      "response": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您是想了解什么是 AI 还是要知道我叫什么名字。\"}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "none",
+        "arguments": {},
+        "need_clarification": true,
+        "question": "请问您是想了解什么是 AI 还是要知道我叫什么名字。"
+      }
+    },
+    {
+      "query": "帮我预约明天下午3点的项目评审会议",
+      "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-18\", \"time\": \"15:30\", \"topic\": \"项目评审\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "book_meeting",
+        "arguments": {
+          "date": "2026-07-18",
+          "time": "15:30",
+          "topic": "项目评审"
+        }
+      }
+    },
+    {
+      "query": "给 admin@company.com 发一封关于系统升级的通知邮件",
+      "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"系统升级通知\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "send_email",
+        "arguments": {
+          "recipient": "admin@company.com",
+          "subject": "系统升级通知",
+          "content": "尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。"
+        }
+      }
+    },
+    {
+      "query": "帮我预约个会议",
+      "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-18\", \"time\": \"10:00\", \"topic\": \"项目讨论\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "book_meeting",
+        "arguments": {
+          "date": "2026-07-18",
+          "time": "10:00",
+          "topic": "项目讨论"
+        }
+      }
+    },
+    {
+      "query": "搜一下 Python 教程，然后帮我发邮件给经理",
+      "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python教程\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "search_docs",
+        "arguments": {
+          "query": "Python教程"
+        }
+      }
+    },
+    {
+      "query": "今天是几号",
+      "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"2024-01-18-ABC123\"}}",
+      "json_valid": true,
+      "parsed": {
+        "tool": "query_order",
+        "arguments": {
+          "order_id": "2024-01-18-ABC123"
+        }
+      }
+    }
+  ]
+}

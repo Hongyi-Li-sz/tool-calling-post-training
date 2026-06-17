@@ -1,0 +1,42 @@
+# SFT 训练配置
+# 框架: TRL SFTTrainer + PEFT LoRA
+
+# ── 模型 ──
+model_path: "models/Qwen2.5-0.5B-Instruct"
+
+# ── 数据 ──
+data_path: "data/sft/train.json"
+data_size: 573  # Day 2 生成的训练数据条数
+
+# ── 量化 ──
+quantization: "4bit"  # QLoRA: 4-bit NF4 量化
+bnb_4bit_compute_dtype: "float16"
+bnb_4bit_use_double_quant: true
+
+# ── LoRA ──
+lora_r: 8              # LoRA 秩（秩越大容量越大，但参数也更多）
+lora_alpha: 16         # 缩放系数（通常为 rank × 2）
+lora_dropout: 0.05     # Dropout 防止过拟合
+lora_target_modules:   # 在哪些层插入 adapter
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+
+# ── 训练超参数 ──
+epochs: 3                    # 训练轮数
+batch_size: 4                # 每卡 batch size
+gradient_accumulation: 2     # 梯度累积步数 → 有效 batch_size = 8
+learning_rate: 2.0e-4        # 学习率
+warmup_ratio: 0.05           # 预热步数比例
+max_seq_length: 1024         # 最大序列长度
+optimizer: "adamw_8bit"      # 8-bit AdamW 优化器（省显存）
+fp16: true                   # 混合精度训练
+
+# ── 预期结果 ──
+# 可训练参数: ~5M（约占模型总参数 1%）
+# 显存占用: ~4-6GB（QLoRA 4-bit）
+# 预估训练时间: 20-30 分钟（单卡 RTX 4090）
