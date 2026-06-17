@@ -1,0 +1,391 @@
+一周大模型后训练入门计划：Tool Calling SFT + DPO 项目
+
+项目目标：
+训练一个小模型，让它根据用户问题稳定输出正确的 JSON 工具调用。
+重点学习大模型后训练里的数据构造、SFT、DPO、自动评测和误差分析。
+
+最终产出：
+
+1. 一个可运行 GitHub 项目
+2. 一份 SFT vs DPO 对比实验报告
+3. 一个自动评测脚本
+4. 一个 README，可用于简历或面试展示
+
+推荐技术栈：
+模型：Qwen 小模型，优先选择 0.5B / 0.6B / 1.5B 级别
+训练方法：LoRA / QLoRA
+训练阶段：SFT + DPO
+框架：LLaMA-Factory 或 TRL
+任务：中文 Tool Calling JSON 输出
+
+工具设计：
+定义 5 个工具即可：
+
+1. search_docs
+   用途：检索知识库
+   参数：
+
+* query
+
+2. calculator
+   用途：计算数学表达式
+   参数：
+
+* expression
+
+3. query_order
+   用途：查询订单状态
+   参数：
+
+* order_id
+
+4. book_meeting
+   用途：预约会议
+   参数：
+
+* date
+* time
+* topic
+
+5. send_email
+   用途：发送邮件
+   参数：
+
+* recipient
+* subject
+* content
+
+模型输出格式统一为：
+
+{
+"tool": "工具名",
+"arguments": {
+"参数名": "参数值"
+}
+}
+
+不需要调用工具时，输出：
+
+{
+"tool": "none",
+"arguments": {}
+}
+
+---
+
+Day 1：确定项目范围 + 搭建仓库
+
+目标：
+把项目范围固定下来，不再换题。
+
+任务：
+
+1. 创建 GitHub 仓库
+2. 写 README 初稿
+3. 确定 5 个工具的 schema
+4. 准备数据目录结构
+5. 跑通 base model 的一次推理
+
+仓库结构：
+
+tool-calling-post-training/
+data/
+raw/
+sft/
+dpo/
+eval/
+configs/
+sft.yaml
+dpo.yaml
+src/
+build_sft_data.py
+build_dpo_data.py
+train_sft.py
+train_dpo.py
+evaluate.py
+infer.py
+reports/
+error_analysis.md
+sft_vs_dpo.md
+README.md
+
+当天产出：
+
+1. repo 初始化完成
+2. 工具 schema 写清楚
+3. base model 能正常推理
+
+---
+
+Day 2：构造 SFT 数据
+
+目标：
+构造 500 到 1000 条 instruction 数据。
+
+数据格式：
+
+{
+"instruction": "帮我查一下订单 A10293 的状态",
+"input": "",
+"output": "{"tool":"query_order","arguments":{"order_id":"A10293"}}"
+}
+
+数据类型要覆盖：
+
+1. 单工具调用
+   例如：
+   “帮我查一下订单 A10293”
+
+2. 不需要工具
+   例如：
+   “你是谁？”
+
+3. 参数缺失，需要追问
+   例如：
+   “帮我预约个会议”
+   输出：
+   {
+   "tool": "none",
+   "arguments": {},
+   "need_clarification": true,
+   "question": "请提供会议日期、时间和主题。"
+   }
+
+4. 多种相似意图
+   例如：
+   “帮我算一下 123 * 456”
+   “这个表达式 15 + 28 / 2 等于多少？”
+
+5. 干扰问题
+   例如：
+   “帮我发邮件顺便查订单”
+   先规定只允许单工具调用，选择最主要任务，或者输出需要澄清。
+
+当天产出：
+
+1. 至少 500 条 SFT 数据
+2. 数据字段统一
+3. 随机抽查 50 条，确保 output 是合法 JSON
+
+---
+
+Day 3：跑 SFT 训练
+
+目标：
+用 LoRA / QLoRA 跑通第一次监督微调。
+
+任务：
+
+1. 准备训练配置
+2. 跑 SFT
+3. 保存 adapter
+4. 用 50 条测试样本做初步评测
+
+建议记录：
+
+1. 模型名称
+2. 数据量
+3. batch size
+4. learning rate
+5. epoch
+6. 显存占用
+7. 训练时间
+8. loss 曲线或最终 loss
+
+当天评测指标：
+
+1. JSON 合法率
+   json.loads 是否成功
+
+2. 工具选择准确率
+   tool 字段是否正确
+
+3. 参数准确率
+   arguments 是否完整且正确
+
+4. 不该调用工具时的拒调用准确率
+   tool 是否为 none
+
+当天产出：
+
+1. SFT adapter
+2. 第一版评测结果
+3. 记录 base model vs SFT model 的差异
+
+---
+
+Day 4：构造 DPO 偏好数据
+
+目标：
+构造 chosen / rejected 数据，让模型学会更偏好正确、简洁、合法的 JSON。
+
+DPO 数据格式：
+
+{
+"prompt": "帮我查一下订单 A10293",
+"chosen": "{"tool":"query_order","arguments":{"order_id":"A10293"}}",
+"rejected": "{"tool":"search_docs","arguments":{"query":"订单 A10293"}}"
+}
+
+chosen 标准：
+
+1. JSON 合法
+2. 工具选择正确
+3. 参数完整
+4. 不输出多余解释
+5. 不编造参数
+
+rejected 类型：
+
+1. JSON 格式错误
+2. 工具选错
+3. 参数缺失
+4. 参数名错误
+5. 输出了多余自然语言
+6. 不该调用工具却调用了工具
+7. 应该调用工具却输出 none
+
+建议数量：
+300 到 800 对 preference pairs。
+
+当天产出：
+
+1. DPO 数据集
+2. rejected 错误类型统计
+3. 更新 README 的数据构造说明
+
+---
+
+Day 5：跑 DPO 训练
+
+目标：
+在 SFT 模型基础上继续做 DPO 偏好优化。
+
+任务：
+
+1. 加载 SFT adapter
+2. 使用 DPO 数据训练
+3. 保存 DPO adapter
+4. 在同一测试集上评测 base / SFT / DPO 三个模型
+
+对比表：
+
+模型,JSON合法率,工具准确率,参数准确率,拒调用准确率
+Base,待填写,待填写,待填写,待填写
+SFT,待填写,待填写,待填写,待填写
+DPO,待填写,待填写,待填写,待填写
+
+当天产出：
+
+1. DPO adapter
+2. 三个模型的对比结果
+3. 初步结论：DPO 是否提升稳定性
+
+---
+
+Day 6：自动评测 + Bad Case 分析
+
+目标：
+让项目看起来像真实工程，而不是只跑了训练。
+
+任务：
+
+1. 写 evaluate.py
+2. 自动检查 JSON 是否可解析
+3. 自动检查 tool 是否正确
+4. 自动检查 arguments 是否匹配
+5. 输出错误样本到 reports/bad_cases.json
+
+Bad Case 分类：
+
+1. JSON 格式错误
+2. 工具选择错误
+3. 参数漏抽
+4. 参数值错误
+5. 多余解释文本
+6. 该拒绝时没有拒绝
+7. 需要澄清时直接调用工具
+
+分析模板：
+
+样本：
+用户输入：
+模型输出：
+标准答案：
+错误类型：
+可能原因：
+改进方式：
+
+当天产出：
+
+1. evaluate.py
+2. bad_cases.json
+3. error_analysis.md
+
+---
+
+Day 7：整理 README + 实验报告
+
+目标：
+把项目包装成一个完整可展示项目。
+
+README 必须包含：
+
+1. 项目背景
+   说明为什么 Tool Calling 重要。
+
+2. 项目目标
+   让模型稳定输出合法 JSON 工具调用。
+
+3. 方法
+   Base Model -> SFT -> DPO -> Evaluation
+
+4. 数据构造
+   说明 SFT 数据和 DPO 数据如何构造。
+
+5. 训练配置
+   写清楚模型、LoRA 参数、数据量、epoch、batch size。
+
+6. 评测指标
+   JSON 合法率、工具准确率、参数准确率、拒调用准确率。
+
+7. 实验结果
+   放 base / SFT / DPO 对比表。
+
+8. Bad Case 分析
+   说明模型还会在哪些场景犯错。
+
+9. 下一步优化
+   例如：
+
+* 扩展更多工具
+* 支持多工具调用
+* 支持多轮参数补全
+* 引入 RAG 工具
+* 增加人工偏好数据
+
+最终简历描述：
+
+基于 Qwen 小模型构建中文 Tool Calling 后训练项目，设计 5 类业务工具及 JSON Schema，构造 SFT 指令数据和 DPO 偏好数据，使用 LoRA / QLoRA 完成监督微调与偏好优化，并实现自动评测脚本，对比 Base、SFT、DPO 三阶段模型在 JSON 合法率、工具选择准确率、参数准确率和拒调用准确率上的表现。
+
+最终项目标题：
+
+中文 Tool Calling 后训练：基于 SFT + DPO 的 JSON 工具调用优化
+
+最低完成标准：
+
+1. 500 条 SFT 数据
+2. 300 对 DPO 数据
+3. 跑通 SFT
+4. 跑通 DPO
+5. 有自动评测
+6. 有 base / SFT / DPO 对比表
+7. 有 README 和 bad case 分析
+
+加分项：
+
+1. 做一个简单 Gradio Demo
+2. 支持多轮参数追问
+3. 增加 RAG 检索工具
+4. 把评测结果画成图表
+5. 上传模型 adapter 到 Hugging Face

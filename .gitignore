@@ -1,0 +1,34 @@
+# Models
+models/
+
+# Outputs (training checkpoints, adapters, logs)
+outputs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.eggs/
+
+# Conda
+.env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# HuggingFace cache
+hf_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

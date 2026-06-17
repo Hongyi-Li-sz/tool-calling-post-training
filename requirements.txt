@@ -1,0 +1,24 @@
+# Core
+torch>=2.0.0
+transformers>=4.45.0
+accelerate>=0.30.0
+peft>=0.10.0
+
+# Data
+datasets>=2.18.0
+
+# Training (LLaMA-Factory will be cloned separately)
+trl>=0.8.0
+
+# Evaluation
+scikit-learn>=1.3.0
+
+# API & Demo
+gradio>=4.0.0
+
+# Utilities
+numpy>=1.24.0
+pandas>=2.0.0
+pyyaml>=6.0
+tqdm>=4.65.0
+argparse>=1.4.0

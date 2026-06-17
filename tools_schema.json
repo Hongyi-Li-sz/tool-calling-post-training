@@ -1,0 +1,111 @@
+{
+  "tools": [
+    {
+      "name": "search_docs",
+      "description": "检索知识库，根据用户查询返回相关文档内容",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "搜索关键词或问题"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "calculator",
+      "description": "计算数学表达式，支持加减乘除、括号、幂运算等",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "expression": {
+            "type": "string",
+            "description": "数学表达式，例如 '123 * 456' 或 '15 + 28 / 2'"
+          }
+        },
+        "required": ["expression"]
+      }
+    },
+    {
+      "name": "query_order",
+      "description": "根据订单号查询订单状态（待支付/已发货/已完成/已取消等）",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string",
+            "description": "订单号，例如 'A10293'"
+          }
+        },
+        "required": ["order_id"]
+      }
+    },
+    {
+      "name": "book_meeting",
+      "description": "预约会议，需要提供日期、时间和会议主题",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "会议日期，格式 YYYY-MM-DD"
+          },
+          "time": {
+            "type": "string",
+            "description": "会议时间，格式 HH:MM"
+          },
+          "topic": {
+            "type": "string",
+            "description": "会议主题"
+          }
+        },
+        "required": ["date", "time", "topic"]
+      }
+    },
+    {
+      "name": "send_email",
+      "description": "发送邮件给指定收件人",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "recipient": {
+            "type": "string",
+            "description": "收件人邮箱地址"
+          },
+          "subject": {
+            "type": "string",
+            "description": "邮件主题"
+          },
+          "content": {
+            "type": "string",
+            "description": "邮件正文内容"
+          }
+        },
+        "required": ["recipient", "subject", "content"]
+      }
+    }
+  ],
+  "output_format": {
+    "description": "模型必须输出合法的 JSON，不做任何额外解释",
+    "examples": {
+      "with_tool": {
+        "tool": "query_order",
+        "arguments": {
+          "order_id": "A10293"
+        }
+      },
+      "without_tool": {
+        "tool": "none",
+        "arguments": {}
+      },
+      "need_clarification": {
+        "tool": "none",
+        "arguments": {},
+        "need_clarification": true,
+        "question": "请提供会议日期、时间和主题。"
+      }
+    }
+  }
+}

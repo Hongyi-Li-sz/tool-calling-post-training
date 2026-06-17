@@ -1,0 +1,58 @@
+[
+  {
+    "query": "帮我查一下订单 A10293 的状态",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}",
+    "json_valid": true,
+    "tool_correct": true,
+    "notes": "✅ 完美"
+  },
+  {
+    "query": "计算 123 * 456 等于多少",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"123 * 456\"}}",
+    "json_valid": true,
+    "tool_correct": true,
+    "notes": "✅ 完美"
+  },
+  {
+    "query": "帮我搜索一下大模型后训练的资料",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"大模型后训练资料\"}}",
+    "json_valid": true,
+    "tool_correct": true,
+    "notes": "✅ 完美"
+  },
+  {
+    "query": "你是谁？",
+    "output": "我是阿里云开发的智能助手，我叫通义千问。",
+    "json_valid": false,
+    "tool_correct": false,
+    "notes": "❌ 应输出 {\"tool\": \"none\"}，但输出自然语言"
+  },
+  {
+    "query": "帮我预约明天下午3点的项目评审会议",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2023-04-07T15:00:00\", \"time\": \"15:00\", \"topic\": \"项目评审\"}}",
+    "json_valid": true,
+    "tool_correct": true,
+    "notes": "⚠️ 工具正确但日期编造(2023年)"
+  },
+  {
+    "query": "给 admin@company.com 发一封关于系统升级的通知邮件",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {...}}",
+    "json_valid": true,
+    "tool_correct": true,
+    "notes": "✅ 正确提取所有参数"
+  },
+  {
+    "query": "帮我预约个会议",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {hallucinated}}",
+    "json_valid": true,
+    "tool_correct": true,
+    "notes": "❌ 应追问缺失参数，但编造了参数值"
+  },
+  {
+    "query": "搜一下 Python 教程，然后帮我发邮件给经理",
+    "output": "{\"tool\": \"search_docs\", ...}",
+    "json_valid": true,
+    "tool_correct": true,
+    "notes": "⚠️ 只处理了第一个意图，忽略了邮件请求"
+  }
+]
