@@ -110,6 +110,9 @@
 - [x] `src/build_sft_data.py` — 数据构造脚本
 - [x] `data/sft/train.json` — 573 条训练数据
 
+### Git 提交
+- `8a1c9bd` Day 2: 构造 SFT 训练数据
+
 ## Day 3：跑 SFT 训练
 ⬜ 待开始
 
