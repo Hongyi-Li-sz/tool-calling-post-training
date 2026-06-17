@@ -1,167 +1,944 @@
 [
   {
-    "id": 3,
-    "instruction": "物流跟踪 G98765",
-    "category": "单工具-查询订单",
-    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"物流跟踪\"}}",
+    "id": 1,
+    "instruction": "检索一下 Kubernetes 入门教程",
+    "category": "single_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Kubernetes入门教程\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "search_docs",
       "arguments": {
-        "query": "物流跟踪"
+        "query": "Kubernetes入门教程"
       }
     },
-    "expected_tool": "query_order",
+    "expected_tool": "search_docs",
     "expected_arguments": {
-      "order_id": "G98765"
+      "query": "Kubernetes 入门教程"
     },
     "expected_clarify": false,
     "actual_tool": "search_docs",
     "actual_arguments": {
-      "query": "物流跟踪"
+      "query": "Kubernetes入门教程"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 query: 期望 'Kubernetes 入门教程'，实际 'Kubernetes入门教程'",
+    "is_correct": false
+  },
+  {
+    "id": 2,
+    "instruction": "找一下自然语言处理的最新进展",
+    "category": "single_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"natural language processing latest progress\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "natural language processing latest progress"
+      }
+    },
+    "expected_tool": "search_docs",
+    "expected_arguments": {
+      "query": "自然语言处理 最新进展"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "natural language processing latest progress"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 query: 期望 '自然语言处理 最新进展'，实际 'natural language processing latest progress'",
+    "is_correct": false
+  },
+  {
+    "id": 4,
+    "instruction": "搜索 Transformer 架构的论文",
+    "category": "single_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Transformer 架构\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "Transformer 架构"
+      }
+    },
+    "expected_tool": "search_docs",
+    "expected_arguments": {
+      "query": "Transformer 架构 论文"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "Transformer 架构"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 query: 期望 'Transformer 架构 论文'，实际 'Transformer 架构'",
+    "is_correct": false
+  },
+  {
+    "id": 7,
+    "instruction": "搜搜看有没有分布式系统一致性的文章",
+    "category": "single_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"分布式系统一致性的文章\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "分布式系统一致性的文章"
+      }
+    },
+    "expected_tool": "search_docs",
+    "expected_arguments": {
+      "query": "分布式系统一致性"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "分布式系统一致性的文章"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 query: 期望 '分布式系统一致性'，实际 '分布式系统一致性的文章'",
+    "is_correct": false
+  },
+  {
+    "id": 8,
+    "instruction": "知识库里找一下 Git 高级用法",
+    "category": "single_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Git高级用法\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "Git高级用法"
+      }
+    },
+    "expected_tool": "search_docs",
+    "expected_arguments": {
+      "query": "Git 高级用法"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "Git高级用法"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 query: 期望 'Git 高级用法'，实际 'Git高级用法'",
+    "is_correct": false
+  },
+  {
+    "id": 10,
+    "instruction": "查文档：如何用 Redis 做缓存",
+    "category": "single_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"如何用 Redis 做缓存\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "如何用 Redis 做缓存"
+      }
+    },
+    "expected_tool": "search_docs",
+    "expected_arguments": {
+      "query": "Redis 缓存"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "如何用 Redis 做缓存"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 query: 期望 'Redis 缓存'，实际 '如何用 Redis 做缓存'",
+    "is_correct": false
+  },
+  {
+    "id": 11,
+    "instruction": "检索 Nginx 反向代理的配置方法",
+    "category": "single_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Nginx反向代理配置\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "Nginx反向代理配置"
+      }
+    },
+    "expected_tool": "search_docs",
+    "expected_arguments": {
+      "query": "Nginx 反向代理 配置"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "Nginx反向代理配置"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 query: 期望 'Nginx 反向代理 配置'，实际 'Nginx反向代理配置'",
+    "is_correct": false
+  },
+  {
+    "id": 15,
+    "instruction": "求 (100 + 50) * 3 的结果",
+    "category": "single_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"100 + 50 * 3\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "100 + 50 * 3"
+      }
+    },
+    "expected_tool": "calculator",
+    "expected_arguments": {
+      "expression": "(100 + 50) * 3"
+    },
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "100 + 50 * 3"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 expression: 期望 '(100 + 50) * 3'，实际 '100 + 50 * 3'",
+    "is_correct": false
+  },
+  {
+    "id": 16,
+    "instruction": "算一下 2 的 10 次方",
+    "category": "single_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"2^10\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "2^10"
+      }
+    },
+    "expected_tool": "calculator",
+    "expected_arguments": {
+      "expression": "2 ** 10"
+    },
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "2^10"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 expression: 期望 '2 ** 10'，实际 '2^10'",
+    "is_correct": false
+  },
+  {
+    "id": 19,
+    "instruction": "100 减去 35 再乘 2",
+    "category": "single_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"100 - 35 * 2\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "100 - 35 * 2"
+      }
+    },
+    "expected_tool": "calculator",
+    "expected_arguments": {
+      "expression": "(100 - 35) * 2"
+    },
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "100 - 35 * 2"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 expression: 期望 '(100 - 35) * 2'，实际 '100 - 35 * 2'",
+    "is_correct": false
+  },
+  {
+    "id": 20,
+    "instruction": "计算一下 88 除以 4 加 6",
+    "category": "single_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"88/4+6\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "88/4+6"
+      }
+    },
+    "expected_tool": "calculator",
+    "expected_arguments": {
+      "expression": "88 / 4 + 6"
+    },
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "88/4+6"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 expression: 期望 '88 / 4 + 6'，实际 '88/4+6'",
+    "is_correct": false
+  },
+  {
+    "id": 26,
+    "instruction": "帮我跟踪一下 B20456 的物流",
+    "category": "single_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"B20456物流跟踪\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "B20456物流跟踪"
+      }
+    },
+    "expected_tool": "query_order",
+    "expected_arguments": {
+      "order_id": "B20456"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "B20456物流跟踪"
     },
     "error_type": "wrong_tool",
     "error_detail": "期望 query_order，实际 search_docs",
     "is_correct": false
   },
   {
-    "id": 6,
-    "instruction": "计算 (50 - 30) * 7",
-    "category": "单工具-计算",
-    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"50 - 30 * 7\"}}",
+    "id": 28,
+    "instruction": "F12345 这个订单发货了没",
+    "category": "single_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"F12345 -> order_status\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "calculator",
       "arguments": {
-        "expression": "50 - 30 * 7"
+        "expression": "F12345 -> order_status"
       }
     },
-    "expected_tool": "calculator",
+    "expected_tool": "query_order",
     "expected_arguments": {
-      "expression": "(50 - 30) * 7"
+      "order_id": "F12345"
     },
     "expected_clarify": false,
     "actual_tool": "calculator",
     "actual_arguments": {
-      "expression": "50 - 30 * 7"
+      "expression": "F12345 -> order_status"
     },
-    "error_type": "wrong_param_value",
-    "error_detail": "参数 expression: 期望 '(50 - 30) * 7'，实际 '50 - 30 * 7'",
+    "error_type": "wrong_tool",
+    "error_detail": "期望 query_order，实际 calculator",
     "is_correct": false
   },
   {
-    "id": 10,
-    "instruction": "检索 Redis 缓存策略",
-    "category": "单工具-搜索",
-    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Redis 缓存\"}}",
+    "id": 30,
+    "instruction": "看看 E56789 是不是已签收",
+    "category": "single_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"E56789 IS SNAPSHOT\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "E56789 IS SNAPSHOT"
+      }
+    },
+    "expected_tool": "query_order",
+    "expected_arguments": {
+      "order_id": "E56789"
+    },
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "E56789 IS SNAPSHOT"
+    },
+    "error_type": "wrong_tool",
+    "error_detail": "期望 query_order，实际 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 31,
+    "instruction": "帮我查查 SO-240315-001 卖家发货了没",
+    "category": "single_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"SO-240315-001 卖家发货\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "search_docs",
       "arguments": {
-        "query": "Redis 缓存"
+        "query": "SO-240315-001 卖家发货"
       }
     },
-    "expected_tool": "search_docs",
+    "expected_tool": "query_order",
     "expected_arguments": {
-      "query": "Redis 缓存策略"
+      "order_id": "SO-240315-001"
     },
     "expected_clarify": false,
     "actual_tool": "search_docs",
     "actual_arguments": {
-      "query": "Redis 缓存"
+      "query": "SO-240315-001 卖家发货"
     },
-    "error_type": "wrong_param_value",
-    "error_detail": "参数 query: 期望 'Redis 缓存策略'，实际 'Redis 缓存'",
+    "error_type": "wrong_tool",
+    "error_detail": "期望 query_order，实际 search_docs",
     "is_correct": false
   },
   {
-    "id": 11,
-    "instruction": "有没有推荐系统算法的教程",
-    "category": "单工具-搜索",
-    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"推荐系统算法教程\"}}",
+    "id": 32,
+    "instruction": "这个单 H34567 什么时候到",
+    "category": "single_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"H34567 什么时候到\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "search_docs",
       "arguments": {
-        "query": "推荐系统算法教程"
+        "query": "H34567 什么时候到"
       }
     },
-    "expected_tool": "search_docs",
+    "expected_tool": "query_order",
     "expected_arguments": {
-      "query": "推荐系统算法"
+      "order_id": "H34567"
     },
     "expected_clarify": false,
     "actual_tool": "search_docs",
     "actual_arguments": {
-      "query": "推荐系统算法教程"
+      "query": "H34567 什么时候到"
     },
-    "error_type": "wrong_param_value",
-    "error_detail": "参数 query: 期望 '推荐系统算法'，实际 '推荐系统算法教程'",
+    "error_type": "wrong_tool",
+    "error_detail": "期望 query_order，实际 search_docs",
     "is_correct": false
   },
   {
-    "id": 13,
-    "instruction": "在 2026-08-15 14:30 帮我安排代码审查",
-    "category": "单工具-预约会议",
-    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"2026-08-15 14:30\"}}",
+    "id": 33,
+    "instruction": "追踪一下 TBA1029384756",
+    "category": "single_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"TBA1029384756\"}}",
     "json_valid": true,
     "parsed": {
-      "tool": "query_order",
+      "tool": "search_docs",
       "arguments": {
-        "order_id": "2026-08-15 14:30"
+        "query": "TBA1029384756"
+      }
+    },
+    "expected_tool": "query_order",
+    "expected_arguments": {
+      "order_id": "TBA1029384756"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "TBA1029384756"
+    },
+    "error_type": "wrong_tool",
+    "error_detail": "期望 query_order，实际 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 35,
+    "instruction": "J22222 的物流状态查一下",
+    "category": "single_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"J22222物流状态\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "J22222物流状态"
+      }
+    },
+    "expected_tool": "query_order",
+    "expected_arguments": {
+      "order_id": "J22222"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "J22222物流状态"
+    },
+    "error_type": "wrong_tool",
+    "error_detail": "期望 query_order，实际 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 36,
+    "instruction": "帮我预约 2026-07-01 14:00 的产品发布会",
+    "category": "single_tool",
+    "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"14:00\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "book_meeting",
+      "arguments": {
+        "date": "2026-07-01",
+        "time": "14:00"
       }
     },
     "expected_tool": "book_meeting",
     "expected_arguments": {
+      "date": "2026-07-01",
+      "time": "14:00",
+      "topic": "产品发布会"
+    },
+    "expected_clarify": false,
+    "actual_tool": "book_meeting",
+    "actual_arguments": {
+      "date": "2026-07-01",
+      "time": "14:00"
+    },
+    "error_type": "missing_param",
+    "error_detail": "缺少参数: {'topic'}",
+    "is_correct": false
+  },
+  {
+    "id": 37,
+    "instruction": "在 2026-08-15 09:30 安排代码审查",
+    "category": "single_tool",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"2026-08-15 09:30\"}, \"need_clarification\": false, \"question\": \"请问您想安排哪一天的代码审查？\"}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "2026-08-15 09:30"
+      },
+      "need_clarification": false,
+      "question": "请问您想安排哪一天的代码审查？"
+    },
+    "expected_tool": "book_meeting",
+    "expected_arguments": {
       "date": "2026-08-15",
-      "time": "14:30",
+      "time": "09:30",
       "topic": "代码审查"
     },
     "expected_clarify": false,
     "actual_tool": "query_order",
     "actual_arguments": {
-      "order_id": "2026-08-15 14:30"
+      "order_id": "2026-08-15 09:30"
     },
     "error_type": "wrong_tool",
     "error_detail": "期望 book_meeting，实际 query_order",
     "is_correct": false
   },
   {
-    "id": 17,
-    "instruction": "给经理发一封周报邮件",
-    "category": "单工具-发邮件",
-    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@example.com\", \"subject\": \"Weekly Report\", \"content\": \"Dear Manager, Please find attached the latest weekly report.\"}}",
+    "id": 38,
+    "instruction": "预定 2026-09-10 10:00 的技术方案讨论会",
+    "category": "single_tool",
+    "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-09-10\", \"time\": \"10:00\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "book_meeting",
+      "arguments": {
+        "date": "2026-09-10",
+        "time": "10:00"
+      }
+    },
+    "expected_tool": "book_meeting",
+    "expected_arguments": {
+      "date": "2026-09-10",
+      "time": "10:00",
+      "topic": "技术方案讨论"
+    },
+    "expected_clarify": false,
+    "actual_tool": "book_meeting",
+    "actual_arguments": {
+      "date": "2026-09-10",
+      "time": "10:00"
+    },
+    "error_type": "missing_param",
+    "error_detail": "缺少参数: {'topic'}",
+    "is_correct": false
+  },
+  {
+    "id": 39,
+    "instruction": "帮我约 2026-10-05 的年度总结，下午 2 点",
+    "category": "single_tool",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"date\": \"2026-10-05\", \"time\": \"14:00\"}}\n{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": false, \"question\": \"请问您想预约哪个时间段的会议？\"}",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "book_meeting",
+    "expected_arguments": {
+      "date": "2026-10-05",
+      "time": "14:00",
+      "topic": "年度总结"
+    },
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 40,
+    "instruction": "安排 2026-11-20 16:00 的性能优化讨论",
+    "category": "single_tool",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"202611201600\", \"topic\": \"性能优化\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "202611201600",
+        "topic": "性能优化"
+      }
+    },
+    "expected_tool": "book_meeting",
+    "expected_arguments": {
+      "date": "2026-11-20",
+      "time": "16:00",
+      "topic": "性能优化讨论"
+    },
+    "expected_clarify": false,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "202611201600",
+      "topic": "性能优化"
+    },
+    "error_type": "wrong_tool",
+    "error_detail": "期望 book_meeting，实际 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 41,
+    "instruction": "预约 2026-07-15 11:00 的 1v1 沟通",
+    "category": "single_tool",
+    "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-15\", \"time\": \"11:00\", \"topic\": \"沟通\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "book_meeting",
+      "arguments": {
+        "date": "2026-07-15",
+        "time": "11:00",
+        "topic": "沟通"
+      }
+    },
+    "expected_tool": "book_meeting",
+    "expected_arguments": {
+      "date": "2026-07-15",
+      "time": "11:00",
+      "topic": "1v1 沟通"
+    },
+    "expected_clarify": false,
+    "actual_tool": "book_meeting",
+    "actual_arguments": {
+      "date": "2026-07-15",
+      "time": "11:00",
+      "topic": "沟通"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 topic: 期望 '1v1 沟通'，实际 '沟通'",
+    "is_correct": false
+  },
+  {
+    "id": 42,
+    "instruction": "下周五上午十点帮我约需求评审",
+    "category": "single_tool",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"req_review_202306181000\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "req_review_202306181000"
+      }
+    },
+    "expected_tool": "book_meeting",
+    "expected_arguments": {
+      "date": "__any__",
+      "time": "10:00",
+      "topic": "需求评审"
+    },
+    "expected_clarify": false,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "req_review_202306181000"
+    },
+    "error_type": "wrong_tool",
+    "error_detail": "期望 book_meeting，实际 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 43,
+    "instruction": "定一个 2026-12-25 下午 3 点的团队建设会议",
+    "category": "single_tool",
+    "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-12-25\", \"time\": \"13:00\", \"topic\": \"团队建设\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "book_meeting",
+      "arguments": {
+        "date": "2026-12-25",
+        "time": "13:00",
+        "topic": "团队建设"
+      }
+    },
+    "expected_tool": "book_meeting",
+    "expected_arguments": {
+      "date": "2026-12-25",
+      "time": "15:00",
+      "topic": "团队建设"
+    },
+    "expected_clarify": false,
+    "actual_tool": "book_meeting",
+    "actual_arguments": {
+      "date": "2026-12-25",
+      "time": "13:00",
+      "topic": "团队建设"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 time: 期望 '15:00'，实际 '13:00'",
+    "is_correct": false
+  },
+  {
+    "id": 44,
+    "instruction": "帮我在 2026-07-08 09:00 安排 Sprint 回顾",
+    "category": "single_tool",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"202607080900\", \"topic\": \"Sprint回顾\"}}\n{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": false, \"question\": \"请问您想安排哪一天的 Sprint 回顾？\"}",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "book_meeting",
+    "expected_arguments": {
+      "date": "2026-07-08",
+      "time": "09:00",
+      "topic": "Sprint 回顾"
+    },
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 45,
+    "instruction": "约一个 2026-09-01 上午 10 点半的预算评审",
+    "category": "single_tool",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"date\": \"2026-09-01\", \"time\": \"10:00\", \"topic\": \"预算评审\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "date": "2026-09-01",
+        "time": "10:00",
+        "topic": "预算评审"
+      }
+    },
+    "expected_tool": "book_meeting",
+    "expected_arguments": {
+      "date": "2026-09-01",
+      "time": "10:30",
+      "topic": "预算评审"
+    },
+    "expected_clarify": false,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "date": "2026-09-01",
+      "time": "10:00",
+      "topic": "预算评审"
+    },
+    "error_type": "wrong_tool",
+    "error_detail": "期望 book_meeting，实际 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 47,
+    "instruction": "下周三下午帮我预定会议室讨论项目进度",
+    "category": "single_tool",
+    "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2023-04-15\", \"time\": \"14:00\", \"topic\": \"项目进度讨论\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "book_meeting",
+      "arguments": {
+        "date": "2023-04-15",
+        "time": "14:00",
+        "topic": "项目进度讨论"
+      }
+    },
+    "expected_tool": "book_meeting",
+    "expected_arguments": {
+      "date": "__any__",
+      "time": "__any__",
+      "topic": "项目进度"
+    },
+    "expected_clarify": false,
+    "actual_tool": "book_meeting",
+    "actual_arguments": {
+      "date": "2023-04-15",
+      "time": "14:00",
+      "topic": "项目进度讨论"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 topic: 期望 '项目进度'，实际 '项目进度讨论'",
+    "is_correct": false
+  },
+  {
+    "id": 48,
+    "instruction": "给 admin@company.com 发一封系统维护通知的邮件",
+    "category": "single_tool",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"System Maintenance Notice\", \"content\": \"Dear Admin, We are experiencing some issues with the system. Please review the following steps to resolve the problem.\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "send_email",
       "arguments": {
-        "recipient": "manager@example.com",
-        "subject": "Weekly Report",
-        "content": "Dear Manager, Please find attached the latest weekly report."
+        "recipient": "admin@company.com",
+        "subject": "System Maintenance Notice",
+        "content": "Dear Admin, We are experiencing some issues with the system. Please review the following steps to resolve the problem."
       }
     },
     "expected_tool": "send_email",
     "expected_arguments": {
-      "recipient": "manager@team.org",
-      "subject": "周报",
+      "recipient": "admin@company.com",
+      "subject": "系统维护通知",
       "content": "__any__"
     },
     "expected_clarify": false,
     "actual_tool": "send_email",
     "actual_arguments": {
-      "recipient": "manager@example.com",
-      "subject": "Weekly Report",
-      "content": "Dear Manager, Please find attached the latest weekly report."
+      "recipient": "admin@company.com",
+      "subject": "System Maintenance Notice",
+      "content": "Dear Admin, We are experiencing some issues with the system. Please review the following steps to resolve the problem."
     },
     "error_type": "wrong_param_value",
-    "error_detail": "参数 recipient: 期望 'manager@team.org'，实际 'manager@example.com'",
+    "error_detail": "参数 subject: 期望 '系统维护通知'，实际 'System Maintenance Notice'",
     "is_correct": false
   },
   {
-    "id": 18,
-    "instruction": "你好",
-    "category": "拒调用-问候",
-    "response": "您好！有什么可以帮助您的吗？",
+    "id": 51,
+    "instruction": "向 all@team.org 发送周末团建的活动通知",
+    "category": "single_tool",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"all@team.org\", \"subject\": \"周末团建活动通知\", \"content\": \"尊敬的团队成员，为了庆祝我们的节日，我们将举办一个周末团建活动。请于本周五下午两点到公司会议室参加。感谢您的参与！\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "all@team.org",
+        "subject": "周末团建活动通知",
+        "content": "尊敬的团队成员，为了庆祝我们的节日，我们将举办一个周末团建活动。请于本周五下午两点到公司会议室参加。感谢您的参与！"
+      }
+    },
+    "expected_tool": "send_email",
+    "expected_arguments": {
+      "recipient": "all@team.org",
+      "subject": "周末团建通知",
+      "content": "__any__"
+    },
+    "expected_clarify": false,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "all@team.org",
+      "subject": "周末团建活动通知",
+      "content": "尊敬的团队成员，为了庆祝我们的节日，我们将举办一个周末团建活动。请于本周五下午两点到公司会议室参加。感谢您的参与！"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 subject: 期望 '周末团建通知'，实际 '周末团建活动通知'",
+    "is_correct": false
+  },
+  {
+    "id": 52,
+    "instruction": "给财务部发一封预算审批的邮件",
+    "category": "single_tool",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"finance@company.com\", \"subject\": \"Budget Approval Request\", \"content\": \"Dear Finance Department, We are preparing a budget for the upcoming quarter and would like to request your approval. Please review the proposed budget and provide feedback within 7 days.\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "finance@company.com",
+        "subject": "Budget Approval Request",
+        "content": "Dear Finance Department, We are preparing a budget for the upcoming quarter and would like to request your approval. Please review the proposed budget and provide feedback within 7 days."
+      }
+    },
+    "expected_tool": "send_email",
+    "expected_arguments": {
+      "recipient": "finance@corp.cn",
+      "subject": "预算审批",
+      "content": "__any__"
+    },
+    "expected_clarify": false,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "finance@company.com",
+      "subject": "Budget Approval Request",
+      "content": "Dear Finance Department, We are preparing a budget for the upcoming quarter and would like to request your approval. Please review the proposed budget and provide feedback within 7 days."
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 recipient: 期望 'finance@corp.cn'，实际 'finance@company.com'",
+    "is_correct": false
+  },
+  {
+    "id": 53,
+    "instruction": "发邮件通知 wangwu@dev.io 技术方案已更新",
+    "category": "single_tool",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"技术方案已更新\", \"content\": \"请查收\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "wangwu@dev.io",
+        "subject": "技术方案已更新",
+        "content": "请查收"
+      }
+    },
+    "expected_tool": "send_email",
+    "expected_arguments": {
+      "recipient": "wangwu@dev.io",
+      "subject": "技术方案更新通知",
+      "content": "__any__"
+    },
+    "expected_clarify": false,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "wangwu@dev.io",
+      "subject": "技术方案已更新",
+      "content": "请查收"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 subject: 期望 '技术方案更新通知'，实际 '技术方案已更新'",
+    "is_correct": false
+  },
+  {
+    "id": 54,
+    "instruction": "帮我写一封邮件给 lisi@tech.cn 说明项目延期原因",
+    "category": "single_tool",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"lisi@tech.cn\", \"subject\": \"关于项目延期的说明\", \"content\": \"尊敬的 lisi@tech.cn ，我们非常抱歉地通知您，由于一些不可预见的原因，我们的项目延期了。请理解并接受我们的歉意。我们将尽快与您取得联系，并提供一个解决方案以确保项目的顺利进行。如果您有任何疑问，请随时联系我们。感谢您的理解和合作。\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "lisi@tech.cn",
+        "subject": "关于项目延期的说明",
+        "content": "尊敬的 lisi@tech.cn ，我们非常抱歉地通知您，由于一些不可预见的原因，我们的项目延期了。请理解并接受我们的歉意。我们将尽快与您取得联系，并提供一个解决方案以确保项目的顺利进行。如果您有任何疑问，请随时联系我们。感谢您的理解和合作。"
+      }
+    },
+    "expected_tool": "send_email",
+    "expected_arguments": {
+      "recipient": "lisi@tech.cn",
+      "subject": "项目延期说明",
+      "content": "__any__"
+    },
+    "expected_clarify": false,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "lisi@tech.cn",
+      "subject": "关于项目延期的说明",
+      "content": "尊敬的 lisi@tech.cn ，我们非常抱歉地通知您，由于一些不可预见的原因，我们的项目延期了。请理解并接受我们的歉意。我们将尽快与您取得联系，并提供一个解决方案以确保项目的顺利进行。如果您有任何疑问，请随时联系我们。感谢您的理解和合作。"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 subject: 期望 '项目延期说明'，实际 '关于项目延期的说明'",
+    "is_correct": false
+  },
+  {
+    "id": 60,
+    "instruction": "你好啊",
+    "category": "no_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"2 + 3 * 4\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "2 + 3 * 4"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "2 + 3 * 4"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 61,
+    "instruction": "早上好",
+    "category": "no_tool",
+    "response": "你好！有什么可以帮助你的吗？",
     "json_valid": false,
     "parsed": null,
     "expected_tool": "none",
@@ -174,15 +951,15 @@
     "is_correct": false
   },
   {
-    "id": 19,
-    "instruction": "今天天气怎么样",
-    "category": "拒调用-闲聊",
-    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"today's weather\"}}",
+    "id": 62,
+    "instruction": "晚上好，今天过得怎么样",
+    "category": "no_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"time + 10\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "calculator",
       "arguments": {
-        "expression": "today's weather"
+        "expression": "time + 10"
       }
     },
     "expected_tool": "none",
@@ -190,22 +967,22 @@
     "expected_clarify": false,
     "actual_tool": "calculator",
     "actual_arguments": {
-      "expression": "today's weather"
+      "expression": "time + 10"
     },
     "error_type": "should_reject",
     "error_detail": "应输出 none 但调用了 calculator",
     "is_correct": false
   },
   {
-    "id": 20,
-    "instruction": "讲个笑话给我听",
-    "category": "拒调用-闲聊",
-    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1+1\"}}",
+    "id": 63,
+    "instruction": "讲个笑话",
+    "category": "no_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1+1=2\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "calculator",
       "arguments": {
-        "expression": "1+1"
+        "expression": "1+1=2"
       }
     },
     "expected_tool": "none",
@@ -213,22 +990,22 @@
     "expected_clarify": false,
     "actual_tool": "calculator",
     "actual_arguments": {
-      "expression": "1+1"
+      "expression": "1+1=2"
     },
     "error_type": "should_reject",
     "error_detail": "应输出 none 但调用了 calculator",
     "is_correct": false
   },
   {
-    "id": 21,
-    "instruction": "Python 是哪个国家发明的",
-    "category": "拒调用-常识",
-    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python 诞生国\"}}",
+    "id": 64,
+    "instruction": "推荐一部好看的电影",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"好看的电影\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "search_docs",
       "arguments": {
-        "query": "Python 诞生国"
+        "query": "好看的电影"
       }
     },
     "expected_tool": "none",
@@ -236,22 +1013,22 @@
     "expected_clarify": false,
     "actual_tool": "search_docs",
     "actual_arguments": {
-      "query": "Python 诞生国"
+      "query": "好看的电影"
     },
     "error_type": "should_reject",
     "error_detail": "应输出 none 但调用了 search_docs",
     "is_correct": false
   },
   {
-    "id": 22,
-    "instruction": "推荐一本好看的小说",
-    "category": "拒调用-闲聊",
-    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"好看的小说\"}}",
+    "id": 65,
+    "instruction": "周末去哪里玩比较好",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"周末旅游地点\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "search_docs",
       "arguments": {
-        "query": "好看的小说"
+        "query": "周末旅游地点"
       }
     },
     "expected_tool": "none",
@@ -259,40 +1036,17 @@
     "expected_clarify": false,
     "actual_tool": "search_docs",
     "actual_arguments": {
-      "query": "好看的小说"
+      "query": "周末旅游地点"
     },
     "error_type": "should_reject",
     "error_detail": "应输出 none 但调用了 search_docs",
     "is_correct": false
   },
   {
-    "id": 23,
-    "instruction": "解释一下什么是微积分",
-    "category": "拒调用-常识",
-    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"∫dx\"}}",
-    "json_valid": true,
-    "parsed": {
-      "tool": "calculator",
-      "arguments": {
-        "expression": "∫dx"
-      }
-    },
-    "expected_tool": "none",
-    "expected_arguments": {},
-    "expected_clarify": false,
-    "actual_tool": "calculator",
-    "actual_arguments": {
-      "expression": "∫dx"
-    },
-    "error_type": "should_reject",
-    "error_detail": "应输出 none 但调用了 calculator",
-    "is_correct": false
-  },
-  {
-    "id": 24,
-    "instruction": "你觉得 AI 会取代人类吗",
-    "category": "拒调用-哲学",
-    "response": "AI 和人类在许多方面都有不同的优势和局限性。AI 可以处理大量数据并进行复杂的计算，但它缺乏情感、创造力和道德判断能力。因此，我认为 AI 不可能完全取代人类，但可以更好地辅助人类工作。",
+    "id": 66,
+    "instruction": "给我讲个睡前故事",
+    "category": "no_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"sleeping\"})",
     "json_valid": false,
     "parsed": null,
     "expected_tool": "none",
@@ -305,15 +1059,31 @@
     "is_correct": false
   },
   {
-    "id": 25,
-    "instruction": "给我一些学英语的建议",
-    "category": "拒调用-建议",
-    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"学英语的建议\"}}",
+    "id": 67,
+    "instruction": "你是谁",
+    "category": "no_tool",
+    "response": "我是阿里云开发的智能助手，我叫通义千问。有什么可以帮助你的吗？",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 68,
+    "instruction": "介绍一下你自己",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"自我介绍\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "search_docs",
       "arguments": {
-        "query": "学英语的建议"
+        "query": "自我介绍"
       }
     },
     "expected_tool": "none",
@@ -321,22 +1091,54 @@
     "expected_clarify": false,
     "actual_tool": "search_docs",
     "actual_arguments": {
-      "query": "学英语的建议"
+      "query": "自我介绍"
     },
     "error_type": "should_reject",
     "error_detail": "应输出 none 但调用了 search_docs",
     "is_correct": false
   },
   {
-    "id": 26,
-    "instruction": "早饭吃什么比较健康",
-    "category": "拒调用-生活",
-    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"早饭健康食谱\"}}",
+    "id": 69,
+    "instruction": "你有什么功能",
+    "category": "no_tool",
+    "response": "我有以下几种功能：\n\n1. 检索知识库 - 根据关键词查询相关知识。\n2. 计算数学表达式 - 输入数学表达式计算结果。\n3. 查询订单状态 - 根据订单号获取订单状态信息。\n4. 预约会议 - 提供会议预约服务。\n5. 发送邮件 - 安排发送电子邮件。\n\n请告诉我你需要哪种功能。",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 70,
+    "instruction": "你能帮我做什么",
+    "category": "no_tool",
+    "response": "当然可以！请告诉我你需要什么帮助。",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 71,
+    "instruction": "北京在哪里",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"北京\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "search_docs",
       "arguments": {
-        "query": "早饭健康食谱"
+        "query": "北京"
       }
     },
     "expected_tool": "none",
@@ -344,22 +1146,22 @@
     "expected_clarify": false,
     "actual_tool": "search_docs",
     "actual_arguments": {
-      "query": "早饭健康食谱"
+      "query": "北京"
     },
     "error_type": "should_reject",
     "error_detail": "应输出 none 但调用了 search_docs",
     "is_correct": false
   },
   {
-    "id": 27,
-    "instruction": "怎么才能早睡早起",
-    "category": "拒调用-生活",
-    "response": "为了帮助您更好地了解如何早睡早起，我将为您提供一些实用的建议。首先，请告诉我您的作息习惯和当前的生活环境是什么样的？这样我可以更准确地为您推荐适合的方法。\n\n{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"早睡早起方法\"}}\n\n如果您有特定的问题或者想要获取关于睡眠卫生、饮食习惯等方面的信息，也可以告诉我，我会尽力提供帮助。",
+    "id": 72,
+    "instruction": "Python 是什么",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "search_docs",
       "arguments": {
-        "query": "早睡早起方法"
+        "query": "Python"
       }
     },
     "expected_tool": "none",
@@ -367,16 +1169,78 @@
     "expected_clarify": false,
     "actual_tool": "search_docs",
     "actual_arguments": {
-      "query": "早睡早起方法"
+      "query": "Python"
     },
     "error_type": "should_reject",
     "error_detail": "应输出 none 但调用了 search_docs",
     "is_correct": false
   },
   {
-    "id": 28,
+    "id": 73,
+    "instruction": "人工智能和机器学习有什么区别",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"人工智能和机器学习的区别\"}}\n{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": false, \"question\": \"请问您想了解哪方面的区别？\"}",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 74,
+    "instruction": "什么是深度学习",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"深度学习\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "深度学习"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "深度学习"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 75,
+    "instruction": "地球绕太阳一圈要多久",
+    "category": "no_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"365天 × 24小时/分钟 × 60分钟/秒 × 3600秒/年 × 1年\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "365天 × 24小时/分钟 × 60分钟/秒 × 3600秒/年 × 1年"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "365天 × 24小时/分钟 × 60分钟/秒 × 3600秒/年 × 1年"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 76,
     "instruction": "为什么天空是蓝色的",
-    "category": "拒调用-常识",
+    "category": "no_tool",
     "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"天空的颜色 = '蓝色'\"}}",
     "json_valid": true,
     "parsed": {
@@ -397,9 +1261,181 @@
     "is_correct": false
   },
   {
-    "id": 29,
-    "instruction": "谢谢",
-    "category": "拒调用-礼貌",
+    "id": 77,
+    "instruction": "帮我写一首关于秋天的诗",
+    "category": "no_tool",
+    "response": "好的，请提供您想要的诗歌主题和一些基本信息，比如诗歌长度、韵律等。这样我才能为您创作一首合适的秋日诗。",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 78,
+    "instruction": "写一段祝福的话给朋友",
+    "category": "no_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"time + date\"}}\n{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": false, \"question\": \"请问您想祝福谁？\"}",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 79,
+    "instruction": "帮我翻译：Hello World 到中文",
+    "category": "no_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"Hello World\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "Hello World"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "Hello World"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 80,
+    "instruction": "总结一下机器学习的核心思想",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"机器学习的核心思想\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "机器学习的核心思想"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "机器学习的核心思想"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 81,
+    "instruction": "用简单的话解释什么是区块链",
+    "category": "no_tool",
+    "response": "区块链是一种去中心化的分布式账本技术。每个区块都包含了前一个区块的哈希值和交易信息，并通过加密算法确保数据的安全性和不可篡改性。这种技术可以记录交易历史、身份验证等，使得交易过程更加透明和安全。",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 82,
+    "instruction": "怎么才能提高学习效率",
+    "category": "no_tool",
+    "response": "为了提高学习效率，你可以尝试以下几个方法：\n\n1. 制定合理的学习计划：将大段的课程分成小块进行学习，并设定具体的时间限制。\n2. 利用多种学习方式：结合阅读、讨论和实践练习等多种学习方式，以提高理解和记忆能力。\n3. 建立良好的学习习惯：保持规律的学习时间和充足的睡眠，避免过度疲劳。\n4. 学会有效复习：通过做笔记、总结等方式加深对知识点的理解和记忆。\n5. 寻找适合自己的学习资源：根据自己的兴趣和需求选择合适的书籍、在线课程等。\n\n希望这些建议能帮助到你！",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 83,
+    "instruction": "推荐一个好的编程学习方法",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"编程学习方法\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "编程学习方法"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "编程学习方法"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 84,
+    "instruction": "如何保持健康的生活习惯",
+    "category": "no_tool",
+    "response": "为了保持健康的生活习惯，您可以尝试以下几个建议：\n\n1. **均衡饮食**：确保您的饮食中包含足够的蔬菜、水果和全谷物。避免过多摄入加工食品和高糖食物。\n2. **定期运动**：每周至少进行150分钟的中等强度运动，或者75分钟的高强度运动。这有助于提高心肺功能和身体健康。\n3. **充足睡眠**：成年人每晚应保证7到9小时的高质量睡眠。良好的睡眠对身体恢复至关重要。\n4. **减压放松**：学习一些压力管理技巧，比如深呼吸、冥想或瑜伽。长期的压力会对身心健康产生负面影响。\n5. **戒烟限酒**：吸烟和过量饮酒都会对健康造成严重损害。尽量减少这些不良习惯。\n\n请根据自己的实际情况调整上述建议，并在必要时咨询医生或专业人士的意见。",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 85,
+    "instruction": "给我一些缓解压力的建议",
+    "category": "no_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"sum(1, 2, 3, 4, 5)\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "sum(1, 2, 3, 4, 5)"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "sum(1, 2, 3, 4, 5)"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 86,
+    "instruction": "谢谢你的帮助",
+    "category": "no_tool",
     "response": "不客气！如果有其他问题，请随时告诉我。",
     "json_valid": false,
     "parsed": null,
@@ -413,10 +1449,33 @@
     "is_correct": false
   },
   {
-    "id": 30,
-    "instruction": "帮我写一首诗",
-    "category": "拒调用-创作",
-    "response": "好的，请告诉我您想要的诗歌的主题或者风格。",
+    "id": 87,
+    "instruction": "OK 好的",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"如何在Python中使用正则表达式\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "如何在Python中使用正则表达式"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "如何在Python中使用正则表达式"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 88,
+    "instruction": "明白了，谢谢你",
+    "category": "no_tool",
+    "response": "不客气，有任何其他需求请随时告诉我！",
     "json_valid": false,
     "parsed": null,
     "expected_tool": "none",
@@ -429,38 +1488,31 @@
     "is_correct": false
   },
   {
-    "id": 31,
-    "instruction": "什么是区块链",
-    "category": "拒调用-常识",
-    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"区块链\"}}",
-    "json_valid": true,
-    "parsed": {
-      "tool": "search_docs",
-      "arguments": {
-        "query": "区块链"
-      }
-    },
+    "id": 89,
+    "instruction": "你有感情吗",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"感情\"}}, {\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": false, \"question\": \"我想要了解关于感情的更多信息，请问您有什么具体的问题？\"}",
+    "json_valid": false,
+    "parsed": null,
     "expected_tool": "none",
     "expected_arguments": {},
     "expected_clarify": false,
-    "actual_tool": "search_docs",
-    "actual_arguments": {
-      "query": "区块链"
-    },
-    "error_type": "should_reject",
-    "error_detail": "应输出 none 但调用了 search_docs",
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
     "is_correct": false
   },
   {
-    "id": 32,
-    "instruction": "你能做些什么",
-    "category": "拒调用-元问题",
-    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"7 + 3 * 2\"}}",
+    "id": 90,
+    "instruction": "你觉得自己聪明吗",
+    "category": "no_tool",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"10 + 5 * 2\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "calculator",
       "arguments": {
-        "expression": "7 + 3 * 2"
+        "expression": "10 + 5 * 2"
       }
     },
     "expected_tool": "none",
@@ -468,16 +1520,533 @@
     "expected_clarify": false,
     "actual_tool": "calculator",
     "actual_arguments": {
-      "expression": "7 + 3 * 2"
+      "expression": "10 + 5 * 2"
     },
     "error_type": "should_reject",
     "error_detail": "应输出 none 但调用了 calculator",
     "is_correct": false
   },
   {
-    "id": 33,
+    "id": 91,
+    "instruction": "AI 会不会取代人类",
+    "category": "no_tool",
+    "response": "AI已经在许多领域取得了显著的进展，并且在某些方面已经超越了人类的能力。然而，AI的发展仍然受到伦理、法律和道德等方面的挑战。因此，我们不能简单地说AI会取代人类。相反，AI可能会成为人类的一部分，帮助我们更好地理解和解决复杂的问题。",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 92,
+    "instruction": "你用的是哪个模型",
+    "category": "no_tool",
+    "response": "我使用的是基于预训练的语言模型，可以回答各种类型的问题和提供信息。请告诉我你需要什么帮助？",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 93,
+    "instruction": "怎么学好英语",
+    "category": "no_tool",
+    "response": "学习英语有很多方法，这里提供一些通用的建议：\n\n1. 多听多说：通过观看英文电影、电视剧、播客和新闻等材料来提高听力理解能力。同时，积极参与英语对话，与母语为英语的人交流。\n\n2. 多读多写：阅读英文书籍、报纸、杂志和文章，并尝试写作。可以使用在线资源或者找一个语言交换伙伴进行练习。\n\n3. 练习口语：参加英语角、加入英语俱乐部或者找一个英语母语者一起练习口语。可以通过模仿发音、跟读等方式提高口语水平。\n\n4. 学习语法和词汇：掌握基本的语法结构和常用词汇是学习英语的基础。可以通过看语法书、做语法练习题或者找一本英语词典来学习。\n\n5. 创造性思维：尝试将英语单词和短语运用到日常生活中去，比如购物、旅行、烹饪等场景中，这样可以帮助你更好地理解和记忆这些词汇。\n\n6. 定期复习：定期回顾所学的内容，巩固记忆。可以设置学习目标，每天安排一定的时间来复习。\n\n7. 寻求反馈：向老师、同学或者母语为英语的人寻求反馈，了解自己的学习进度和",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 94,
+    "instruction": "中午吃什么好",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"午餐推荐\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "午餐推荐"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "午餐推荐"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 95,
+    "instruction": "怎么学好数学",
+    "category": "no_tool",
+    "response": "为了更好地学习数学，你可以尝试以下几个方法：\n\n1. **理解基础知识**：首先，确保你对基本的数学概念和公式有深入的理解。这包括代数、几何和微积分等。\n\n2. **做练习题**：通过做各种类型的题目来巩固你的理解和记忆。可以是简单的计算题，也可以是更复杂的定理证明。\n\n3. **参加课程或辅导**：如果你在某个特定领域感兴趣，考虑报名参加在线课程或者找一位专业的老师进行一对一辅导。\n\n4. **利用资源**：使用书籍、在线教程、视频课程等多种资源来辅助学习。\n\n5. **解决难题**：遇到困难时，不要害怕寻求帮助。与同学讨论，或者向老师请教，这些都是提高解决问题能力的好方法。\n\n6. **保持耐心和毅力**：学习数学可能会有些挑战，但坚持下去，你会看到进步。\n\n希望这些建议对你有所帮助！如果还有其他疑问，请随时提问。",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 96,
+    "instruction": "比特币是什么",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"比特币\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "比特币"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "比特币"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 97,
+    "instruction": "有哪些好的学习资源",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"学习资源\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "学习资源"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "学习资源"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 98,
+    "instruction": "怎么变聪明",
+    "category": "no_tool",
+    "response": "我可以帮你查询一些关于提高智力和学习技巧的知识。请问你需要了解哪些方面的知识呢？",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 99,
+    "instruction": "介绍一个旅游景点",
+    "category": "no_tool",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"旅游景点\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "旅游景点"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "旅游景点"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 100,
+    "instruction": "帮我搜索一下",
+    "category": "clarification",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"搜索关键词或问题\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "搜索关键词或问题"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "搜索关键词或问题"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 101,
+    "instruction": "检索知识库",
+    "category": "clarification",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"知识库\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "知识库"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "知识库"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 102,
+    "instruction": "搜点东西",
+    "category": "clarification",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"东西搜索\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "东西搜索"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "东西搜索"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 103,
+    "instruction": "查文档",
+    "category": "clarification",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"文档搜索\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "文档搜索"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "文档搜索"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 104,
+    "instruction": "帮我在知识库里找找",
+    "category": "clarification",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"知识库\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "知识库"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "知识库"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 105,
+    "instruction": "帮我算一下",
+    "category": "clarification",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"10 + 5 * 2\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "10 + 5 * 2"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "10 + 5 * 2"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 106,
+    "instruction": "算个数",
+    "category": "clarification",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"3 + 4 = ?\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "3 + 4 = ?"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "3 + 4 = ?"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 107,
+    "instruction": "计算器",
+    "category": "clarification",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"2 + 3 * 4\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "2 + 3 * 4"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "2 + 3 * 4"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 108,
+    "instruction": "做一道计算题",
+    "category": "clarification",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"2 + 3 * 4\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "2 + 3 * 4"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "2 + 3 * 4"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 109,
+    "instruction": "那个表达式帮我算算",
+    "category": "clarification",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"2 + 3 * 4\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "2 + 3 * 4"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "2 + 3 * 4"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 110,
+    "instruction": "帮我查一下订单",
+    "category": "clarification",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"your_order_id\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "your_order_id"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "your_order_id"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 111,
+    "instruction": "查订单状态",
+    "category": "clarification",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"your_order_id\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "your_order_id"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "your_order_id"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 112,
+    "instruction": "我的订单到哪了",
+    "category": "clarification",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"your_order_id\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "your_order_id"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "your_order_id"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 113,
+    "instruction": "物流跟踪",
+    "category": "clarification",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"your_order_id\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "your_order_id"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "your_order_id"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 114,
+    "instruction": "订单怎么样了",
+    "category": "clarification",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"your_order_id\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "your_order_id"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "your_order_id"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 115,
     "instruction": "帮我预约个会议",
-    "category": "追问-缺参数",
+    "category": "clarification",
     "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2023-04-15\", \"time\": \"14:00\", \"topic\": \"项目讨论\"}}",
     "json_valid": true,
     "parsed": {
@@ -502,16 +2071,97 @@
     "is_correct": false
   },
   {
-    "id": 34,
-    "instruction": "查一下订单",
-    "category": "追问-缺参数",
-    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"your_order_id\"}}",
+    "id": 116,
+    "instruction": "我想预约会议",
+    "category": "clarification",
+    "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2023-04-15\", \"time\": \"14:00\", \"topic\": \"项目讨论\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "book_meeting",
+      "arguments": {
+        "date": "2023-04-15",
+        "time": "14:00",
+        "topic": "项目讨论"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "book_meeting",
+    "actual_arguments": {
+      "date": "2023-04-15",
+      "time": "14:00",
+      "topic": "项目讨论"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 book_meeting",
+    "is_correct": false
+  },
+  {
+    "id": 117,
+    "instruction": "安排一个会议",
+    "category": "clarification",
+    "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2023-04-15\", \"time\": \"14:00\", \"topic\": \"项目讨论\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "book_meeting",
+      "arguments": {
+        "date": "2023-04-15",
+        "time": "14:00",
+        "topic": "项目讨论"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "book_meeting",
+    "actual_arguments": {
+      "date": "2023-04-15",
+      "time": "14:00",
+      "topic": "项目讨论"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 book_meeting",
+    "is_correct": false
+  },
+  {
+    "id": 118,
+    "instruction": "明天上午 10 点开会",
+    "category": "clarification",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"abc123\", \"time\": \"10:00 AM\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "abc123",
+        "time": "10:00 AM"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "abc123",
+      "time": "10:00 AM"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 119,
+    "instruction": "帮我约个需求评审的会",
+    "category": "clarification",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"your_order_id\"}, \"need_clarification\": false, \"question\": \"请问你需要在哪个日期和时间进行需求评审？\"}",
     "json_valid": true,
     "parsed": {
       "tool": "query_order",
       "arguments": {
         "order_id": "your_order_id"
-      }
+      },
+      "need_clarification": false,
+      "question": "请问你需要在哪个日期和时间进行需求评审？"
     },
     "expected_tool": "none",
     "expected_arguments": {},
@@ -525,9 +2175,117 @@
     "is_correct": false
   },
   {
-    "id": 35,
-    "instruction": "帮我发个邮件",
-    "category": "追问-缺参数",
+    "id": 120,
+    "instruction": "约个周五的会",
+    "category": "clarification",
+    "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2022-10-05\", \"time\": \"14:00\", \"topic\": \"项目讨论\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "book_meeting",
+      "arguments": {
+        "date": "2022-10-05",
+        "time": "14:00",
+        "topic": "项目讨论"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "book_meeting",
+    "actual_arguments": {
+      "date": "2022-10-05",
+      "time": "14:00",
+      "topic": "项目讨论"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 book_meeting",
+    "is_correct": false
+  },
+  {
+    "id": 121,
+    "instruction": "下午 3 点帮我订会议室",
+    "category": "clarification",
+    "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2023-04-15\", \"time\": \"13:00\", \"topic\": \"项目讨论\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "book_meeting",
+      "arguments": {
+        "date": "2023-04-15",
+        "time": "13:00",
+        "topic": "项目讨论"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "book_meeting",
+    "actual_arguments": {
+      "date": "2023-04-15",
+      "time": "13:00",
+      "topic": "项目讨论"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 book_meeting",
+    "is_correct": false
+  },
+  {
+    "id": 122,
+    "instruction": "帮我安排下周三的会议",
+    "category": "clarification",
+    "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2022-04-18\", \"time\": \"14:00\", \"topic\": \"项目讨论\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "book_meeting",
+      "arguments": {
+        "date": "2022-04-18",
+        "time": "14:00",
+        "topic": "项目讨论"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "book_meeting",
+    "actual_arguments": {
+      "date": "2022-04-18",
+      "time": "14:00",
+      "topic": "项目讨论"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 book_meeting",
+    "is_correct": false
+  },
+  {
+    "id": 123,
+    "instruction": "帮忙预约",
+    "category": "clarification",
+    "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2023-04-15\", \"time\": \"10:00\", \"topic\": \"项目讨论\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "book_meeting",
+      "arguments": {
+        "date": "2023-04-15",
+        "time": "10:00",
+        "topic": "项目讨论"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "book_meeting",
+    "actual_arguments": {
+      "date": "2023-04-15",
+      "time": "10:00",
+      "topic": "项目讨论"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 book_meeting",
+    "is_correct": false
+  },
+  {
+    "id": 124,
+    "instruction": "帮我发封邮件",
+    "category": "clarification",
     "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"test@example.com\", \"subject\": \"邮件主题\", \"content\": \"邮件正文\"}}",
     "json_valid": true,
     "parsed": {
@@ -552,15 +2310,204 @@
     "is_correct": false
   },
   {
-    "id": 36,
-    "instruction": "帮我搜索一下",
-    "category": "追问-缺参数",
-    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"搜索关键词或问题\"}}",
+    "id": 125,
+    "instruction": "发邮件",
+    "category": "clarification",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"receiver@example.com\", \"subject\": \"邮件主题\", \"content\": \"邮件正文\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "receiver@example.com",
+        "subject": "邮件主题",
+        "content": "邮件正文"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "receiver@example.com",
+      "subject": "邮件主题",
+      "content": "邮件正文"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 send_email",
+    "is_correct": false
+  },
+  {
+    "id": 126,
+    "instruction": "帮我写个邮件给 HR",
+    "category": "clarification",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@example.com\", \"subject\": \"申请离职邮件\", \"content\": \"尊敬的 HR，请查收。我因工作原因决定离开公司。感谢您对我的工作的支持和帮助。期待您的回复！\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "hr@example.com",
+        "subject": "申请离职邮件",
+        "content": "尊敬的 HR，请查收。我因工作原因决定离开公司。感谢您对我的工作的支持和帮助。期待您的回复！"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "hr@example.com",
+      "subject": "申请离职邮件",
+      "content": "尊敬的 HR，请查收。我因工作原因决定离开公司。感谢您对我的工作的支持和帮助。期待您的回复！"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 send_email",
+    "is_correct": false
+  },
+  {
+    "id": 127,
+    "instruction": "发周报给领导",
+    "category": "clarification",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"领导邮箱\", \"subject\": \"本周工作汇报\", \"content\": \"请查收关于本周的工作报告。\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "领导邮箱",
+        "subject": "本周工作汇报",
+        "content": "请查收关于本周的工作报告。"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "领导邮箱",
+      "subject": "本周工作汇报",
+      "content": "请查收关于本周的工作报告。"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 send_email",
+    "is_correct": false
+  },
+  {
+    "id": 128,
+    "instruction": "邮件通知全组",
+    "category": "clarification",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"all@company.com\", \"subject\": \"Group Meeting Reminder\", \"content\": \"Please attend the group meeting on [insert date and time here] at [insert time here]. Please RSVP by [insert deadline here].\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "all@company.com",
+        "subject": "Group Meeting Reminder",
+        "content": "Please attend the group meeting on [insert date and time here] at [insert time here]. Please RSVP by [insert deadline here]."
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "all@company.com",
+      "subject": "Group Meeting Reminder",
+      "content": "Please attend the group meeting on [insert date and time here] at [insert time here]. Please RSVP by [insert deadline here]."
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 send_email",
+    "is_correct": false
+  },
+  {
+    "id": 129,
+    "instruction": "帮我通知一下大家",
+    "category": "clarification",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"user@example.com\", \"subject\": \"重要通知\", \"content\": \"尊敬的用户，我们很高兴地通知您，您的订单已经成功完成。\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "user@example.com",
+        "subject": "重要通知",
+        "content": "尊敬的用户，我们很高兴地通知您，您的订单已经成功完成。"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "user@example.com",
+      "subject": "重要通知",
+      "content": "尊敬的用户，我们很高兴地通知您，您的订单已经成功完成。"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 send_email",
+    "is_correct": false
+  },
+  {
+    "id": 130,
+    "instruction": "发个通知邮件",
+    "category": "clarification",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"user@example.com\", \"subject\": \"重要通知\", \"content\": \"尊敬的用户，我们很高兴地通知您，您的订单将于明天下午两点到达。请确认收件人的电子邮件地址以便进行下一步操作。感谢您的耐心等待！\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "user@example.com",
+        "subject": "重要通知",
+        "content": "尊敬的用户，我们很高兴地通知您，您的订单将于明天下午两点到达。请确认收件人的电子邮件地址以便进行下一步操作。感谢您的耐心等待！"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "user@example.com",
+      "subject": "重要通知",
+      "content": "尊敬的用户，我们很高兴地通知您，您的订单将于明天下午两点到达。请确认收件人的电子邮件地址以便进行下一步操作。感谢您的耐心等待！"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 send_email",
+    "is_correct": false
+  },
+  {
+    "id": 131,
+    "instruction": "帮我给经理发个邮件",
+    "category": "clarification",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@example.com\", \"subject\": \"关于项目进度的邮件\", \"content\": \"尊敬的经理，我最近对项目的进展感到非常满意。请允许我向您汇报一下我们的最新进展情况。\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "manager@example.com",
+        "subject": "关于项目进度的邮件",
+        "content": "尊敬的经理，我最近对项目的进展感到非常满意。请允许我向您汇报一下我们的最新进展情况。"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "manager@example.com",
+      "subject": "关于项目进度的邮件",
+      "content": "尊敬的经理，我最近对项目的进展感到非常满意。请允许我向您汇报一下我们的最新进展情况。"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 send_email",
+    "is_correct": false
+  },
+  {
+    "id": 132,
+    "instruction": "帮我查个东西",
+    "category": "clarification",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"什么东西\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "search_docs",
       "arguments": {
-        "query": "搜索关键词或问题"
+        "query": "什么东西"
       }
     },
     "expected_tool": "none",
@@ -568,46 +2515,147 @@
     "expected_clarify": true,
     "actual_tool": "search_docs",
     "actual_arguments": {
-      "query": "搜索关键词或问题"
+      "query": "什么东西"
     },
     "error_type": "should_clarify",
     "error_detail": "应追问但调用了 search_docs",
     "is_correct": false
   },
   {
-    "id": 37,
-    "instruction": "算一下",
-    "category": "追问-缺参数",
-    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"7 + 3 * 2\"}}",
+    "id": 133,
+    "instruction": "我需要帮助",
+    "category": "clarification",
+    "response": "当然可以，请问您需要什么帮助？",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 134,
+    "instruction": "帮我处理一下",
+    "category": "clarification",
+    "response": "好的，请告诉我您遇到的具体问题。",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 135,
+    "instruction": "有件事要你帮忙",
+    "category": "clarification",
+    "response": "好的，请告诉我你需要帮助的具体事情。",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 136,
+    "instruction": "帮我干个活",
+    "category": "clarification",
+    "response": "好的，请告诉我你需要做些什么。",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 137,
+    "instruction": "能帮我处理个事情吗",
+    "category": "clarification",
+    "response": "当然可以，请告诉我你需要处理的具体事情。",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 138,
+    "instruction": "给我查",
+    "category": "clarification",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"如何在Python中使用正则表达式\"}}",
     "json_valid": true,
     "parsed": {
-      "tool": "calculator",
+      "tool": "search_docs",
       "arguments": {
-        "expression": "7 + 3 * 2"
+        "query": "如何在Python中使用正则表达式"
       }
     },
     "expected_tool": "none",
     "expected_arguments": {},
     "expected_clarify": true,
-    "actual_tool": "calculator",
+    "actual_tool": "search_docs",
     "actual_arguments": {
-      "expression": "7 + 3 * 2"
+      "query": "如何在Python中使用正则表达式"
     },
     "error_type": "should_clarify",
-    "error_detail": "应追问但调用了 calculator",
+    "error_detail": "应追问但调用了 search_docs",
     "is_correct": false
   },
   {
-    "id": 38,
-    "instruction": "帮我查订单顺便搜一下资料",
-    "category": "干扰-复合请求",
-    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"订单\"}}, {\"tool\": \"search_docs\", \"arguments\": {\"query\": \"资料\"}}",
+    "id": 139,
+    "instruction": "我需要你给我一些信息",
+    "category": "clarification",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"你需要的信息\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "你需要的信息"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "你需要的信息"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 140,
+    "instruction": "我今天有点累，不想开会",
+    "category": "semantic_interference",
+    "response": "好的，我可以帮你预约一个会议。请问你的会议日期、时间以及会议主题是什么？",
     "json_valid": false,
     "parsed": null,
-    "expected_tool": "query_order",
-    "expected_arguments": {
-      "order_id": "__any__"
-    },
+    "expected_tool": "none",
+    "expected_arguments": {},
     "expected_clarify": false,
     "actual_tool": null,
     "actual_arguments": null,
@@ -616,17 +2664,154 @@
     "is_correct": false
   },
   {
-    "id": 39,
-    "instruction": "先发邮件再计算 100+200",
-    "category": "干扰-复合请求",
-    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"test@example.com\", \"subject\": \"邮件主题\", \"content\": \"这是邮件正文\"}}\n{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"100 + 200\"}}",
+    "id": 141,
+    "instruction": "昨天那个会议开了三个小时",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"some_order_id\"}, \"need_clarification\": false, \"question\": \"昨天的会议是哪一天召开的？\"}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "some_order_id"
+      },
+      "need_clarification": false,
+      "question": "昨天的会议是哪一天召开的？"
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "some_order_id"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 142,
+    "instruction": "我们下周再约时间吧",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"next_week_meeting\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "next_week_meeting"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "next_week_meeting"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 143,
+    "instruction": "上次开会讨论的方案你还记得吗",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"last_meeting\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "last_meeting"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "last_meeting"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 144,
+    "instruction": "这个会议取消吧",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"your_order_id_here\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "your_order_id_here"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "your_order_id_here"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 145,
+    "instruction": "我不确定明天能不能参加会议",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"your_order_id_here\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "your_order_id_here"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "your_order_id_here"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 146,
+    "instruction": "这个订单号看起来像 A10293，但我不是要查询它",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"A10293\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "A10293"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "A10293"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 147,
+    "instruction": "昨天我下了一个订单，体验还不错",
+    "category": "semantic_interference",
+    "response": "好的，请问您想了解什么信息？比如订单的状态、商品详情等。",
     "json_valid": false,
     "parsed": null,
-    "expected_tool": "send_email",
-    "expected_arguments": {
-      "recipient": "__any__",
-      "subject": "__any__"
-    },
+    "expected_tool": "none",
+    "expected_arguments": {},
     "expected_clarify": false,
     "actual_tool": null,
     "actual_arguments": null,
@@ -635,15 +2820,54 @@
     "is_correct": false
   },
   {
-    "id": 41,
-    "instruction": "今天是几月几号",
-    "category": "语义-日期询问",
-    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"today + 1\"}}",
+    "id": 148,
+    "instruction": "订单编号的格式一般是怎样的",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"订单号\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "订单号"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "订单号"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 149,
+    "instruction": "我的订单怎么总是延迟",
+    "category": "semantic_interference",
+    "response": "我无法直接查询订单状态。但是，我可以帮助您解决其他问题。请告诉我您的问题是什么？",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 150,
+    "instruction": "请问退货流程是什么",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"total_amount - discount_amount\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "calculator",
       "arguments": {
-        "expression": "today + 1"
+        "expression": "total_amount - discount_amount"
       }
     },
     "expected_tool": "none",
@@ -651,16 +2875,349 @@
     "expected_clarify": false,
     "actual_tool": "calculator",
     "actual_arguments": {
-      "expression": "today + 1"
+      "expression": "total_amount - discount_amount"
     },
     "error_type": "should_reject",
     "error_detail": "应输出 none 但调用了 calculator",
     "is_correct": false
   },
   {
-    "id": 42,
-    "instruction": "现在是什么时间",
-    "category": "语义-时间询问",
+    "id": 151,
+    "instruction": "订单 B20456 我已经收到了，谢谢",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "B20456"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "B20456"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 152,
+    "instruction": "邮件收到了吗",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"receiver@example.com\", \"subject\": \"收件人邮箱的回复\", \"content\": \"收到您的邮件！请查收。\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "receiver@example.com",
+        "subject": "收件人邮箱的回复",
+        "content": "收到您的邮件！请查收。"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "receiver@example.com",
+      "subject": "收件人邮箱的回复",
+      "content": "收到您的邮件！请查收。"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 send_email",
+    "is_correct": false
+  },
+  {
+    "id": 153,
+    "instruction": "我昨天发了一封邮件给经理但没回复",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@example.com\", \"subject\": \"邮件回复\", \"content\": \"尊敬的经理，我昨天发了一封邮件给你，但是没有回复。请尽快给我回复，谢谢！\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "manager@example.com",
+        "subject": "邮件回复",
+        "content": "尊敬的经理，我昨天发了一封邮件给你，但是没有回复。请尽快给我回复，谢谢！"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "manager@example.com",
+      "subject": "邮件回复",
+      "content": "尊敬的经理，我昨天发了一封邮件给你，但是没有回复。请尽快给我回复，谢谢！"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 send_email",
+    "is_correct": false
+  },
+  {
+    "id": 154,
+    "instruction": "邮件通知功能好用吗",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"user@example.com\", \"subject\": \"邮件通知\", \"content\": \"您好，您的邮件已收到。\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "user@example.com",
+        "subject": "邮件通知",
+        "content": "您好，您的邮件已收到。"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "user@example.com",
+      "subject": "邮件通知",
+      "content": "您好，您的邮件已收到。"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 send_email",
+    "is_correct": false
+  },
+  {
+    "id": 155,
+    "instruction": "请查收附件中的报告",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"报告\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "报告"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "报告"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 156,
+    "instruction": "回复邮件时要注意什么",
+    "category": "semantic_interference",
+    "response": "为了确保回复邮件的准确性和及时性，请注意以下几点：\n\n1. 确保邮件的主题和内容清晰明了。\n2. 在发送前检查收件人的电子邮件地址是否正确无误。\n3. 使用礼貌的语言，避免使用过于正式或专业性的词汇。\n4. 尽量在邮件中包括附件，以便于接收者查看。\n5. 定期检查邮件，以确保没有遗漏重要信息。\n\n请根据以上建议进行回复。如果还有其他疑问，请随时提问。",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 157,
+    "instruction": "我没有收到系统升级的邮件通知",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"user@example.com\", \"subject\": \"系统升级通知\", \"content\": \"尊敬的用户，我们已经完成了系统升级。请查收最新的版本以获取最新功能和改进。感谢您的支持！\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "user@example.com",
+        "subject": "系统升级通知",
+        "content": "尊敬的用户，我们已经完成了系统升级。请查收最新的版本以获取最新功能和改进。感谢您的支持！"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "user@example.com",
+      "subject": "系统升级通知",
+      "content": "尊敬的用户，我们已经完成了系统升级。请查收最新的版本以获取最新功能和改进。感谢您的支持！"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 send_email",
+    "is_correct": false
+  },
+  {
+    "id": 158,
+    "instruction": "计算器这个工具怎么用",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"5 + 3 * 2\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "5 + 3 * 2"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "5 + 3 * 2"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 159,
+    "instruction": "这个计算结果靠谱吗",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"10 + 5 * 2\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "10 + 5 * 2"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "10 + 5 * 2"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 160,
+    "instruction": "我不太会算这个账",
+    "category": "semantic_interference",
+    "response": "好的，请问您要计算的数学表达式是什么？",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 161,
+    "instruction": "数学计算对我来说很难",
+    "category": "semantic_interference",
+    "response": "好的，请告诉我您当前的数学表达式。",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 162,
+    "instruction": "搜索功能好像不太准",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"搜索功能\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "搜索功能"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "搜索功能"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 163,
+    "instruction": "上次搜索的内容我没保存",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"上次搜索的内容\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "上次搜索的内容"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "上次搜索的内容"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 164,
+    "instruction": "有没有更快的方法找资料",
+    "category": "semantic_interference",
+    "response": "当然可以！我可以帮你搜索知识库。请告诉我你需要什么类型的资料？例如，是关于某个特定领域的知识、还是想要了解一个公式或者算法的详细步骤？",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 165,
+    "instruction": "今天是几号",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"今天的日期\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": "今天的日期"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": "今天的日期"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 166,
+    "instruction": "现在几点了",
+    "category": "semantic_interference",
     "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"当前时间\"}}",
     "json_valid": true,
     "parsed": {
@@ -681,9 +3238,9 @@
     "is_correct": false
   },
   {
-    "id": 43,
+    "id": 167,
     "instruction": "明天星期几",
-    "category": "语义-日期询问",
+    "category": "semantic_interference",
     "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"date + ' ' + time + ' ' + topic\"}}",
     "json_valid": true,
     "parsed": {
@@ -704,88 +3261,411 @@
     "is_correct": false
   },
   {
-    "id": 44,
-    "instruction": "能帮我处理个事情吗",
-    "category": "追问-模糊意图",
-    "response": "当然可以，请告诉我你需要处理的具体事情。",
-    "json_valid": false,
-    "parsed": null,
-    "expected_tool": "none",
-    "expected_arguments": {},
-    "expected_clarify": true,
-    "actual_tool": null,
-    "actual_arguments": null,
-    "error_type": "json_parse_error",
-    "error_detail": "输出无法解析为 JSON",
-    "is_correct": false
-  },
-  {
-    "id": 45,
-    "instruction": "我需要帮忙",
-    "category": "追问-模糊意图",
-    "response": "当然可以，请问您需要帮助什么？",
-    "json_valid": false,
-    "parsed": null,
-    "expected_tool": "none",
-    "expected_arguments": {},
-    "expected_clarify": true,
-    "actual_tool": null,
-    "actual_arguments": null,
-    "error_type": "json_parse_error",
-    "error_detail": "输出无法解析为 JSON",
-    "is_correct": false
-  },
-  {
-    "id": 46,
-    "instruction": "有个事想麻烦你",
-    "category": "追问-模糊意图",
-    "response": "好的，请告诉我你需要什么帮助。",
-    "json_valid": false,
-    "parsed": null,
-    "expected_tool": "none",
-    "expected_arguments": {},
-    "expected_clarify": true,
-    "actual_tool": null,
-    "actual_arguments": null,
-    "error_type": "json_parse_error",
-    "error_detail": "输出无法解析为 JSON",
-    "is_correct": false
-  },
-  {
-    "id": 47,
-    "instruction": "查一下 H34567 的单子",
-    "category": "单工具-口语化表达",
-    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"H34567 单子\"}}",
+    "id": 168,
+    "instruction": "这个月还有多少天",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"current_date - date_of_birth_days\"}}",
     "json_valid": true,
     "parsed": {
-      "tool": "search_docs",
+      "tool": "calculator",
       "arguments": {
-        "query": "H34567 单子"
+        "expression": "current_date - date_of_birth_days"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "current_date - date_of_birth_days"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 169,
+    "instruction": "2024 年是不是闰年",
+    "category": "semantic_interference",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"year % 4 == 0 and year % 100 != 0 or year % 400 == 0\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "year % 4 == 0 and year % 100 != 0 or year % 400 == 0"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "year % 4 == 0 and year % 100 != 0 or year % 400 == 0"
+    },
+    "error_type": "should_reject",
+    "error_detail": "应输出 none 但调用了 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 170,
+    "instruction": "帮我搜索 Python 教程，顺便发邮件给经理",
+    "category": "compound",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python教程\"}}\n{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@example.com\", \"subject\": \"Python教程请求\", \"content\": \"尊敬的经理，我正在寻找一些关于Python编程的教学资源。如果您有任何推荐，请回复。期待您的回复！\"}}",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "search_docs",
+    "expected_arguments": {
+      "query": "Python 教程"
+    },
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 171,
+    "instruction": "查一下订单 B20456 的同时帮我算一下 100+200",
+    "category": "compound",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"100 + 200\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "100 + 200"
       }
     },
     "expected_tool": "query_order",
     "expected_arguments": {
-      "order_id": "H34567"
+      "order_id": "B20456"
+    },
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "100 + 200"
+    },
+    "error_type": "wrong_tool",
+    "error_detail": "期望 query_order，实际 calculator",
+    "is_correct": false
+  },
+  {
+    "id": 173,
+    "instruction": "先算一下 999/3，然后查订单 A10293",
+    "category": "compound",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"999/3\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "999/3"
+      }
+    },
+    "expected_tool": "calculator",
+    "expected_arguments": {
+      "expression": "999 / 3"
+    },
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "999/3"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 expression: 期望 '999 / 3'，实际 '999/3'",
+    "is_correct": false
+  },
+  {
+    "id": 174,
+    "instruction": "帮我查资料还要发邮件",
+    "category": "compound",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"资料\"}}\n{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"receiver@example.com\", \"subject\": \"资料查询\", \"content\": \"您好，请查收关于资料的相关资料。\"}}",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 175,
+    "instruction": "我想搜个东西，不过可能不需要工具",
+    "category": "compound",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"你需要搜索什么？\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "你需要搜索什么？"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "你需要搜索什么？"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 176,
+    "instruction": "帮我查一下最近的知识库更新",
+    "category": "compound",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"最近的知识库更新\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "最近的知识库更新"
+      }
+    },
+    "expected_tool": "search_docs",
+    "expected_arguments": {
+      "query": "知识库更新"
     },
     "expected_clarify": false,
     "actual_tool": "search_docs",
     "actual_arguments": {
-      "query": "H34567 单子"
+      "query": "最近的知识库更新"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 query: 期望 '知识库更新'，实际 '最近的知识库更新'",
+    "is_correct": false
+  },
+  {
+    "id": 177,
+    "instruction": "我不确定要不要用工具，帮我看看怎么搜东西",
+    "category": "compound",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"如何搜索知识\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "如何搜索知识"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "如何搜索知识"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 178,
+    "instruction": "先帮我查订单情况，如果不行就搜索退货流程",
+    "category": "compound",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"订单状态\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "订单状态"
+      }
+    },
+    "expected_tool": "query_order",
+    "expected_arguments": {
+      "order_id": "__any__"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "订单状态"
     },
     "error_type": "wrong_tool",
     "error_detail": "期望 query_order，实际 search_docs",
     "is_correct": false
   },
   {
-    "id": 49,
-    "instruction": "搜搜 Docker 怎么用",
-    "category": "单工具-口语化表达",
-    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 使用方法\"}}",
+    "id": 180,
+    "instruction": "搜索 Docker 教程，另外你叫什么名字",
+    "category": "compound",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker教程\"}}",
     "json_valid": true,
     "parsed": {
       "tool": "search_docs",
       "arguments": {
-        "query": "Docker 使用方法"
+        "query": "Docker教程"
+      }
+    },
+    "expected_tool": "search_docs",
+    "expected_arguments": {
+      "query": "Docker 教程"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "Docker教程"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 query: 期望 'Docker 教程'，实际 'Docker教程'",
+    "is_correct": false
+  },
+  {
+    "id": 183,
+    "instruction": "除了发邮件还能做什么，先帮我发个通知",
+    "category": "compound",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"user@example.com\", \"subject\": \"重要通知\", \"content\": \"尊敬的用户，我们很高兴地宣布您的账户已成功激活。请检查您的电子邮件以获取激活链接。感谢您使用我们的服务！\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "user@example.com",
+        "subject": "重要通知",
+        "content": "尊敬的用户，我们很高兴地宣布您的账户已成功激活。请检查您的电子邮件以获取激活链接。感谢您使用我们的服务！"
+      }
+    },
+    "expected_tool": "send_email",
+    "expected_arguments": {
+      "recipient": "__any__",
+      "subject": "通知",
+      "content": "__any__"
+    },
+    "expected_clarify": false,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "user@example.com",
+      "subject": "重要通知",
+      "content": "尊敬的用户，我们很高兴地宣布您的账户已成功激活。请检查您的电子邮件以获取激活链接。感谢您使用我们的服务！"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 subject: 期望 '通知'，实际 '重要通知'",
+    "is_correct": false
+  },
+  {
+    "id": 185,
+    "instruction": "帮我搜索 Nginx 配置，然后如果是周末就不发邮件了",
+    "category": "compound",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Nginx 周末配置\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "Nginx 周末配置"
+      }
+    },
+    "expected_tool": "search_docs",
+    "expected_arguments": {
+      "query": "Nginx 配置"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "Nginx 周末配置"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 query: 期望 'Nginx 配置'，实际 'Nginx 周末配置'",
+    "is_correct": false
+  },
+  {
+    "id": 186,
+    "instruction": "查一下今天有什么新订单",
+    "category": "compound",
+    "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": null}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "query_order",
+      "arguments": {
+        "order_id": null
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "query_order",
+    "actual_arguments": {
+      "order_id": null
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 query_order",
+    "is_correct": false
+  },
+  {
+    "id": 188,
+    "instruction": "我要查东西，但好像忘了具体要查什么",
+    "category": "compound",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"东西\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "东西"
+      }
+    },
+    "expected_tool": "none",
+    "expected_arguments": {},
+    "expected_clarify": true,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "东西"
+    },
+    "error_type": "should_clarify",
+    "error_detail": "应追问但调用了 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 189,
+    "instruction": "帮我做两件事：查订单 TBA1029384756 和搜退货政策",
+    "category": "compound",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"TBA1029384756\"}}\n{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"TBA1029384756\"}}",
+    "json_valid": false,
+    "parsed": null,
+    "expected_tool": "query_order",
+    "expected_arguments": {
+      "order_id": "TBA1029384756"
+    },
+    "expected_clarify": false,
+    "actual_tool": null,
+    "actual_arguments": null,
+    "error_type": "json_parse_error",
+    "error_detail": "输出无法解析为 JSON",
+    "is_correct": false
+  },
+  {
+    "id": 194,
+    "instruction": "看下这个单 D45678 到哪了",
+    "category": "colloquial",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"D45678\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "D45678"
+      }
+    },
+    "expected_tool": "query_order",
+    "expected_arguments": {
+      "order_id": "D45678"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "D45678"
+    },
+    "error_type": "wrong_tool",
+    "error_detail": "期望 query_order，实际 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 195,
+    "instruction": "搜搜怎么用 Docker",
+    "category": "colloquial",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"如何使用Docker\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "如何使用Docker"
       }
     },
     "expected_tool": "search_docs",
@@ -795,10 +3675,116 @@
     "expected_clarify": false,
     "actual_tool": "search_docs",
     "actual_arguments": {
-      "query": "Docker 使用方法"
+      "query": "如何使用Docker"
     },
     "error_type": "wrong_param_value",
-    "error_detail": "参数 query: 期望 'Docker 怎么用'，实际 'Docker 使用方法'",
+    "error_detail": "参数 query: 期望 'Docker 怎么用'，实际 '如何使用Docker'",
+    "is_correct": false
+  },
+  {
+    "id": 196,
+    "instruction": "帮我看下物流到哪了，单号 F12345",
+    "category": "colloquial",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"物流到哪了 单号 F12345\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "物流到哪了 单号 F12345"
+      }
+    },
+    "expected_tool": "query_order",
+    "expected_arguments": {
+      "order_id": "F12345"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "物流到哪了 单号 F12345"
+    },
+    "error_type": "wrong_tool",
+    "error_detail": "期望 query_order，实际 search_docs",
+    "is_correct": false
+  },
+  {
+    "id": 197,
+    "instruction": "算算这个 7*8*9",
+    "category": "colloquial",
+    "response": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"7*8*9\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "calculator",
+      "arguments": {
+        "expression": "7*8*9"
+      }
+    },
+    "expected_tool": "calculator",
+    "expected_arguments": {
+      "expression": "7 * 8 * 9"
+    },
+    "expected_clarify": false,
+    "actual_tool": "calculator",
+    "actual_arguments": {
+      "expression": "7*8*9"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 expression: 期望 '7 * 8 * 9'，实际 '7*8*9'",
+    "is_correct": false
+  },
+  {
+    "id": 198,
+    "instruction": "发个邮件给 Tom，说会议改时间了",
+    "category": "colloquial",
+    "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"tom@example.com\", \"subject\": \"会议时间变更通知\", \"content\": \"尊敬的Tom先生/女士，我们已经收到您的回复并确认会议将于明天上午9点开始。如果您有任何疑问，请随时联系我。谢谢！\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "send_email",
+      "arguments": {
+        "recipient": "tom@example.com",
+        "subject": "会议时间变更通知",
+        "content": "尊敬的Tom先生/女士，我们已经收到您的回复并确认会议将于明天上午9点开始。如果您有任何疑问，请随时联系我。谢谢！"
+      }
+    },
+    "expected_tool": "send_email",
+    "expected_arguments": {
+      "recipient": "__any__",
+      "subject": "会议时间变更",
+      "content": "__any__"
+    },
+    "expected_clarify": false,
+    "actual_tool": "send_email",
+    "actual_arguments": {
+      "recipient": "tom@example.com",
+      "subject": "会议时间变更通知",
+      "content": "尊敬的Tom先生/女士，我们已经收到您的回复并确认会议将于明天上午9点开始。如果您有任何疑问，请随时联系我。谢谢！"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 subject: 期望 '会议时间变更'，实际 '会议时间变更通知'",
+    "is_correct": false
+  },
+  {
+    "id": 199,
+    "instruction": "查下数据库的文章",
+    "category": "colloquial",
+    "response": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"数据库文章\"}}",
+    "json_valid": true,
+    "parsed": {
+      "tool": "search_docs",
+      "arguments": {
+        "query": "数据库文章"
+      }
+    },
+    "expected_tool": "search_docs",
+    "expected_arguments": {
+      "query": "数据库"
+    },
+    "expected_clarify": false,
+    "actual_tool": "search_docs",
+    "actual_arguments": {
+      "query": "数据库文章"
+    },
+    "error_type": "wrong_param_value",
+    "error_detail": "参数 query: 期望 '数据库'，实际 '数据库文章'",
     "is_correct": false
   }
 ]

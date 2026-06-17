@@ -1,0 +1,424 @@
+Tool Calling Post-Training 项目后续行动计划（V2）
+
+一、项目背景
+
+本项目旨在构建一个面向中文 Tool Calling 场景的大模型后训练实验流程。项目通过构造监督微调数据和偏好优化数据，对基础模型进行 SFT 与 DPO 后训练，使模型能够根据用户请求稳定输出结构化 JSON 工具调用结果。
+
+当前项目已完成第一阶段 MVP（Day 1-7），包括数据构造、SFT 训练、DPO 训练、自动评测与错误分析。下一阶段工作重点将从"跑通流程"转向"提升实验可信度、修复关键错误类型、完善工程展示能力"。
+
+二、当前阶段结论
+
+V1 实验结论：
+  1. SFT 是当前最佳模型：JSON 合法率 82%→100%，完全正确率 28%→54%
+  2. DPO 未稳定超过 SFT：完全正确率 54%→42%，引入过度追问（0→10）
+  3. 参数追问是三模型共同盲区（0/5）
+  4. 语义干扰场景表现不稳定（日期询问均错误调用 query_order）
+
+V2 不再以扩大数据量为目标，而是聚焦：
+  - 评测集扩展（提高实验可信度）
+  - 针对性数据修复（消除参数追问盲区、抑制过度追问）
+  - 评测脚本升级（分场景指标）
+  - Demo 展示（工程完整性）
+
+三、V2 阶段总体目标
+
+  1. 冻结 V1 baseline，确保实验可复现。
+  2. 扩展评测集到 ≥200 条，支持分场景评估。
+  3. 升级 evaluate.py → 分场景、多指标（含过度追问率、不必要工具调用率）。
+  4. 针对 V1 Bad Case 构造修复型 SFT-v2 数据。
+  5. 训练 SFT-v2，验证是否超过 SFT-v1。
+  6. 在 SFT-v2 稳定后，构造更有针对性的 DPO-v2 数据。
+  7. 训练 DPO-v2，诚实评估是否带来增益。
+  8. 补充 Gradio Demo。
+  9. 完善 README 和实验报告。
+
+四、核心问题定义（V1 暴露的）
+
+  1. 参数缺失追问能力不足（0/5 正确）
+      → 需大幅增加追问型训练数据（7% → 20%+）
+
+  2. DPO 后出现过度追问（5 → 10）
+      → DPO 数据需增加"不必要追问"的 rejected 样例
+
+  3. 语义干扰场景表现不稳定
+      → 包含工具关键词≠需要调用工具，需专门数据纠正
+
+  4. 评测集规模小（50 条），缺乏分场景统计
+      → 扩展到 200 条，分层采样
+
+  5. 评测指标不够细
+      → 增加过度追问率、不必要工具调用率、分场景正确率
+
+五、调整后的执行计划（Day 8 → Day 14）
+
+与原计划相比的三处关键调整：
+  A. 阶段一+阶段二合并 → Day 8（冻结 V1 + 扩展评测集同步完成）
+  B. 阶段七（升级评测脚本）前置 → Day 9（在训练 SFT-v2 之前完成）
+  C. 语义干扰数据建议用 GPT-4 辅助生成（模板覆盖不了微妙场景）
+
+═══════════════════════════════════════════════════════════
+
+Day 8：冻结 V1 Baseline + 扩展评测集
+
+目标：
+  （1）锁定 V1 实验结果，不被后续版本覆盖
+  （2）将评测集扩展到 ≥200 条，支持按 category 分层
+
+产出物：
+  reports/v1_summary.md           # V1 结论固化
+  data/eval/test_set_v2.json      # ≥200 条标注评测集
+  PROGRESS_v2.md                  # V2 进度文件
+
+test_set_v2.json 样本分布（200 条）：
+
+  单工具调用：60 条
+    - search_docs：12 条
+    - calculator：12 条
+    - query_order：12 条
+    - book_meeting：12 条
+    - send_email：12 条
+
+  无需工具调用：40 条
+    问候、闲聊、自我介绍、常识问题、写作请求
+    总结请求、开放式建议、翻译请求
+
+  参数缺失追问：40 条
+    缺 query、缺 expression、缺 order_id
+    缺 meeting date/time/topic、缺 email recipient/subject/content
+
+  语义干扰：30 条（⚠ 建议用 GPT-4 辅助生成）
+    提到时间但不需要 book_meeting
+    提到订单但不需要 query_order
+    提到邮件但不需要 send_email
+    提到计算但不需要 calculator
+    提到搜索但不需要 search_docs
+
+  复合请求：20 条
+    多工具意图、意图不明确
+    工具调用+普通聊天混合
+
+  口语化表达：10 条
+    "帮我查下" "算一下" "约个会" "发个通知" "看下这个单"
+
+每条样本包含字段：
+  {
+    "id": "eval_v2_0001",
+    "category": "single_tool",
+    "subcategory": "query_order",
+    "instruction": "帮我查一下订单 A10293 的状态",
+    "expected_tool": "query_order",
+    "expected_arguments": {"order_id": "A10293"},
+    "need_clarification": false,
+    "difficulty": "easy"
+  }
+
+验收标准：
+  ✅ test_set_v2.json ≥ 200 条
+  ✅ 每条样本包含 category / expected_tool / expected_arguments / need_clarification
+  ✅ 6 类场景全覆盖
+  ✅ reports/v1_summary.md 完成
+  ✅ 用 V1 三模型在 test_set_v2.json 上重新评测并记录 baseline（方便后续对比）
+
+═══════════════════════════════════════════════════════════
+
+Day 9：升级自动评测脚本（前置）
+
+目标：
+  将 evaluate.py 升级为分场景、多指标评测工具。
+  ⚠ 注意：此项在 Day 9 完成，确保 SFT-v2 训练时已有完善的评测体系。
+
+新增指标（7 项）：
+
+  1. json_valid_rate          — JSON 是否可解析
+  2. tool_accuracy            — tool 字段是否正确
+  3. argument_exact_match     — arguments 是否完全匹配
+  4. clarification_accuracy   — 需要追问时是否正确追问
+  5. over_clarification_rate  — 不需要追问时是否错误追问（新增）
+  6. unnecessary_tool_call_rate — 不需要工具时是否错误调用（新增）
+  7. complete_success_rate    — 以上全部正确
+
+输出文件：
+  reports/v2_eval_summary.json
+  reports/v2_eval_by_category.csv
+  reports/v2_bad_cases.json
+
+验收标准：
+  ✅ evaluate_v2.py 支持 --test_set test_set_v2.json
+  ✅ 输出按 category 分组统计
+  ✅ 输出分场景 7 项指标
+  ✅ 自动导出 bad cases
+
+═══════════════════════════════════════════════════════════
+
+Day 10：构造 SFT-v2 修复型数据
+
+目标：
+  针对 V1 Bad Case 构造修复型 SFT 数据。
+  重点：参数缺失追问、语义干扰拒调用、抑制过度追问。
+
+产出物：
+  data/sft/train_v2.json （≥600 条新数据，可独立使用也可与 v1 合并）
+
+数据分布：
+
+  1. 参数缺失追问样本：200 条（V1 仅 40 条，占比 7%→30%+）
+     目标：提升模型在必填参数缺失时的澄清追问能力
+     示例：
+       输入："帮我预约个会议"
+       输出：{"tool": "none", "arguments": {},
+               "need_clarification": true,
+               "question": "请提供会议日期、时间和主题。"}
+     ⚠ missing_fields 字段标记为 optional（向后兼容 V1 Schema）
+
+  2. 语义干扰拒调用样本：120 条（⚠ 建议 GPT-4 辅助生成）
+     目标：提升模型对"关键词出现 ≠ 真实工具意图"的区分能力
+     示例：
+       输入："我今天有点累，不想开会"
+       输出：{"tool": "none", "arguments": {}}
+       输入："这个订单号看起来像 A10293，但我不是要查询它"
+       输出：{"tool": "none", "arguments": {}}
+
+  3. 无需工具且无需追问样本：150 条
+     目标：抑制 V1 DPO 引入的过度追问
+     示例：
+       输入："你好，介绍一下你自己"
+       输出：{"tool": "none", "arguments": {}}
+       输入："今天天气怎么样"
+       输出：{"tool": "none", "arguments": {}}
+
+  4. 标准单工具调用样本：100 条
+     目标：保持已有工具调用能力，防止"修了过度追问，坏了正常调用"
+
+  5. 复合请求与模糊意图样本：30 条
+     目标：提升边界处理能力
+
+验收标准：
+  ✅ 新增 SFT-v2 数据 ≥ 600 条
+  ✅ clarification 样本占比明显提高（V1 7% → V2 20%+）
+  ✅ 语义干扰样本覆盖所有 5 个工具关键词
+  ✅ 所有 output 均为合法 JSON
+  ✅ 随机抽查 100 条验证标签正确
+
+═══════════════════════════════════════════════════════════
+
+Day 11：训练 SFT-v2 + 四模型对比
+
+目标：
+  验证 SFT-v2 是否在各项指标上超过 SFT-v1 和 DPO-v1。
+
+执行：
+  1. 使用 train_v2.json 训练 SFT-v2（超参数同 V1，必要时调整 epoch）
+  2. 保存 adapter 到 outputs/sft_v2/
+  3. 在 test_set_v2.json 上评测 4 个模型：
+     - Base
+     - SFT-v1
+     - DPO-v1
+     - SFT-v2
+
+核心指标：
+  1. JSON 合法率
+  2. 工具选择准确率
+  3. 参数准确率
+  4. 澄清追问准确率（需追问时的正确率）
+  5. 过度追问率（不需追问时的错误追问率）
+  6. 不必要工具调用率
+  7. 完全正确率
+
+预期目标：
+  ✅ JSON 合法率 ≥ 98%
+  ✅ 完全正确率 > SFT-v1（当前 54%）
+  ✅ 参数缺失追问准确率显著提升（V1 为 0%）
+  ✅ 过度追问率 < DPO-v1
+  ✅ 标准单工具调用准确率不下降
+
+验收标准：
+  ✅ 完成 4 模型对比评测
+  ✅ 输出分场景结果
+  ✅ 明确判断 SFT-v2 是否成为新最佳模型
+  ✅ 如果 SFT-v2 未超 SFT-v1，如实记录原因，不强行进入 DPO-v2
+
+═══════════════════════════════════════════════════════════
+
+Day 12：构造 DPO-v2 数据
+
+前提条件：SFT-v2 在 Day 11 中表现稳定且超过 SFT-v1。
+如果 SFT-v2 未超过 SFT-v1，本阶段仅做小规模实验。
+
+目标：
+  围绕 SFT-v2 的 Bad Case 构造更有针对性的 DPO 偏好数据。
+  DPO-v2 不简单复用 DPO-v1 数据。
+
+产出物：
+  data/dpo/train_v2.json（300-500 对）
+
+重点偏好类型：
+
+  1. 抑制过度追问（核心）
+     prompt: "你好"
+     chosen:  {"tool": "none", "arguments": {}}
+     rejected: {"tool": "none", "arguments": {}, "need_clarification": true,
+                "question": "请补充更多信息。"}
+
+  2. 参数缺失时必须追问
+     prompt: "帮我发封邮件"
+     chosen:  {"tool": "none", "arguments": {}, "need_clarification": true,
+               "question": "请提供收件人、邮件主题和邮件内容。"}
+     rejected: {"tool": "send_email", "arguments": {"recipient": "unknown",
+                "subject": "通知", "content": "请查看。"}}
+
+  3. 保持 JSON 格式稳定
+     prompt: "查订单 A10293"
+     chosen:  {"tool": "query_order", "arguments": {"order_id": "A10293"}}
+     rejected: "我将为你查询订单 A10293 的状态。"
+
+  4. 语义干扰拒调用
+     prompt: "我今天不想开会"
+     chosen:  {"tool": "none", "arguments": {}}
+     rejected: {"tool": "book_meeting", "arguments":
+                {"date": "2024-01-01", "time": "09:00", "topic": "会议"}}
+
+验收标准：
+  ✅ DPO-v2 数据 300-500 对
+  ✅ chosen 和 rejected 差异清晰
+  ✅ clarification 型 rejected 不占比过高
+  ✅ 非法 JSON rejected 不占比过高
+  ✅ 覆盖 SFT-v2 的主要 Bad Case 类型
+
+═══════════════════════════════════════════════════════════
+
+Day 13：训练 DPO-v2 + 五模型对比
+
+目标：
+  验证 DPO-v2 是否能在 SFT-v2 基础上进一步提升。
+
+执行：
+  1. 以 SFT-v2 为基础模型，训练 DPO-v2
+  2. 保存 adapter 到 outputs/dpo_v2/
+  3. 在 test_set_v2.json 上评测 5 个模型：
+     - Base / SFT-v1 / DPO-v1 / SFT-v2 / DPO-v2
+
+DPO-v2 只有在以下条件同时满足时，才作为最终最佳模型：
+  1. 完全正确率 ≥ SFT-v2
+  2. JSON 合法率 ≥ 98%
+  3. 过度追问率 ≤ SFT-v2
+  4. 参数缺失追问准确率 ≥ SFT-v2
+  5. 标准单工具调用准确率不明显下降
+
+如果 DPO-v2 未超过 SFT-v2，应在报告和 README 中如实说明：
+  "在当前 Tool Calling 任务中，SFT 是主要收益来源；DPO 的效果高度
+   依赖偏好数据质量。当前 DPO-v2 未稳定超过 SFT-v2，因此最终推荐
+   使用 SFT-v2 作为部署模型。"
+
+验收标准：
+  ✅ 完成 5 模型对比评测
+  ✅ 输出分场景结果
+  ✅ 明确说明最终推荐模型及理由
+
+═══════════════════════════════════════════════════════════
+
+Day 14：Gradio Demo + 最终整理
+
+目标：
+  （1）Gradio Demo 可交互展示
+  （2）README 和实验报告更新完毕
+  （3）项目成为完整、可复现、可展示的 GitHub 工程
+
+产出物：
+  app.py                         # Gradio Demo
+  reports/v2_comparison.md       # V2 完整实验对比报告
+  reports/v2_error_analysis.md   # V2 Bad Case 分析
+  README.md（更新）               # 加入 V2 结果 + Demo 截图
+
+Gradio Demo 功能：
+  1. 用户输入中文请求
+  2. 选择模型版本（Base / SFT-v1 / DPO-v1 / SFT-v2 / DPO-v2）
+  3. 展示模型原始输出
+  4. 展示 JSON 解析结果（tool + arguments）
+  5. 提供 10 个典型样例按钮
+
+推荐样例：
+  1. 帮我查一下订单 A10293 的状态
+  2. 计算一下 123 * 456
+  3. 帮我预约明天下午三点的项目复盘会议
+  4. 帮我发邮件给 Tom，主题是会议纪要
+  5. 你好，介绍一下你自己
+  6. 我今天不想开会
+  7. 帮我预约个会议
+  8. 帮我发封邮件
+  9. 今天是几号
+  10. 这个订单号看起来像 A10293，但我不是要查询它
+
+验收标准：
+  ✅ app.py 可本地运行
+  ✅ README 含 Demo 启动命令 + 截图
+  ✅ Demo 能直观展示 SFT-v2 vs Base 的差异
+  ✅ V2 完整对比报告完成
+
+═══════════════════════════════════════════════════════════
+
+六、V2 最终交付物清单
+
+  数据：
+    data/eval/test_set_v2.json        # ≥200 条标注评测集
+    data/sft/train_v2.json            # ≥600 条 SFT-v2 数据
+    data/dpo/train_v2.json            # 300-500 对 DPO-v2 数据
+
+  模型：
+    outputs/sft_v2/adapter/           # SFT-v2 LoRA adapter
+    outputs/dpo_v2/adapter/           # DPO-v2 LoRA adapter
+
+  报告：
+    reports/v1_summary.md             # V1 结论固化
+    reports/v2_comparison.md          # V2 完整实验对比
+    reports/v2_error_analysis.md      # V2 Bad Case 分析
+    reports/v2_eval_summary.json      # 评测数据
+    reports/v2_eval_by_category.csv   # 分场景结果
+    reports/v2_bad_cases.json         # V2 Bad Cases
+
+  工程：
+    app.py                            # Gradio Demo
+    src/evaluate_v2.py                # 升级版评测脚本
+    README.md（更新）                  # 含 V2 结果
+    PROGRESS_v2.md                    # V2 进度记录
+
+═══════════════════════════════════════════════════════════
+
+七、项目最终定位
+
+本项目最终定位为：
+
+  一个完整的中文 Tool Calling 后训练实验项目，覆盖数据构造、SFT、
+  DPO、自动评测、错误分析和 Demo 展示。项目重点不在于单次训练结果，
+  而在于展示完整的数据闭环和实验迭代能力。
+
+项目最终结论可以概括为：
+
+  在 Tool Calling 场景中，SFT 是提升结构化输出能力的主要手段；
+  DPO 并不必然优于 SFT，其效果高度依赖偏好数据质量。通过分场景
+  评测和 Bad Case 驱动的数据迭代，可以更稳定地提升模型在 JSON
+  合法性、工具选择、参数抽取和澄清追问场景下的表现。
+
+═══════════════════════════════════════════════════════════
+
+八、简历描述建议（V2 更新版）
+
+  基于 Qwen 小模型构建中文 Tool Calling 后训练项目，设计多类业务工具
+  及 JSON Schema，构造 SFT 指令数据与 DPO 偏好数据，完成 LoRA / QLoRA
+  监督微调和偏好优化实验。通过 V1/V2 两轮数据迭代，验证 SFT 与 DPO 在
+  结构化工具调用任务中的效果差异。实现自动评测脚本，支持 JSON 合法率、
+  工具选择准确率、参数准确率、澄清追问准确率、过度追问率和分场景 Bad
+  Case 分析。完成可交互 Gradio Demo 展示。
+
+═══════════════════════════════════════════════════════════
+
+九、与 V1 计划的主要改进
+
+  V1 问题                        V2 改进
+  ─────────                      ──────
+  DPO 不管效果先跑了再说          DPO-v2 有条件才做，不超 SFT 就诚实说
+  评测集 50 条，无分场景          扩展至 200 条，6 类场景分层统计
+  只有整体准确率                  新增过度追问率、不必要工具调用率等 7 项指标
+  数据构造无针对性                根据 V1 Bad Case 精准构造修复型数据
+  评测脚本在最后升级              评测脚本前置（Day 9），指导 SFT-v2 训练
+  DPO 数据通用化                  DPO-v2 围绕明确错误类型构造 preference pairs
+  无 Demo                        加 Gradio Demo

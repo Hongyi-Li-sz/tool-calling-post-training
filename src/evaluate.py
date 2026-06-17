@@ -112,7 +112,7 @@ def classify_error(parsed: Optional[dict], expected: dict, response: str
 
     # 该拒绝（expected=none）但调了工具
     if expected_tool == "none" and actual_tool != "none":
-        clarify = expected.get("expected_clarify", False)
+        clarify = expected.get("expected_clarify", False) or expected.get("need_clarification", False)
         if clarify:
             return "should_clarify", f"应追问但调用了 {actual_tool}"
         else:
@@ -161,7 +161,7 @@ def classify_error(parsed: Optional[dict], expected: dict, response: str
 
     # 4. 对 none 的额外交互检查
     if expected_tool == "none" and actual_tool == "none":
-        clarify = expected.get("expected_clarify", False)
+        clarify = expected.get("expected_clarify", False) or expected.get("need_clarification", False)
         actual_clarify = parsed.get("need_clarification", False)
 
         if clarify and not actual_clarify:
@@ -180,7 +180,7 @@ def evaluate_model(model, tokenizer, test_set: list[dict], model_name: str) -> l
         expected = {
             "expected_tool": case["expected_tool"],
             "expected_arguments": case.get("expected_arguments", {}),
-            "expected_clarify": case.get("expected_clarify", False),
+            "expected_clarify": case.get("expected_clarify", False) or case.get("need_clarification", False),
         }
 
         response = infer(model, tokenizer, instruction)
@@ -196,7 +196,7 @@ def evaluate_model(model, tokenizer, test_set: list[dict], model_name: str) -> l
             "parsed": parsed,
             "expected_tool": expected["expected_tool"],
             "expected_arguments": expected["expected_arguments"],
-            "expected_clarify": expected["expected_clarify"],
+            "expected_clarify": expected.get("expected_clarify", False) or expected.get("need_clarification", False),
             "actual_tool": parsed.get("tool") if parsed else None,
             "actual_arguments": parsed.get("arguments") if parsed else None,
             "error_type": error_type,
