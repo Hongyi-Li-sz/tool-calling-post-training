@@ -1,0 +1,2867 @@
+[
+  {
+    "instruction": "下周三下午有空吗？帮我约个产品讨论",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议的完整日期（YYYY-MM-DD 格式）和具体时间。\"}"
+  },
+  {
+    "instruction": "帮我查一下有关深度学习的资料，顺便算个 999/3",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"深度学习\"}}"
+  },
+  {
+    "instruction": "搜索：RESTful API 设计规范",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"RESTful API 设计规范\"}}"
+  },
+  {
+    "instruction": "查订单 B20456 的同时帮我检索一下退货政策",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}"
+  },
+  {
+    "instruction": "帮我找一下Python 多线程教程相关的内容",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python 多线程教程\"}}"
+  },
+  {
+    "instruction": "你好啊",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "写封邮件发给zhangsan@example.com，关于请假申请",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"zhangsan@example.com\", \"subject\": \"请假申请\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "帮我求解 15 + 28 / 2",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"15 + 28 / 2\"}}"
+  },
+  {
+    "instruction": "帮我约团队建设，2026-06-3014:30",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-30\", \"time\": \"14:30\", \"topic\": \"团队建设\"}}"
+  },
+  {
+    "instruction": "256 >> 2 = ?",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"256 >> 2\"}}"
+  },
+  {
+    "instruction": "发一封系统维护通知给 support@service.com",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"系统维护通知\", \"content\": \"系统将于本周六凌晨2点进行维护，预计4小时完成。\"}}"
+  },
+  {
+    "instruction": "中国首都是哪",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "订单 H34567 到哪了",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"H34567\"}}"
+  },
+  {
+    "instruction": "SO-240315-001 这个订单现在什么状态",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"SO-240315-001\"}}"
+  },
+  {
+    "instruction": "看看有没有Kubernetes 入门教程的文档",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Kubernetes 入门教程\"}}"
+  },
+  {
+    "instruction": "这个订单 ORD-2024-001 发货了吗",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-001\"}}"
+  },
+  {
+    "instruction": "给 support@service.com 发客户反馈汇总",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"客户反馈汇总\", \"content\": \"您好，关于上次讨论的技术方案，我整理了新版本，请查看附件并提供反馈。\"}}"
+  },
+  {
+    "instruction": "预定会议，2026-06-2414:00开需求评审",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-24\", \"time\": \"14:00\", \"topic\": \"需求评审\"}}"
+  },
+  {
+    "instruction": "帮我在 2026-07-08 09:30 安排Sprint 回顾",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-08\", \"time\": \"09:30\", \"topic\": \"Sprint 回顾\"}}"
+  },
+  {
+    "instruction": "帮我定个会议室，2026-06-18 15:30，讨论产品发布会",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-18\", \"time\": \"15:30\", \"topic\": \"产品发布会\"}}"
+  },
+  {
+    "instruction": "我有两件事：订一个明天的项目评审会，还有查订单 C37890",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-18\", \"time\": \"14:00\", \"topic\": \"项目评审\"}}"
+  },
+  {
+    "instruction": "发周报给领导",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱和邮件内容。\"}"
+  },
+  {
+    "instruction": "你懂音乐吗",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "计算：(100 - 25) * 3",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"(100 - 25) * 3\"}}"
+  },
+  {
+    "instruction": "请帮我发送周报到 finance@corp.cn",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"finance@corp.cn\", \"subject\": \"周报\", \"content\": \"您好，关于上次讨论的技术方案，我整理了新版本，请查看附件并提供反馈。\"}}"
+  },
+  {
+    "instruction": "算算 15 + 28 / 2",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"15 + 28 / 2\"}}"
+  },
+  {
+    "instruction": "预定会议，2026-06-2217:00开产品发布会",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-22\", \"time\": \"17:00\", \"topic\": \"产品发布会\"}}"
+  },
+  {
+    "instruction": "帮我求解 1024 / 8",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1024 / 8\"}}"
+  },
+  {
+    "instruction": "发邮件通知finance@corp.cn：客户反馈汇总",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"finance@corp.cn\", \"subject\": \"客户反馈汇总\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "你好",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "发送邮件：收件人 zhangsan@example.com，周报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"zhangsan@example.com\", \"subject\": \"周报\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "发邮件通知all@team.org：安全提醒",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"all@team.org\", \"subject\": \"安全提醒\", \"content\": \"您好，关于上次讨论的技术方案，我整理了新版本，请查看附件并提供反馈。\"}}"
+  },
+  {
+    "instruction": "如何提高工作效率",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "看一下 ORD-2024-0892 是不是已签收",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-0892\"}}"
+  },
+  {
+    "instruction": "今天星期几",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我计算 (100 - 25) * 3 的结果",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"(100 - 25) * 3\"}}"
+  },
+  {
+    "instruction": "帮我搜索一下Transformer 架构详解",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Transformer 架构详解\"}}"
+  },
+  {
+    "instruction": "给 hr@corp.cn 发请假申请",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"请假申请\", \"content\": \"您好，我因身体不适需要请假一天。\"}}"
+  },
+  {
+    "instruction": "帮我安排 2026-06-2511:00 的安全合规审查",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-25\", \"time\": \"11:00\", \"topic\": \"安全合规审查\"}}"
+  },
+  {
+    "instruction": "查一下关于Linux 常用命令的资料",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Linux 常用命令\"}}"
+  },
+  {
+    "instruction": "在 2026-06-28 14:00 帮我安排一场年度总结的会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-28\", \"time\": \"14:00\", \"topic\": \"年度总结\"}}"
+  },
+  {
+    "instruction": "帮我约架构设计讨论，2026-07-1410:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-14\", \"time\": \"10:00\", \"topic\": \"架构设计讨论\"}}"
+  },
+  {
+    "instruction": "预定会议，2026-07-0517:00开1v1 沟通",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-05\", \"time\": \"17:00\", \"topic\": \"1v1 沟通\"}}"
+  },
+  {
+    "instruction": "给我查",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您要查什么？\"}"
+  },
+  {
+    "instruction": "介绍一个旅游景点",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "我要预约一个会议，2026-07-12 14:30，关于代码审查",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-12\", \"time\": \"14:30\", \"topic\": \"代码审查\"}}"
+  },
+  {
+    "instruction": "计算器算一下 1000 - 345",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1000 - 345\"}}"
+  },
+  {
+    "instruction": "怎么缓解压力",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "G98765 什么时候能到",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"G98765\"}}"
+  },
+  {
+    "instruction": "算算 1000000 / 1024",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1000000 / 1024\"}}"
+  },
+  {
+    "instruction": "我想了解自然语言处理综述，帮我搜索一下",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"自然语言处理综述\"}}"
+  },
+  {
+    "instruction": "预定会议，2026-06-2409:30开团队建设",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-24\", \"time\": \"09:30\", \"topic\": \"团队建设\"}}"
+  },
+  {
+    "instruction": "预定会议，2026-07-0416:30开代码审查",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-04\", \"time\": \"16:30\", \"topic\": \"代码审查\"}}"
+  },
+  {
+    "instruction": "我想知道 PO-20240315-0056 的订单情况",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"PO-20240315-0056\"}}"
+  },
+  {
+    "instruction": "帮我查查推荐系统算法",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"推荐系统算法\"}}"
+  },
+  {
+    "instruction": "给我推荐一本书",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "搜索文档：CUDA 编程指南",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"CUDA 编程指南\"}}"
+  },
+  {
+    "instruction": "在 2026-06-18 14:00 帮我安排一场架构设计讨论的会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-18\", \"time\": \"14:00\", \"topic\": \"架构设计讨论\"}}"
+  },
+  {
+    "instruction": "推荐一首好听的歌",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "人为什么要吃饭",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "麻烦给 wangwu@dev.io 发个邮件，技术方案 v2.0",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"技术方案 v2.0\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "请计算 1024 / 8",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1024 / 8\"}}"
+  },
+  {
+    "instruction": "定一个 2026-07-08 14:30 的季度规划会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-08\", \"time\": \"14:30\", \"topic\": \"季度规划\"}}"
+  },
+  {
+    "instruction": "email zhangsan@example.com 关于项目进度",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"zhangsan@example.com\", \"subject\": \"项目进度\", \"content\": \"请查收项目进度汇报。\"}}"
+  },
+  {
+    "instruction": "帮我创建安全合规审查会议，2026-07-1715:30",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-17\", \"time\": \"15:30\", \"topic\": \"安全合规审查\"}}"
+  },
+  {
+    "instruction": "预约会议：2026-07-03 10:30，客户演示",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-03\", \"time\": \"10:30\", \"topic\": \"客户演示\"}}"
+  },
+  {
+    "instruction": "看一下 A10293 是不是已签收",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}"
+  },
+  {
+    "instruction": "看一下 SO-240315-001 是不是已签收",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"SO-240315-001\"}}"
+  },
+  {
+    "instruction": "苹果和梨哪个好吃",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我解 17 * 19",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"17 * 19\"}}"
+  },
+  {
+    "instruction": "解释一下什么是机器学习",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "找一下时间序列预测方法的教程",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"时间序列预测方法\"}}"
+  },
+  {
+    "instruction": "讲个笑话",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查一下 G98765 的配送进度",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"G98765\"}}"
+  },
+  {
+    "instruction": "找一下时间序列预测方法的教程",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"时间序列预测方法\"}}"
+  },
+  {
+    "instruction": "3.14 * 10 * 10 给我算出来",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"3.14 * 10 * 10\"}}"
+  },
+  {
+    "instruction": "帮我约需求评审，2026-06-2910:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-29\", \"time\": \"10:00\", \"topic\": \"需求评审\"}}"
+  },
+  {
+    "instruction": "SO-240315-001 这个订单现在什么状态",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"SO-240315-001\"}}"
+  },
+  {
+    "instruction": "计算 256 >> 2 等于多少",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"256 >> 2\"}}"
+  },
+  {
+    "instruction": "帮我搜Git 分支管理",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Git 分支管理\"}}"
+  },
+  {
+    "instruction": "怎么学做饭",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你能写代码吗",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我发邮件，给admin@company.com，说预算审批",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"预算审批\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "看看有没有推荐系统算法的文档",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"推荐系统算法\"}}"
+  },
+  {
+    "instruction": "帮我查一下最近的知识库更新",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"知识库更新\"}}"
+  },
+  {
+    "instruction": "帮我计算 123 * 456 的结果",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"123 * 456\"}}"
+  },
+  {
+    "instruction": "查询订单 J22222",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"J22222\"}}"
+  },
+  {
+    "instruction": "发邮件通知hr@corp.cn：周报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"周报\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "帮我创建年度总结会议，2026-07-1616:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-16\", \"time\": \"16:00\", \"topic\": \"年度总结\"}}"
+  },
+  {
+    "instruction": "查询 PO-20240315-0056 是否已完成",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"PO-20240315-0056\"}}"
+  },
+  {
+    "instruction": "订单怎么样了",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "发邮件给 all@team.org，主题是系统升级通知",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"all@team.org\", \"subject\": \"系统升级通知\", \"content\": \"您好，关于上次讨论的技术方案，我整理了新版本，请查看附件并提供反馈。\"}}"
+  },
+  {
+    "instruction": "有没有如何优化 SQL 查询方面的资料？",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"如何优化 SQL 查询\"}}"
+  },
+  {
+    "instruction": "请帮我发送活动通知到 ceo@startup.com",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"ceo@startup.com\", \"subject\": \"活动通知\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "帮我起个名字",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我搜之前先确认一下你是不是最新的版本",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "能不能帮我搜一下RESTful API 设计规范",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"RESTful API 设计规范\"}}"
+  },
+  {
+    "instruction": "计算：9999 / 3",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"9999 / 3\"}}"
+  },
+  {
+    "instruction": "请帮我预定 2026-06-18 下午的预算评审会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-18\", \"time\": \"15:00\", \"topic\": \"预算评审\"}}"
+  },
+  {
+    "instruction": "把 1000000 / 1024 算出来",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1000000 / 1024\"}}"
+  },
+  {
+    "instruction": "我心情不好怎么办",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "通知一下大家",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、通知主题和内容。\"}"
+  },
+  {
+    "instruction": "45 + 55 - 20，等于几？",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"45 + 55 - 20\"}}"
+  },
+  {
+    "instruction": "查询 ORD-2024-001 是否已完成",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-001\"}}"
+  },
+  {
+    "instruction": "计算 (100 - 25) * 3 等于多少",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"(100 - 25) * 3\"}}"
+  },
+  {
+    "instruction": "帮忙预约",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请告诉我您要预约什么类型的会面，以及日期、时间等信息。\"}"
+  },
+  {
+    "instruction": "帮我查查 X20240315001 卖家发货了没",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"X20240315001\"}}"
+  },
+  {
+    "instruction": "3.14 * 10 * 10 = ?",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"3.14 * 10 * 10\"}}"
+  },
+  {
+    "instruction": "把 18.5 * 2 算出来",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"18.5 * 2\"}}"
+  },
+  {
+    "instruction": "发邮件通知hr@corp.cn：会议纪要",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"会议纪要\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "帮我分析一下",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "看看有没有分布式系统一致性的文档",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"分布式系统一致性\"}}"
+  },
+  {
+    "instruction": "向 hr@corp.cn 发送会议纪要邮件",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"会议纪要\", \"content\": \"您好，关于上次讨论的技术方案，我整理了新版本，请查看附件并提供反馈。\"}}"
+  },
+  {
+    "instruction": "求 365 * 24 的值",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"365 * 24\"}}"
+  },
+  {
+    "instruction": "帮我约年度总结，2026-07-0216:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-02\", \"time\": \"16:00\", \"topic\": \"年度总结\"}}"
+  },
+  {
+    "instruction": "88 / 4 + 6 的结果是多少",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"88 / 4 + 6\"}}"
+  },
+  {
+    "instruction": "什么是云计算",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我查查时间序列预测方法",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"时间序列预测方法\"}}"
+  },
+  {
+    "instruction": "发送邮件：收件人 support@service.com，活动通知",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"活动通知\", \"content\": \"各位同事，附件是本月的项目进度报告，请大家查阅。如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "帮我计算 sqrt(144) 的结果",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"sqrt(144)\"}}"
+  },
+  {
+    "instruction": "计算 18.5 * 2 等于多少",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"18.5 * 2\"}}"
+  },
+  {
+    "instruction": "在知识库里查时间序列预测方法",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"时间序列预测方法\"}}"
+  },
+  {
+    "instruction": "这个订单 G98765 发货了吗",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"G98765\"}}"
+  },
+  {
+    "instruction": "有没有外星人",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查询订单 X20240315001",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"X20240315001\"}}"
+  },
+  {
+    "instruction": "帮我给 all@team.org 发邮件，主题项目进度汇报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"all@team.org\", \"subject\": \"项目进度汇报\", \"content\": \"各位同事，附件是本月的项目进度报告，请大家查阅。如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "查一下 PO-20240315-0056 的配送进度",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"PO-20240315-0056\"}}"
+  },
+  {
+    "instruction": "帮我解释一下什么是 API",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "邮件通知全组",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "查询订单 D45678",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"D45678\"}}"
+  },
+  {
+    "instruction": "求 15 + 28 / 2 的值",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"15 + 28 / 2\"}}"
+  },
+  {
+    "instruction": "1+1等于几",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "能不能帮我搜一下Kubernetes 入门教程",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Kubernetes 入门教程\"}}"
+  },
+  {
+    "instruction": "写封邮件发给wangwu@dev.io，关于周报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"周报\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "帮我计算 256 >> 2 的结果",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"256 >> 2\"}}"
+  },
+  {
+    "instruction": "发邮件通知zhangsan@example.com：周报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"zhangsan@example.com\", \"subject\": \"周报\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "麻烦给 support@service.com 发个邮件，技术方案 v2.0",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"技术方案 v2.0\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "给 finance@corp.cn 发周报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"finance@corp.cn\", \"subject\": \"周报\", \"content\": \"您好，关于上次讨论的技术方案，我整理了新版本，请查看附件并提供反馈。\"}}"
+  },
+  {
+    "instruction": "帮我写邮件给 finance@corp.cn，安全提醒",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"finance@corp.cn\", \"subject\": \"安全提醒\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "帮我通知一下团队",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、通知主题和具体内容。\"}"
+  },
+  {
+    "instruction": "定一个 2026-07-14 10:30 的架构设计讨论会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-14\", \"time\": \"10:30\", \"topic\": \"架构设计讨论\"}}"
+  },
+  {
+    "instruction": "做个自我介绍",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我处理一下",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "算算 2 ** 10",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"2 ** 10\"}}"
+  },
+  {
+    "instruction": "订单 ORD-2024-001 到哪了",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-001\"}}"
+  },
+  {
+    "instruction": "帮我求解 100 * 0.85",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"100 * 0.85\"}}"
+  },
+  {
+    "instruction": "定一个 2026-07-01 14:30 的预算评审会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"14:30\", \"topic\": \"预算评审\"}}"
+  },
+  {
+    "instruction": "帮我跟踪一下 D45678",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"D45678\"}}"
+  },
+  {
+    "instruction": "PO-20240315-0056 这个订单现在什么状态",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"PO-20240315-0056\"}}"
+  },
+  {
+    "instruction": "怎么学好编程",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "把 9999 / 3 算出来",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"9999 / 3\"}}"
+  },
+  {
+    "instruction": "帮我预约个会议",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "帮我给 lisi@tech.cn 发邮件，主题客户反馈汇总",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"lisi@tech.cn\", \"subject\": \"客户反馈汇总\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "帮我查东西",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您要查什么？是订单、知识库资料，还是其他？\"}"
+  },
+  {
+    "instruction": "查一下关于Docker 部署 Flask的资料",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 部署 Flask\"}}"
+  },
+  {
+    "instruction": "B20456 什么时候能到",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}"
+  },
+  {
+    "instruction": "给 finance@corp.cn 发一封关于客户反馈汇总的邮件",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"finance@corp.cn\", \"subject\": \"客户反馈汇总\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "计算 256 + 512",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"256 + 512\"}}"
+  },
+  {
+    "instruction": "看一下 E56789 是不是已签收",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"E56789\"}}"
+  },
+  {
+    "instruction": "帮我跟踪一下 D45678",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"D45678\"}}"
+  },
+  {
+    "instruction": "请帮我预定 2026-07-10 下午的代码审查会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-10\", \"time\": \"15:00\", \"topic\": \"代码审查\"}}"
+  },
+  {
+    "instruction": "先帮我算 100*50，然后订个会议室",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"100 * 50\"}}"
+  },
+  {
+    "instruction": "我想了解深度学习入门，帮我搜索一下",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"深度学习入门\"}}"
+  },
+  {
+    "instruction": "2026-07-07 帮我约个代码审查，17:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-07\", \"time\": \"17:00\", \"topic\": \"代码审查\"}}"
+  },
+  {
+    "instruction": "麻烦给 wangwu@dev.io 发个邮件，安全提醒",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"安全提醒\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "I11111 这个订单现在什么状态",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"I11111\"}}"
+  },
+  {
+    "instruction": "我想知道 E56789 的订单情况",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"E56789\"}}"
+  },
+  {
+    "instruction": "X20240315001 订单状态是什么",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"X20240315001\"}}"
+  },
+  {
+    "instruction": "算算 1024 / 8",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1024 / 8\"}}"
+  },
+  {
+    "instruction": "算一下这个表达式：(100 - 25) * 3",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"(100 - 25) * 3\"}}"
+  },
+  {
+    "instruction": "我不知道该用什么功能",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "请帮我预定 2026-07-15 下午的技术方案讨论会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-15\", \"time\": \"10:30\", \"topic\": \"技术方案讨论\"}}"
+  },
+  {
+    "instruction": "把 (100 - 25) * 3 算出来",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"(100 - 25) * 3\"}}"
+  },
+  {
+    "instruction": "推荐一个好用的笔记软件",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "发个通知邮件",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、通知主题和内容。\"}"
+  },
+  {
+    "instruction": "搜索：自然语言处理综述",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"自然语言处理综述\"}}"
+  },
+  {
+    "instruction": "为什么天空是蓝色的",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "请用中文回答",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "PO-20240315-0056 什么时候能到",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"PO-20240315-0056\"}}"
+  },
+  {
+    "instruction": "帮我找一下设计模式入门相关的内容",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"设计模式入门\"}}"
+  },
+  {
+    "instruction": "帮我算一下 88 / 4 + 6",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"88 / 4 + 6\"}}"
+  },
+  {
+    "instruction": "C37890 这个订单现在什么状态",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"C37890\"}}"
+  },
+  {
+    "instruction": "给我打个招呼",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "做一道计算题",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "给 wangwu@dev.io 发安全提醒",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"安全提醒\", \"content\": \"各位同事，附件是本月的项目进度报告，请大家查阅。如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "预约 2026-07-13 的性能优化讨论，时间15:30",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-13\", \"time\": \"15:30\", \"topic\": \"性能优化讨论\"}}"
+  },
+  {
+    "instruction": "那个表达式帮我算算",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "比特币是什么",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "给 lisi@tech.cn 去邮件：安全提醒",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"lisi@tech.cn\", \"subject\": \"安全提醒\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "搜索：如何优化 SQL 查询",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"如何优化 SQL 查询\"}}"
+  },
+  {
+    "instruction": "我想预约会议",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "把 3.14 * 10 * 10 算出来",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"3.14 * 10 * 10\"}}"
+  },
+  {
+    "instruction": "人生有什么意义",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "在 2026-07-05 10:30 帮我安排一场性能优化讨论的会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-05\", \"time\": \"10:30\", \"topic\": \"性能优化讨论\"}}"
+  },
+  {
+    "instruction": "预约会议：2026-06-22 10:30，年度总结",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-22\", \"time\": \"10:30\", \"topic\": \"年度总结\"}}"
+  },
+  {
+    "instruction": "发邮件通知wangwu@dev.io：安全提醒",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"安全提醒\", \"content\": \"各位同事，附件是本月的项目进度报告，请大家查阅。如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "找一下分布式系统一致性的教程",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"分布式系统一致性\"}}"
+  },
+  {
+    "instruction": "通知 all@team.org 周末团建",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"all@team.org\", \"subject\": \"周末团建\", \"content\": \"各位同事，本周六组织团建活动，请大家报名参加。\"}}"
+  },
+  {
+    "instruction": "2026-06-30 帮我约个项目评审，16:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-30\", \"time\": \"16:00\", \"topic\": \"项目评审\"}}"
+  },
+  {
+    "instruction": "查一下 A10293 的配送进度",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}"
+  },
+  {
+    "instruction": "请帮我检索Transformer 架构详解的相关信息",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Transformer 架构详解\"}}"
+  },
+  {
+    "instruction": "查个东西",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您要查什么？是资料搜索还是订单查询？\"}"
+  },
+  {
+    "instruction": "检索 设计模式入门",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"设计模式入门\"}}"
+  },
+  {
+    "instruction": "帮我给 lisi@tech.cn 发邮件，主题安全提醒",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"lisi@tech.cn\", \"subject\": \"安全提醒\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "搜点东西",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}"
+  },
+  {
+    "instruction": "请计算 256 + 512",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"256 + 512\"}}"
+  },
+  {
+    "instruction": "把 17 * 19 算出来",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"17 * 19\"}}"
+  },
+  {
+    "instruction": "给 support@service.com 去邮件：系统升级通知",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"系统升级通知\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "能不能帮我搜一下自然语言处理综述",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"自然语言处理综述\"}}"
+  },
+  {
+    "instruction": "帮我在 2026-06-24 17:00 安排性能优化讨论",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-24\", \"time\": \"17:00\", \"topic\": \"性能优化讨论\"}}"
+  },
+  {
+    "instruction": "你觉得人工智能会取代人类吗",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "看看我的快递",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "订单 TBA1029384756 到哪了",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"TBA1029384756\"}}"
+  },
+  {
+    "instruction": "(100 - 25) * 3 怎么算",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"(100 - 25) * 3\"}}"
+  },
+  {
+    "instruction": "写封邮件发给wangwu@dev.io，关于请假申请",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"请假申请\", \"content\": \"您好，关于上次讨论的技术方案，我整理了新版本，请查看附件并提供反馈。\"}}"
+  },
+  {
+    "instruction": "发邮件给 admin@company.com，主题是安全提醒",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"安全提醒\", \"content\": \"各位同事，附件是本月的项目进度报告，请大家查阅。如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "帮我安排 2026-07-1015:00 的安全合规审查",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-10\", \"time\": \"15:00\", \"topic\": \"安全合规审查\"}}"
+  },
+  {
+    "instruction": "找一下Transformer 架构详解的教程",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Transformer 架构详解\"}}"
+  },
+  {
+    "instruction": "搜一下 Python 教程，然后帮我发个邮件",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python 教程\"}}"
+  },
+  {
+    "instruction": "1024 / 8 给我算出来",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1024 / 8\"}}"
+  },
+  {
+    "instruction": "搜索文档：大模型微调方法",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"大模型微调方法\"}}"
+  },
+  {
+    "instruction": "15 + 28 / 2 的结果是多少",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"15 + 28 / 2\"}}"
+  },
+  {
+    "instruction": "hello",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "预约 2025-01-15 10:00 技术方案讨论",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2025-01-15\", \"time\": \"10:00\", \"topic\": \"技术方案讨论\"}}"
+  },
+  {
+    "instruction": "下午3点帮我订会议室",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和主题。\"}"
+  },
+  {
+    "instruction": "帮我算一下",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "发邮件给 manager@team.org，主题是会议纪要",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@team.org\", \"subject\": \"会议纪要\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "怎么提高记忆力",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "怎么学好英语",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "用 send_email 功能发通知",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "查订单：TBA1029384756",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"TBA1029384756\"}}"
+  },
+  {
+    "instruction": "请帮我发送周报到 hr@corp.cn",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"周报\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "帮我写句祝福的话",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我查查深度学习入门",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"深度学习入门\"}}"
+  },
+  {
+    "instruction": "帮我看看 B20456 的物流",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}"
+  },
+  {
+    "instruction": "帮我发封邮件",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "预定会议，2026-07-0509:00开客户演示",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-05\", \"time\": \"09:00\", \"topic\": \"客户演示\"}}"
+  },
+  {
+    "instruction": "查一下 I11111 的配送进度",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"I11111\"}}"
+  },
+  {
+    "instruction": "请给 zhangsan@example.com 发项目进度汇报的邮件",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"zhangsan@example.com\", \"subject\": \"项目进度汇报\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "帮我查查时间序列预测方法",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"时间序列预测方法\"}}"
+  },
+  {
+    "instruction": "预约 2026-06-24 的代码审查，时间15:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-24\", \"time\": \"15:00\", \"topic\": \"代码审查\"}}"
+  },
+  {
+    "instruction": "帮我查一下订单 B20456 的状态",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}"
+  },
+  {
+    "instruction": "能不能帮我搜一下推荐系统算法",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"推荐系统算法\"}}"
+  },
+  {
+    "instruction": "帮我计算 100 * 0.85 的结果",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"100 * 0.85\"}}"
+  },
+  {
+    "instruction": "请计算 45 + 55 - 20",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"45 + 55 - 20\"}}"
+  },
+  {
+    "instruction": "帮我给经理发个邮件",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人的完整邮箱地址、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "帮我查一下订单 D45678",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"D45678\"}}"
+  },
+  {
+    "instruction": "求 sqrt(144) 的值",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"sqrt(144)\"}}"
+  },
+  {
+    "instruction": "看一下 H34567 是不是已签收",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"H34567\"}}"
+  },
+  {
+    "instruction": "麻烦给 zhangsan@example.com 发个邮件，周报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"zhangsan@example.com\", \"subject\": \"周报\", \"content\": \"各位同事，附件是本月的项目进度报告，请大家查阅。如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "帮我算一下 15 + 28 / 2",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"15 + 28 / 2\"}}"
+  },
+  {
+    "instruction": "查资料：深度学习入门",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"深度学习入门\"}}"
+  },
+  {
+    "instruction": "1000000 / 1024 给我算出来",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1000000 / 1024\"}}"
+  },
+  {
+    "instruction": "帮我写邮件给 hr@corp.cn，安全提醒",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"安全提醒\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "1024 / 8 的结果是多少",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1024 / 8\"}}"
+  },
+  {
+    "instruction": "我想知道 SO-240315-001 的订单情况",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"SO-240315-001\"}}"
+  },
+  {
+    "instruction": "麻烦给 all@team.org 发个邮件，请假申请",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"all@team.org\", \"subject\": \"请假申请\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "请帮我发送预算审批到 manager@team.org",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@team.org\", \"subject\": \"预算审批\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "给 manager@team.org 发一封关于活动通知的邮件",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@team.org\", \"subject\": \"活动通知\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "帮我搜PyTorch 基础",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"PyTorch 基础\"}}"
+  },
+  {
+    "instruction": "北京在哪里",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "发邮件给 lisi@tech.cn，主题是预算审批",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"lisi@tech.cn\", \"subject\": \"预算审批\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "帮我搜索一下强化学习原理",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"强化学习原理\"}}"
+  },
+  {
+    "instruction": "计算器",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "帮我找一下推荐系统算法相关的内容",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"推荐系统算法\"}}"
+  },
+  {
+    "instruction": "地球绕太阳转一圈多久",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "定一个 2026-07-14 09:30 的年度总结会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-14\", \"time\": \"09:30\", \"topic\": \"年度总结\"}}"
+  },
+  {
+    "instruction": "sqrt(144) = ?",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"sqrt(144)\"}}"
+  },
+  {
+    "instruction": "1024 % 128 的结果是多少",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1024 % 128\"}}"
+  },
+  {
+    "instruction": "算个数",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "查文档",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}"
+  },
+  {
+    "instruction": "帮我算一下 17 * 19",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"17 * 19\"}}"
+  },
+  {
+    "instruction": "发送邮件：收件人 zhangsan@example.com，客户反馈汇总",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"zhangsan@example.com\", \"subject\": \"客户反馈汇总\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "查询 TBA1029384756 是否已完成",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"TBA1029384756\"}}"
+  },
+  {
+    "instruction": "帮我计算 (100 - 25) * 3 的结果",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"(100 - 25) * 3\"}}"
+  },
+  {
+    "instruction": "算算 88 / 4 + 6",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"88 / 4 + 6\"}}"
+  },
+  {
+    "instruction": "你能识别图片吗",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "煮鸡蛋要多久",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查物流 ORD-2024-0892",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-0892\"}}"
+  },
+  {
+    "instruction": "向 ceo@startup.com 发送预算审批邮件",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"ceo@startup.com\", \"subject\": \"预算审批\", \"content\": \"您好，关于上次讨论的技术方案，我整理了新版本，请查看附件并提供反馈。\"}}"
+  },
+  {
+    "instruction": "45 + 55 - 20，等于几？",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"45 + 55 - 20\"}}"
+  },
+  {
+    "instruction": "我要预约一个会议，2026-06-28 14:00，关于技术方案讨论",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-28\", \"time\": \"14:00\", \"topic\": \"技术方案讨论\"}}"
+  },
+  {
+    "instruction": "安排一个会议",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "你能做什么",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我创建项目评审会议，2026-07-0210:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-02\", \"time\": \"10:00\", \"topic\": \"项目评审\"}}"
+  },
+  {
+    "instruction": "搜索文档：CUDA 编程指南",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"CUDA 编程指南\"}}"
+  },
+  {
+    "instruction": "帮我看看 H34567 的物流",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"H34567\"}}"
+  },
+  {
+    "instruction": "计算：1024 / 8",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1024 / 8\"}}"
+  },
+  {
+    "instruction": "计算 45 + 55 - 20 等于多少",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"45 + 55 - 20\"}}"
+  },
+  {
+    "instruction": "查询我的购买记录",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。如果您不记得，可以告诉我大致的时间和商品名称帮您查找。\"}"
+  },
+  {
+    "instruction": "这个订单 J22222 发货了吗",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"J22222\"}}"
+  },
+  {
+    "instruction": "查订单：F12345",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"F12345\"}}"
+  },
+  {
+    "instruction": "看一下 ORD-2024-001 是不是已签收",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-001\"}}"
+  },
+  {
+    "instruction": "安排周五下午 Sprint 回顾",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2025-02-28\", \"time\": \"14:00\", \"topic\": \"Sprint 回顾\"}}"
+  },
+  {
+    "instruction": "你是谁？",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "定一个 2026-06-25 17:00 的新员工入职培训会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-25\", \"time\": \"17:00\", \"topic\": \"新员工入职培训\"}}"
+  },
+  {
+    "instruction": "明天上午10点开会",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议主题。\"}"
+  },
+  {
+    "instruction": "检索 Redis 缓存策略",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Redis 缓存策略\"}}"
+  },
+  {
+    "instruction": "预定会议，2026-06-2214:30开1v1 沟通",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-22\", \"time\": \"14:30\", \"topic\": \"1v1 沟通\"}}"
+  },
+  {
+    "instruction": "用 search 查一下 Docker 教程",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 教程\"}}"
+  },
+  {
+    "instruction": "帮我写个邮件给 HR",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人的完整邮箱地址、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "有哪些好的学习资源",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查订单：C37890",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"C37890\"}}"
+  },
+  {
+    "instruction": "能不能帮我搜一下CUDA 编程指南",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"CUDA 编程指南\"}}"
+  },
+  {
+    "instruction": "检索 Redis 缓存策略",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Redis 缓存策略\"}}"
+  },
+  {
+    "instruction": "中午吃什么好",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "下周一早上九点约预算评审",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2025-03-03\", \"time\": \"09:00\", \"topic\": \"预算评审\"}}"
+  },
+  {
+    "instruction": "你除了查订单还能干啥",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "搜索文档：自然语言处理综述",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"自然语言处理综述\"}}"
+  },
+  {
+    "instruction": "帮我跟踪一下 A10293",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}"
+  },
+  {
+    "instruction": "88 / 4 + 6 的结果是多少",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"88 / 4 + 6\"}}"
+  },
+  {
+    "instruction": "我要预约一个会议，2026-06-19 09:00，关于架构设计讨论",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"09:00\", \"topic\": \"架构设计讨论\"}}"
+  },
+  {
+    "instruction": "docs Python 异步编程",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python 异步编程\"}}"
+  },
+  {
+    "instruction": "帮我看看 I11111 的物流",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"I11111\"}}"
+  },
+  {
+    "instruction": "帮我查查CUDA 编程指南",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"CUDA 编程指南\"}}"
+  },
+  {
+    "instruction": "帮我干个活",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？\"}"
+  },
+  {
+    "instruction": "查询订单 PO-20240315-0056",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"PO-20240315-0056\"}}"
+  },
+  {
+    "instruction": "请介绍一下自己",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "E56789 什么时候能到",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"E56789\"}}"
+  },
+  {
+    "instruction": "帮我查查 J22222 卖家发货了没",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"J22222\"}}"
+  },
+  {
+    "instruction": "18.5 * 2 给我算出来",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"18.5 * 2\"}}"
+  },
+  {
+    "instruction": "帮我给 manager@team.org 发邮件，主题周报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@team.org\", \"subject\": \"周报\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "你叫什么名字",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "现在几点了",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我预约 2026-07-15 14:30 的会议，主题是性能优化讨论",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-15\", \"time\": \"14:30\", \"topic\": \"性能优化讨论\"}}"
+  },
+  {
+    "instruction": "订单 PO-20240315-0056 怎样了",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"PO-20240315-0056\"}}"
+  },
+  {
+    "instruction": "你有感情吗",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "我想知道 X20240315001 的订单情况",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"X20240315001\"}}"
+  },
+  {
+    "instruction": "订单查询：A10293",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}"
+  },
+  {
+    "instruction": "帮我安排 2026-07-0914:30 的1v1 沟通",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-09\", \"time\": \"14:30\", \"topic\": \"1v1 沟通\"}}"
+  },
+  {
+    "instruction": "如何保持健康",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "3.14 * 10 * 10，等于几？",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"3.14 * 10 * 10\"}}"
+  },
+  {
+    "instruction": "帮我在 2026-06-22 15:00 安排需求评审",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-22\", \"time\": \"15:00\", \"topic\": \"需求评审\"}}"
+  },
+  {
+    "instruction": "请帮我发送周报到 admin@company.com",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"周报\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "查订单状态",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "B20456 订单状态是什么",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}"
+  },
+  {
+    "instruction": "帮我定个会议室，2026-07-01 16:30，讨论客户演示",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"16:30\", \"topic\": \"客户演示\"}}"
+  },
+  {
+    "instruction": "我的订单到哪了",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "向 ceo@startup.com 发送周报邮件",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"ceo@startup.com\", \"subject\": \"周报\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "在 2026-06-20 16:00 帮我安排一场Sprint 回顾的会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-20\", \"time\": \"16:00\", \"topic\": \"Sprint 回顾\"}}"
+  },
+  {
+    "instruction": "帮我发邮件顺便查订单 A10293",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@team.org\", \"subject\": \"通知\", \"content\": \"请查收通知内容。\"}}"
+  },
+  {
+    "instruction": "给 lisi@tech.cn 发一封关于周报的邮件",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"lisi@tech.cn\", \"subject\": \"周报\", \"content\": \"您好，关于上次讨论的技术方案，我整理了新版本，请查看附件并提供反馈。\"}}"
+  },
+  {
+    "instruction": "帮我搜设计模式入门",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"设计模式入门\"}}"
+  },
+  {
+    "instruction": "请帮我发送项目进度汇报到 finance@corp.cn",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"finance@corp.cn\", \"subject\": \"项目进度汇报\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "帮我在 2026-06-29 10:00 安排架构设计讨论",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-29\", \"time\": \"10:00\", \"topic\": \"架构设计讨论\"}}"
+  },
+  {
+    "instruction": "B20456 订单状态是什么",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}"
+  },
+  {
+    "instruction": "查一下关于Docker 部署 Flask的资料",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 部署 Flask\"}}"
+  },
+  {
+    "instruction": "搜索文档：PyTorch 基础",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"PyTorch 基础\"}}"
+  },
+  {
+    "instruction": "给我翻译成英文：你好世界",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我在 2026-07-14 14:30 安排年度总结",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-14\", \"time\": \"14:30\", \"topic\": \"年度总结\"}}"
+  },
+  {
+    "instruction": "帮我写邮件给 wangwu@dev.io，请假申请",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"请假申请\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "查一下 TBA1029384756 的配送进度",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"TBA1029384756\"}}"
+  },
+  {
+    "instruction": "3.14 * 10 等于多少",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"3.14 * 10\"}}"
+  },
+  {
+    "instruction": "定一个 2026-07-10 11:00 的团队建设会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-10\", \"time\": \"11:00\", \"topic\": \"团队建设\"}}"
+  },
+  {
+    "instruction": "帮我写一首诗",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "检索知识库，关键词是如何优化 SQL 查询",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"如何优化 SQL 查询\"}}"
+  },
+  {
+    "instruction": "帮我写邮件给 finance@corp.cn，会议纪要",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"finance@corp.cn\", \"subject\": \"会议纪要\", \"content\": \"各位同事，附件是本月的项目进度报告，请大家查阅。如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "帮我跟踪一下 F12345",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"F12345\"}}"
+  },
+  {
+    "instruction": "可不可以帮我",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我创建项目评审会议，2026-06-2015:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-20\", \"time\": \"15:00\", \"topic\": \"项目评审\"}}"
+  },
+  {
+    "instruction": "帮我写邮件给 support@service.com，安全提醒",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"安全提醒\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "调用 search_docs",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}"
+  },
+  {
+    "instruction": "预定会议，2026-06-2216:30开性能优化讨论",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-22\", \"time\": \"16:30\", \"topic\": \"性能优化讨论\"}}"
+  },
+  {
+    "instruction": "帮我定个会",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "在 2026-06-18 14:30 帮我安排一场预算评审的会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-18\", \"time\": \"14:30\", \"topic\": \"预算评审\"}}"
+  },
+  {
+    "instruction": "帮我订个下周三的会",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议的具体时间（HH:MM 格式）和主题。\"}"
+  },
+  {
+    "instruction": "发邮件",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "帮我约一下 2026-07-11 15:30 预算评审",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-11\", \"time\": \"15:30\", \"topic\": \"预算评审\"}}"
+  },
+  {
+    "instruction": "帮我创建Sprint 回顾会议，2026-07-0210:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-02\", \"time\": \"10:00\", \"topic\": \"Sprint 回顾\"}}"
+  },
+  {
+    "instruction": "帮我做个决定",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "看一下 G98765 是不是已签收",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"G98765\"}}"
+  },
+  {
+    "instruction": "帮我约性能优化讨论，2026-07-1215:30",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-12\", \"time\": \"15:30\", \"topic\": \"性能优化讨论\"}}"
+  },
+  {
+    "instruction": "帮我解释一下相对论",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "搜索：RESTful API 设计规范",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"RESTful API 设计规范\"}}"
+  },
+  {
+    "instruction": "帮我约产品发布会，2026-06-1810:30",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-18\", \"time\": \"10:30\", \"topic\": \"产品发布会\"}}"
+  },
+  {
+    "instruction": "帮我查查 A10293 卖家发货了没",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}"
+  },
+  {
+    "instruction": "推荐一本好书",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "在知识库里查Transformer 架构详解",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Transformer 架构详解\"}}"
+  },
+  {
+    "instruction": "搜一下大模型微调",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"大模型微调\"}}"
+  },
+  {
+    "instruction": "计算完 500+200 后再发邮件",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"500 + 200\"}}"
+  },
+  {
+    "instruction": "我需要帮助",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？\"}"
+  },
+  {
+    "instruction": "订单 PO-20240315-0056 到哪了",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"PO-20240315-0056\"}}"
+  },
+  {
+    "instruction": "我要预约一个会议，2026-07-09 16:00，关于客户演示",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-09\", \"time\": \"16:00\", \"topic\": \"客户演示\"}}"
+  },
+  {
+    "instruction": "把 1000 - 345 算出来",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1000 - 345\"}}"
+  },
+  {
+    "instruction": "你觉得哪个语言最好学",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "在知识库里查Docker 部署 Flask",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 部署 Flask\"}}"
+  },
+  {
+    "instruction": "帮我搜索一下Redis 缓存策略",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Redis 缓存策略\"}}"
+  },
+  {
+    "instruction": "看看有没有分布式系统一致性的文档",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"分布式系统一致性\"}}"
+  },
+  {
+    "instruction": "帮我起草邮件给 support@service.com，周报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"周报\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "检索知识库，关键词是时间序列预测方法",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"时间序列预测方法\"}}"
+  },
+  {
+    "instruction": "帮我计算 17 * 19 的结果",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"17 * 19\"}}"
+  },
+  {
+    "instruction": "算算 2 ** 10",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"2 ** 10\"}}"
+  },
+  {
+    "instruction": "怎么学好数学",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "看看有没有MySQL 索引优化的文档",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"MySQL 索引优化\"}}"
+  },
+  {
+    "instruction": "有没有Nginx 反向代理配置方面的资料？",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Nginx 反向代理配置\"}}"
+  },
+  {
+    "instruction": "周末去哪玩",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我查查Docker 部署 Flask",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 部署 Flask\"}}"
+  },
+  {
+    "instruction": "给我一个建议",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我搜索一下大模型微调方法",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"大模型微调方法\"}}"
+  },
+  {
+    "instruction": "帮我给 support@service.com 发邮件，主题周报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"周报\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "搜索 Transformer 架构",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Transformer 架构\"}}"
+  },
+  {
+    "instruction": "发一封关于请假申请的邮件",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱和邮件内容。\"}"
+  },
+  {
+    "instruction": "帮我计算 1000 - 345 的结果",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1000 - 345\"}}"
+  },
+  {
+    "instruction": "怎么网购",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "计算器算一下 45 + 55 - 20",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"45 + 55 - 20\"}}"
+  },
+  {
+    "instruction": "定一个 2026-07-01 14:00 的安全合规审查会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"14:00\", \"topic\": \"安全合规审查\"}}"
+  },
+  {
+    "instruction": "请给 wangwu@dev.io 发项目进度汇报的邮件",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"项目进度汇报\", \"content\": \"各位同事，附件是本月的项目进度报告，请大家查阅。如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "搜索：强化学习原理",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"强化学习原理\"}}"
+  },
+  {
+    "instruction": "9999 / 3 怎么算",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"9999 / 3\"}}"
+  },
+  {
+    "instruction": "我要预约一个会议，2026-07-16 15:00，关于团队建设",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-16\", \"time\": \"15:00\", \"topic\": \"团队建设\"}}"
+  },
+  {
+    "instruction": "给我讲个睡前故事",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "有没有大模型微调方法方面的资料？",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"大模型微调方法\"}}"
+  },
+  {
+    "instruction": "计算 365 * 24 等于多少",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"365 * 24\"}}"
+  },
+  {
+    "instruction": "看一下 A10293 是不是已签收",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}"
+  },
+  {
+    "instruction": "今天天气怎么样",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我搜自然语言处理综述",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"自然语言处理综述\"}}"
+  },
+  {
+    "instruction": "我想了解Docker 部署 Flask，帮我搜索一下",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 部署 Flask\"}}"
+  },
+  {
+    "instruction": "我要预约一个会议，2026-06-26 10:30，关于需求评审",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-26\", \"time\": \"10:30\", \"topic\": \"需求评审\"}}"
+  },
+  {
+    "instruction": "给 zhangsan@example.com 去邮件：请假申请",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"zhangsan@example.com\", \"subject\": \"请假申请\", \"content\": \"各位同事，附件是本月的项目进度报告，请大家查阅。如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "帮我发邮件，给zhangsan@example.com，说项目进度汇报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"zhangsan@example.com\", \"subject\": \"项目进度汇报\", \"content\": \"各位同事，附件是本月的项目进度报告，请大家查阅。如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "365 * 24 的结果是多少",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"365 * 24\"}}"
+  },
+  {
+    "instruction": "帮我给 support@service.com 发邮件，主题客户反馈汇总",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"客户反馈汇总\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "请帮我检索RESTful API 设计规范的相关信息",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"RESTful API 设计规范\"}}"
+  },
+  {
+    "instruction": "你能听见我说话吗",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "早上好",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我搜索一下大模型微调方法",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"大模型微调方法\"}}"
+  },
+  {
+    "instruction": "帮我算一下 1000000 / 1024",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1000000 / 1024\"}}"
+  },
+  {
+    "instruction": "算一下这个表达式：sqrt(144)",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"sqrt(144)\"}}"
+  },
+  {
+    "instruction": "计算 3*5+7",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"3 * 5 + 7\"}}"
+  },
+  {
+    "instruction": "能不能帮我搜一下时间序列预测方法",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"时间序列预测方法\"}}"
+  },
+  {
+    "instruction": "查订单：ORD-2024-001",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-001\"}}"
+  },
+  {
+    "instruction": "给 wangwu@dev.io 发一封关于周报的邮件",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"周报\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "定一个 2026-07-10 11:00 的需求评审会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-10\", \"time\": \"11:00\", \"topic\": \"需求评审\"}}"
+  },
+  {
+    "instruction": "帮我跟踪一下 G98765",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"G98765\"}}"
+  },
+  {
+    "instruction": "发邮件通知finance@corp.cn：系统升级通知",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"finance@corp.cn\", \"subject\": \"系统升级通知\", \"content\": \"您好，关于上次讨论的技术方案，我整理了新版本，请查看附件并提供反馈。\"}}"
+  },
+  {
+    "instruction": "怎么减肥",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "F12345 订单状态是什么",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"F12345\"}}"
+  },
+  {
+    "instruction": "新年是什么时候",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "怎么学微积分",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "怎么睡得好",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我跟踪一下 X20240315001",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"X20240315001\"}}"
+  },
+  {
+    "instruction": "算算 18.5 * 2",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"18.5 * 2\"}}"
+  },
+  {
+    "instruction": "人生的意义是什么",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "发邮件给 wangwu@dev.io，主题是活动通知",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"活动通知\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "有没有大模型微调方法方面的资料？",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"大模型微调方法\"}}"
+  },
+  {
+    "instruction": "帮我计算 sqrt(144) 的结果",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"sqrt(144)\"}}"
+  },
+  {
+    "instruction": "查一下 D45678 的配送进度",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"D45678\"}}"
+  },
+  {
+    "instruction": "定一个 2026-07-15 09:00 的架构设计讨论会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-15\", \"time\": \"09:00\", \"topic\": \"架构设计讨论\"}}"
+  },
+  {
+    "instruction": "帮我定个会议室，2026-07-02 14:30，讨论Sprint 回顾",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-02\", \"time\": \"14:30\", \"topic\": \"Sprint 回顾\"}}"
+  },
+  {
+    "instruction": "给我个鼓励",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "有件事要你帮忙",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请告诉我您需要什么帮助。\"}"
+  },
+  {
+    "instruction": "给 manager@team.org 发项目进度汇报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@team.org\", \"subject\": \"项目进度汇报\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "帮我看看 G98765 的物流",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"G98765\"}}"
+  },
+  {
+    "instruction": "天上有多少颗星星",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "搜索：Transformer 架构详解",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Transformer 架构详解\"}}"
+  },
+  {
+    "instruction": "帮我给 lisi@tech.cn 发邮件，主题技术方案 v2.0",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"lisi@tech.cn\", \"subject\": \"技术方案 v2.0\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "你可靠吗",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我在 2026-06-30 17:00 安排团队建设",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-30\", \"time\": \"17:00\", \"topic\": \"团队建设\"}}"
+  },
+  {
+    "instruction": "查订单：J22222",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"J22222\"}}"
+  },
+  {
+    "instruction": "预约 2026-07-09 的年度总结，时间14:30",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-09\", \"time\": \"14:30\", \"topic\": \"年度总结\"}}"
+  },
+  {
+    "instruction": "写封邮件发给ceo@startup.com，关于周报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"ceo@startup.com\", \"subject\": \"周报\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "给 ceo@startup.com 发系统升级通知",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"ceo@startup.com\", \"subject\": \"系统升级通知\", \"content\": \"各位同事，附件是本月的项目进度报告，请大家查阅。如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "给 zhangsan@example.com 发一封关于请假申请的邮件",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"zhangsan@example.com\", \"subject\": \"请假申请\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "查询 ORD-2024-0892 是否已完成",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-0892\"}}"
+  },
+  {
+    "instruction": "帮我看看 A10293 的物流",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}"
+  },
+  {
+    "instruction": "查订单：I11111",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"I11111\"}}"
+  },
+  {
+    "instruction": "帮我找一下时间序列预测方法相关的内容",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"时间序列预测方法\"}}"
+  },
+  {
+    "instruction": "定一个 2026-07-06 09:00 的架构设计讨论会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-06\", \"time\": \"09:00\", \"topic\": \"架构设计讨论\"}}"
+  },
+  {
+    "instruction": "什么叫人工智能",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "计算器算一下 7 * 8 * 9",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"7 * 8 * 9\"}}"
+  },
+  {
+    "instruction": "搜索文档：推荐系统算法",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"推荐系统算法\"}}"
+  },
+  {
+    "instruction": "有什么好吃的推荐",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "2026-07-12 帮我约个项目评审，16:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-12\", \"time\": \"16:00\", \"topic\": \"项目评审\"}}"
+  },
+  {
+    "instruction": "请计算 1024 % 128",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1024 % 128\"}}"
+  },
+  {
+    "instruction": "帮我搜强化学习原理",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"强化学习原理\"}}"
+  },
+  {
+    "instruction": "搜索：推荐系统算法",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"推荐系统算法\"}}"
+  },
+  {
+    "instruction": "在知识库里查CUDA 编程指南",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"CUDA 编程指南\"}}"
+  },
+  {
+    "instruction": "检索 强化学习原理",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"强化学习原理\"}}"
+  },
+  {
+    "instruction": "这个订单 J22222 发货了吗",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"J22222\"}}"
+  },
+  {
+    "instruction": "帮我发邮件，给support@service.com，说周报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"周报\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "18.5 * 2 给我算出来",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"18.5 * 2\"}}"
+  },
+  {
+    "instruction": "帮我起草邮件给 support@service.com，周报",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"周报\", \"content\": \"您好，关于上次讨论的技术方案，我整理了新版本，请查看附件并提供反馈。\"}}"
+  },
+  {
+    "instruction": "帮我搜索一下",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}"
+  },
+  {
+    "instruction": "查询 E56789 是否已完成",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"E56789\"}}"
+  },
+  {
+    "instruction": "帮我查一下订单",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "发邮件通知all@team.org：客户反馈汇总",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"all@team.org\", \"subject\": \"客户反馈汇总\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "帮我搜PyTorch 基础",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"PyTorch 基础\"}}"
+  },
+  {
+    "instruction": "帮我给 support@service.com 发邮件，主题系统升级通知",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"系统升级通知\", \"content\": \"各位同事，附件是本月的项目进度报告，请大家查阅。如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "计算器算一下 256 + 512",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"256 + 512\"}}"
+  },
+  {
+    "instruction": "帮我预约 2026-07-10 15:30 的会议，主题是季度规划",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-10\", \"time\": \"15:30\", \"topic\": \"季度规划\"}}"
+  },
+  {
+    "instruction": "你能帮我干什么",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我查一下订单 ORD-2024-001 的状态",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-001\"}}"
+  },
+  {
+    "instruction": "在 2026-07-01 17:00 帮我安排一场代码审查的会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"17:00\", \"topic\": \"代码审查\"}}"
+  },
+  {
+    "instruction": "在吗",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你的生日是哪天",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "预约会议：2026-06-19 11:00，性能优化讨论",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"11:00\", \"topic\": \"性能优化讨论\"}}"
+  },
+  {
+    "instruction": "帮我查查Python 多线程教程",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python 多线程教程\"}}"
+  },
+  {
+    "instruction": "2026-06-23 帮我约个性能优化讨论，17:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-23\", \"time\": \"17:00\", \"topic\": \"性能优化讨论\"}}"
+  },
+  {
+    "instruction": "帮我计算 256 + 512 的结果",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"256 + 512\"}}"
+  },
+  {
+    "instruction": "给 hr@corp.cn 发一封关于周报的邮件",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"周报\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "查一下关于大模型微调方法的资料",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"大模型微调方法\"}}"
+  },
+  {
+    "instruction": "这个订单 H34567 发货了吗",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"H34567\"}}"
+  },
+  {
+    "instruction": "OK",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "写封邮件发给all@team.org，关于系统升级通知",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"all@team.org\", \"subject\": \"系统升级通知\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "什么是深度学习",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "SO-240315-001 什么时候能到",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"SO-240315-001\"}}"
+  },
+  {
+    "instruction": "帮我约架构设计讨论，2026-06-1809:30",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-18\", \"time\": \"09:30\", \"topic\": \"架构设计讨论\"}}"
+  },
+  {
+    "instruction": "1024 除以 8 是多少",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1024 / 8\"}}"
+  },
+  {
+    "instruction": "我买的那个东西发货了吗",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "给 wangwu@dev.io 去邮件：会议纪要",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"会议纪要\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "写封邮件发给admin@company.com，关于预算审批",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"预算审批\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "向 hr@corp.cn 发送周报邮件",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"周报\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "中午了有点困",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "请计算 9999 / 3",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"9999 / 3\"}}"
+  },
+  {
+    "instruction": "帮我创建季度规划会议，2026-06-1816:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-18\", \"time\": \"16:00\", \"topic\": \"季度规划\"}}"
+  },
+  {
+    "instruction": "有没有Redis 缓存策略方面的资料？",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Redis 缓存策略\"}}"
+  },
+  {
+    "instruction": "你有什么功能",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "Python 多线程怎么用",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python 多线程\"}}"
+  },
+  {
+    "instruction": "你是 AI 吗",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "Python 是什么",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我查查 H34567 卖家发货了没",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"H34567\"}}"
+  },
+  {
+    "instruction": "帮我求解 3.14 * 10 * 10",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"3.14 * 10 * 10\"}}"
+  },
+  {
+    "instruction": "搜索文档：深度学习入门",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"深度学习入门\"}}"
+  },
+  {
+    "instruction": "如何理财",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "计算：15 + 28 / 2",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"15 + 28 / 2\"}}"
+  },
+  {
+    "instruction": "请帮我发送预算审批到 ceo@startup.com",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"ceo@startup.com\", \"subject\": \"预算审批\", \"content\": \"各位同事，附件是本月的项目进度报告，请大家查阅。如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "给我讲个笑话",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我约个需求评审的会",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和时间。\"}"
+  },
+  {
+    "instruction": "我要预约一个会议，2026-06-30 14:00，关于产品发布会",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-30\", \"time\": \"14:00\", \"topic\": \"产品发布会\"}}"
+  },
+  {
+    "instruction": "帮我看看 I11111 的物流",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"I11111\"}}"
+  },
+  {
+    "instruction": "帮我约客户演示，2026-07-0609:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-06\", \"time\": \"09:00\", \"topic\": \"客户演示\"}}"
+  },
+  {
+    "instruction": "检索知识库",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "帮我起草邮件给 lisi@tech.cn，请假申请",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"lisi@tech.cn\", \"subject\": \"请假申请\", \"content\": \"各位同事，附件是本月的项目进度报告，请大家查阅。如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "帮我算一下 1024 % 128",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1024 % 128\"}}"
+  },
+  {
+    "instruction": "帮我查一下订单 G98765 的状态",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"G98765\"}}"
+  },
+  {
+    "instruction": "PO-20240315-0056 什么时候能到",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"PO-20240315-0056\"}}"
+  },
+  {
+    "instruction": "推荐一部电影",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "请帮我发送客户反馈汇总到 manager@team.org",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@team.org\", \"subject\": \"客户反馈汇总\", \"content\": \"您好，系统将于今晚 22:00 进行例行升级维护，预计持续 2 小时，期间服务可能会短暂中断，请提前做好安排。\"}}"
+  },
+  {
+    "instruction": "用 calculator 算东西",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "帮我计算 256 >> 2 的结果",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"256 >> 2\"}}"
+  },
+  {
+    "instruction": "帮我算一下 256 + 512",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"256 + 512\"}}"
+  },
+  {
+    "instruction": "麻烦给 finance@corp.cn 发个邮件，客户反馈汇总",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"finance@corp.cn\", \"subject\": \"客户反馈汇总\", \"content\": \"您好，关于上次讨论的技术方案，我整理了新版本，请查看附件并提供反馈。\"}}"
+  },
+  {
+    "instruction": "在知识库里查Redis 缓存策略",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Redis 缓存策略\"}}"
+  },
+  {
+    "instruction": "请讲个故事",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "在 2026-07-03 15:00 帮我安排一场预算评审的会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-03\", \"time\": \"15:00\", \"topic\": \"预算评审\"}}"
+  },
+  {
+    "instruction": "搜索文档：Linux 常用命令",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Linux 常用命令\"}}"
+  },
+  {
+    "instruction": "把 1000 - 345 算出来",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1000 - 345\"}}"
+  },
+  {
+    "instruction": "帮我算一下 9999 / 3",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"9999 / 3\"}}"
+  },
+  {
+    "instruction": "meeting 明天项目讨论",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-18\", \"time\": \"10:00\", \"topic\": \"项目讨论\"}}"
+  },
+  {
+    "instruction": "订单 I11111 到哪了",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"I11111\"}}"
+  },
+  {
+    "instruction": "这个订单 H34567 发货了吗",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"H34567\"}}"
+  },
+  {
+    "instruction": "给 hr@corp.cn 去邮件：预算审批",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"预算审批\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "查询 B20456 是否已完成",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}"
+  },
+  {
+    "instruction": "帮我约代码审查，2026-06-2614:00",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-26\", \"time\": \"14:00\", \"topic\": \"代码审查\"}}"
+  },
+  {
+    "instruction": "物流跟踪",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "帮我查查自然语言处理综述",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"自然语言处理综述\"}}"
+  },
+  {
+    "instruction": "帮我搜索一下推荐系统算法",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"推荐系统算法\"}}"
+  },
+  {
+    "instruction": "定一个 2026-07-04 16:30 的预算评审会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-04\", \"time\": \"16:30\", \"topic\": \"预算评审\"}}"
+  },
+  {
+    "instruction": "谢谢你的帮助",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我找一下RESTful API 设计规范相关的内容",
+    "input": "",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"RESTful API 设计规范\"}}"
+  },
+  {
+    "instruction": "我想查订单但是不太记得单号了",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"您可以尝试在订单列表里查找，或者提供一些订单的关键信息（如购买时间、商品名称），我来帮您匹配。\"}"
+  },
+  {
+    "instruction": "在 2026-07-05 15:30 帮我安排一场客户演示的会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-05\", \"time\": \"15:30\", \"topic\": \"客户演示\"}}"
+  },
+  {
+    "instruction": "给 hr@corp.cn 发会议纪要",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"会议纪要\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "请给 admin@company.com 发预算审批的邮件",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"预算审批\", \"content\": \"尊敬的用户，您的账户将于下个月到期，请及时续费以保证服务不中断。\"}}"
+  },
+  {
+    "instruction": "在 2026-06-26 10:30 帮我安排一场代码审查的会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-26\", \"time\": \"10:30\", \"topic\": \"代码审查\"}}"
+  },
+  {
+    "instruction": "算一下这个表达式：1024 / 8",
+    "input": "",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1024 / 8\"}}"
+  },
+  {
+    "instruction": "约个周五的会",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议的具体日期（YYYY-MM-DD 格式）、时间和主题。\"}"
+  },
+  {
+    "instruction": "帮我写邮件给 hr@corp.cn，会议纪要",
+    "input": "",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"会议纪要\", \"content\": \"通知：本周五下午 3 点在公司大会议室召开全员大会，请准时参加。\"}}"
+  },
+  {
+    "instruction": "我想知道 I11111 的订单情况",
+    "input": "",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"I11111\"}}"
+  },
+  {
+    "instruction": "我要预约一个会议，2026-07-11 16:00，关于架构设计讨论",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-11\", \"time\": \"16:00\", \"topic\": \"架构设计讨论\"}}"
+  },
+  {
+    "instruction": "请问怎么联系客服",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "在 2026-06-25 11:00 帮我安排一场新员工入职培训的会议",
+    "input": "",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-25\", \"time\": \"11:00\", \"topic\": \"新员工入职培训\"}}"
+  },
+  {
+    "instruction": "怎么才能变聪明",
+    "input": "",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  }
+]
