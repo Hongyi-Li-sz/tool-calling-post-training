@@ -1,0 +1,88 @@
+{
+  "stats": [
+    {
+      "total": 200,
+      "json_valid": 160,
+      "json_valid_rate": 80.0,
+      "tool_correct": 66,
+      "tool_accuracy": 33.0,
+      "argument_exact_match": 36,
+      "argument_exact_match_rate": 18.0,
+      "clarification_accuracy": 0.0,
+      "clarify_total": 45,
+      "clarify_correct": 0,
+      "over_clarification_rate": 0.0,
+      "over_clarify_count": 0,
+      "unnecessary_tool_call_rate": 100.0,
+      "unnecessary_tool_call_count": 80,
+      "fully_correct": 36,
+      "fully_correct_rate": 18.0,
+      "bad_cases": 164,
+      "error_counts": {
+        "wrong_param_value": 28,
+        "wrong_tool": 14,
+        "missing_param": 2,
+        "json_parse_error": 40,
+        "should_reject": 41,
+        "should_clarify": 39
+      },
+      "model": "base"
+    },
+    {
+      "total": 200,
+      "json_valid": 199,
+      "json_valid_rate": 99.5,
+      "tool_correct": 115,
+      "tool_accuracy": 57.5,
+      "argument_exact_match": 54,
+      "argument_exact_match_rate": 27.0,
+      "clarification_accuracy": 13.3,
+      "clarify_total": 45,
+      "clarify_correct": 6,
+      "over_clarification_rate": 84.0,
+      "over_clarify_count": 21,
+      "unnecessary_tool_call_rate": 72.8,
+      "unnecessary_tool_call_count": 83,
+      "fully_correct": 64,
+      "fully_correct_rate": 32.0,
+      "bad_cases": 136,
+      "error_counts": {
+        "wrong_param_value": 30,
+        "wrong_tool": 1,
+        "unnecessary_clarify": 21,
+        "should_reject": 44,
+        "should_clarify": 39,
+        "json_parse_error": 1
+      },
+      "model": "sft"
+    },
+    {
+      "total": 200,
+      "json_valid": 191,
+      "json_valid_rate": 95.5,
+      "tool_correct": 111,
+      "tool_accuracy": 55.5,
+      "argument_exact_match": 45,
+      "argument_exact_match_rate": 22.5,
+      "clarification_accuracy": 11.1,
+      "clarify_total": 45,
+      "clarify_correct": 5,
+      "over_clarification_rate": 96.3,
+      "over_clarify_count": 26,
+      "unnecessary_tool_call_rate": 70.6,
+      "unnecessary_tool_call_count": 77,
+      "fully_correct": 51,
+      "fully_correct_rate": 25.5,
+      "bad_cases": 149,
+      "error_counts": {
+        "wrong_param_value": 32,
+        "json_parse_error": 11,
+        "wrong_tool": 3,
+        "unnecessary_clarify": 26,
+        "should_reject": 39,
+        "should_clarify": 38
+      },
+      "model": "dpo"
+    }
+  ]
+}
