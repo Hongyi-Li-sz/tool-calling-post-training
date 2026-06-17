@@ -41,12 +41,12 @@
     },
     {
       "query": "帮我预约明天下午3点的项目评审会议",
-      "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2023-04-15\", \"time\": \"13:00\", \"topic\": \"项目评审\"}}",
+      "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2023-04-07\", \"time\": \"13:00\", \"topic\": \"项目评审\"}}",
       "json_valid": true,
       "parsed": {
         "tool": "book_meeting",
         "arguments": {
-          "date": "2023-04-15",
+          "date": "2023-04-07",
           "time": "13:00",
           "topic": "项目评审"
         }
@@ -54,14 +54,14 @@
     },
     {
       "query": "给 admin@company.com 发一封关于系统升级的通知邮件",
-      "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"系统升级通知\", \"content\": \"尊敬的管理员，我们很高兴地宣布我们的系统即将进行升级。请于2023年10月1日之前将您的账号信息更新至最新版本。感谢您的配合！\"}}",
+      "response": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"系统升级通知\", \"content\": \"尊敬的管理员，我们很高兴地宣布我们的系统即将进行升级。这将有助于提高系统的稳定性和性能。请在收到此邮件后立即检查您的系统以确保一切正常运行。如果您有任何疑问，请随时联系我。感谢您对我们的支持！\"}}",
       "json_valid": true,
       "parsed": {
         "tool": "send_email",
         "arguments": {
           "recipient": "admin@company.com",
           "subject": "系统升级通知",
-          "content": "尊敬的管理员，我们很高兴地宣布我们的系统即将进行升级。请于2023年10月1日之前将您的账号信息更新至最新版本。感谢您的配合！"
+          "content": "尊敬的管理员，我们很高兴地宣布我们的系统即将进行升级。这将有助于提高系统的稳定性和性能。请在收到此邮件后立即检查您的系统以确保一切正常运行。如果您有任何疑问，请随时联系我。感谢您对我们的支持！"
         }
       }
     },
@@ -148,13 +148,13 @@
     },
     {
       "query": "帮我预约明天下午3点的项目评审会议",
-      "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-18\", \"time\": \"15:30\", \"topic\": \"项目评审\"}}",
+      "response": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-18\", \"time\": \"15:00\", \"topic\": \"项目评审\"}}",
       "json_valid": true,
       "parsed": {
         "tool": "book_meeting",
         "arguments": {
           "date": "2026-07-18",
-          "time": "15:30",
+          "time": "15:00",
           "topic": "项目评审"
         }
       }
@@ -198,12 +198,12 @@
     },
     {
       "query": "今天是几号",
-      "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"2024-01-18-ABC123\"}}",
+      "response": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"今天的日期\"}}",
       "json_valid": true,
       "parsed": {
         "tool": "query_order",
         "arguments": {
-          "order_id": "2024-01-18-ABC123"
+          "order_id": "今天的日期"
         }
       }
     }
