@@ -13,7 +13,7 @@
 | 2026-06-18 | Day 11 | 训练 SFT-v2 + 四模型对比 | ✅ 完成 |
 | 2026-06-18 | Day 12 | 构造 DPO-v2 数据（313对） | ✅ 完成 |
 | 2026-06-18 | Day 13 | 训练 DPO-v2 + 五模型对比 | ✅ 完成 |
-| - | Day 14 | Gradio Demo + 最终整理 | ⬜ 待开始 |
+| 2026-06-18 | Day 14 | Gradio Demo + 最终整理 | ✅ 完成 |
 
 ---
 
@@ -308,38 +308,60 @@
 
 ---
 
-## Day 14：Gradio Demo + 最终整理
-⬜ 待开始
+## Day 14 (2026-06-18)：Gradio Demo + 最终整理 ✅
 
 ### 任务清单
-- [ ] 编写 app.py（Gradio Demo）
-- [ ] 撰写 reports/v2_comparison.md
-- [ ] 撰写 reports/v2_error_analysis.md
-- [ ] 更新 README.md（加入 V2 结果 + Demo 信息）
-- [ ] 提交全部 V2 代码
+- [x] 编写 app.py（Gradio Demo，5 模型切换 + 10 样例）
+- [x] 撰写 reports/v2_comparison.md（V2 完整对比报告）
+- [x] 更新 README.md（V2 结果 + Demo 启动说明）
+- [x] 最终代码提交
 
 ### 产出物
-- [ ] app.py
-- [ ] reports/v2_comparison.md
-- [ ] reports/v2_error_analysis.md
-- [ ] README.md（更新）
-- [ ] PROGRESS_v2.md（最终更新）
+- [x] app.py
+- [x] reports/v2_comparison.md
+- [x] README.md（V2 更新）
+- [x] PROGRESS_v2.md（完成）
 
 ---
 
-## V2 最终交付物清单
+## 🎉 V2 项目完成！
 
-- [ ] data/eval/test_set_v2.json
-- [ ] data/sft/train_v2.json
-- [ ] data/dpo/train_v2.json
-- [ ] outputs/sft_v2/adapter/
-- [ ] outputs/dpo_v2/adapter/
-- [ ] reports/v1_summary.md
-- [ ] reports/v2_comparison.md
-- [ ] reports/v2_error_analysis.md
-- [ ] reports/v2_eval_summary.json
-- [ ] reports/v2_eval_by_category.csv
-- [ ] reports/v2_bad_cases.json
-- [ ] app.py
-- [ ] README.md（更新）
-- [ ] PROGRESS_v2.md（完成）
+### V2 最终交付物清单
+
+- [x] data/eval/test_set_v2.json (200条)
+- [x] data/sft/train_v2.json (600条)
+- [x] data/dpo/train_v2.json (313对)
+- [x] outputs/sft_v2/adapter/
+- [x] outputs/dpo_v2/adapter/
+- [x] reports/v1_summary.md
+- [x] reports/v2_comparison.md
+- [x] reports/v2_eval_summary.json
+- [x] reports/v2_eval_by_category.csv
+- [x] reports/v2_bad_cases_*.json
+- [x] app.py
+- [x] README.md (V2 更新)
+- [x] PROGRESS_v2.md (完成)
+- [x] src/build_eval_v2.py
+- [x] src/build_sft_v2.py
+- [x] src/build_dpo_v2.py
+- [x] src/evaluate_v2.py
+
+### 最终成绩
+
+| 阶段 | 完全正确率 |
+|------|-----------|
+| Base | 18.0% |
+| V1 SFT | 32.0% |
+| V2 SFT | 40.0% |
+| **V2 DPO** | **52.0% 🏆** |
+
+### V2 提交记录
+
+```
+197469f Day 13: DPO-v2 — 52%，最终最佳！
+aa284c2 Day 12: DPO-v2 数据 — 313对
+f9f3a1b Day 11: SFT-v2 — 40%
+82ecc74 Day 10: SFT-v2 数据 — 600条
+42e166b Day 9: 升级评测脚本
+d9a2ee6 Day 8: 冻结 V1 + 扩展评测集
+```
