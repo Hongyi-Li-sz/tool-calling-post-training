@@ -1,0 +1,2402 @@
+[
+  {
+    "instruction": "安排一个会议",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "如何提高代码质量",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "我没有收到系统升级的邮件通知",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "谢谢",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "计算：sqrt(144)",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"sqrt(144)\"}}"
+  },
+  {
+    "instruction": "定个年度总结的会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和时间。\"}"
+  },
+  {
+    "instruction": "买的东西收到了但是少了一件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "找一下Redis 缓存策略的教程",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Redis 缓存策略\"}}"
+  },
+  {
+    "instruction": "帮我看看这个搜索结果对不对",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "请帮我检索自然语言处理综述",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"自然语言处理综述\"}}"
+  },
+  {
+    "instruction": "写一段祝福语",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "吃了吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "找点东西",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "发个通知邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "介绍一下你自己",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "非常感谢",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我邮件联系",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "查订单 D45678 是否已完成",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"D45678\"}}"
+  },
+  {
+    "instruction": "给我讲个故事",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我润色这段文字",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "给老板发个汇报邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人的完整邮箱地址、汇报主题和内容。\"}"
+  },
+  {
+    "instruction": "邮件中的链接安全吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "预约 2026-07-13 的项目评审，时间15:30",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-13\", \"time\": \"15:30\", \"topic\": \"项目评审\"}}"
+  },
+  {
+    "instruction": "给 support@service.com 发关于预算审批的邮件",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"预算审批\", \"content\": \"如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "2024年是不是闰年",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "预约 2026-06-29 的项目评审，时间15:00",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-29\", \"time\": \"15:00\", \"topic\": \"项目评审\"}}"
+  },
+  {
+    "instruction": "帮我取个名字",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮忙计算一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "看下 G98765 这个单",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"G98765\"}}"
+  },
+  {
+    "instruction": "给 manager@team.org 去邮件：项目进度汇报",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@team.org\", \"subject\": \"项目进度汇报\", \"content\": \"详见正文内容。\"}}"
+  },
+  {
+    "instruction": "怎么准备面试",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "我不太会算这个账",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "求解",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "帮我约个需求评审",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和时间。\"}"
+  },
+  {
+    "instruction": "你喜欢什么颜色",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "讲个笑话",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你能上网吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "为什么要学数学",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "推荐一个编程入门路线",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我约 2026-07-08 09:30 代码审查",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-08\", \"time\": \"09:30\", \"topic\": \"代码审查\"}}"
+  },
+  {
+    "instruction": "解释一下牛顿第二定律",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "邮件通知全组",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "帮我编个谜语",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "现在是上午还是下午",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查一下关于Redis 缓存策略的资料",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Redis 缓存策略\"}}"
+  },
+  {
+    "instruction": "那个表达式帮我算算",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "看看我的快递",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "帮我核对一下这些数字",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮忙搜一搜",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}"
+  },
+  {
+    "instruction": "这封邮件是诈骗邮件吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "这个月还有多少天",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "1024 / 8 帮我算出来",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1024 / 8\"}}"
+  },
+  {
+    "instruction": "看下 G98765 这个单",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"G98765\"}}"
+  },
+  {
+    "instruction": "帮我群发邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "昨天那个会议开了三个小时",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "为什么天空是蓝色的",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "数学计算",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "计算错误怎么办",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "用一句话解释量子计算",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "搜一下Python 多线程教程",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python 多线程教程\"}}"
+  },
+  {
+    "instruction": "推荐一本书",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "算算 256 + 512",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"256 + 512\"}}"
+  },
+  {
+    "instruction": "什么是区块链",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查物流",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "用计算器算完帮我发结果给经理",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"__any__\"}}"
+  },
+  {
+    "instruction": "明白了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我办个事",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "帮我找个Python教程，算了还是先帮我算 50*30 吧",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"50 * 30\"}}"
+  },
+  {
+    "instruction": "帮我计算 (100 - 25) * 3",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"(100 - 25) * 3\"}}"
+  },
+  {
+    "instruction": "写一句广告语",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我查查资料",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "帮我安排团队建设",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和时间。\"}"
+  },
+  {
+    "instruction": "订单编号的格式一般是怎样的",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "约个讨论会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "为什么我的订单被拒绝了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "什么是微积分",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我写一首诗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "做一道计算题",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "帮我算一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "推荐一个好用的笔记软件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "约个会讨论安全问题",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和时间。\"}"
+  },
+  {
+    "instruction": "追踪一下 D45678",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"D45678\"}}"
+  },
+  {
+    "instruction": "通知发送一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、通知主题和内容。\"}"
+  },
+  {
+    "instruction": "帮我查查 B20456",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}"
+  },
+  {
+    "instruction": "查文档：Nginx 反向代理",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Nginx 反向代理\"}}"
+  },
+  {
+    "instruction": "发送邮件到 zhangsan@example.com，会议纪要",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"zhangsan@example.com\", \"subject\": \"会议纪要\", \"content\": \"请于周五前回复。\"}}"
+  },
+  {
+    "instruction": "做一道计算题",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "看下我的订单",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "上次开会讨论的方案你还记得吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "订单状态查询",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "有哪些好用的学习资源",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查一下关于自然语言处理综述的资料",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"自然语言处理综述\"}}"
+  },
+  {
+    "instruction": "写封邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "怎么网购",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "文档搜索",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "算个数",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "群发邮件的技巧是什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你能看到我的邮件吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "写一段工作总结",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "怎么学好英语",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "怎么提高记忆力",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我搜索RESTful API，顺便问一下你好吗",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"RESTful API\"}}"
+  },
+  {
+    "instruction": "在 2026-06-20 10:30 安排客户演示",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-20\", \"time\": \"10:30\", \"topic\": \"客户演示\"}}"
+  },
+  {
+    "instruction": "中午吃什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "有什么好的计算工具推荐",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "我们下周再约时间吧",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "物流跟踪",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "北京在哪里",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "回复邮件时要注意什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "算个数给我",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "帮我定个会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "API是什么意思",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你是谁",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "用比喻解释一下微服务",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "17 * 19 帮我算出来",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"17 * 19\"}}"
+  },
+  {
+    "instruction": "向 manager@team.org 发送预算审批邮件",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@team.org\", \"subject\": \"预算审批\", \"content\": \"请查收附件。\"}}"
+  },
+  {
+    "instruction": "在 2026-07-18 15:30 安排性能优化讨论",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-18\", \"time\": \"15:30\", \"topic\": \"性能优化讨论\"}}"
+  },
+  {
+    "instruction": "HTTP和HTTPS有什么区别",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "这个计算结果靠谱吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "发一封关于请假的通知",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱和请假内容。\"}"
+  },
+  {
+    "instruction": "算算这个",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "地球绕太阳一圈多久",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我看看 ORD-2024-0892 的物流",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-0892\"}}"
+  },
+  {
+    "instruction": "安排下周的Sprint回顾",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供具体日期和时间。\"}"
+  },
+  {
+    "instruction": "帮我算个东西",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "下周一上午十点约预算评审",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供具体日期（YYYY-MM-DD格式）。\"}"
+  },
+  {
+    "instruction": "查文档",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "订单状态查询",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "帮我给经理发邮件汇报工作，谢谢",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"__any__\", \"subject\": \"工作汇报\", \"content\": \"__any__\"}}"
+  },
+  {
+    "instruction": "你们订单系统是不是出bug了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我处理一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "查件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "知道了谢谢",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我算一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "这封邮件怎么回复比较好",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我算一下 256 + 512",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"256 + 512\"}}"
+  },
+  {
+    "instruction": "你怎么看人类",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "写一个请假条模板",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我计算",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "明天星期几",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "明天上午开会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议主题和具体时间。\"}"
+  },
+  {
+    "instruction": "你好",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我给 ceo@startup.com 发周报",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"ceo@startup.com\", \"subject\": \"周报\", \"content\": \"请查收附件。\"}}"
+  },
+  {
+    "instruction": "帮我检索内容",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "你的梦想是什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "怎么早睡早起",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你说我该不该参加那个培训",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "我今天有点累，不想开会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "约个会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "写一段自我介绍",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮忙处理个事情",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "订个会议室然后发邮件告诉大家",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"__any__\", \"time\": \"__any__\", \"topic\": \"__any__\"}}"
+  },
+  {
+    "instruction": "春节是哪天",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "搜搜看",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "幸福是什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "我需要你帮我做件事",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "查订单状态",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "搜不到我想要的东西怎么办",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "订单确认后多久能改地址",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "发邮件通知团队，顺便帮我预约评审会",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@team.org\", \"subject\": \"通知\", \"content\": \"请查看通知内容。\"}}"
+  },
+  {
+    "instruction": "预定 2026-07-06 09:00 的年度总结",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-06\", \"time\": \"09:00\", \"topic\": \"年度总结\"}}"
+  },
+  {
+    "instruction": "你能做什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "有没有相关文档",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "搜点东西",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "看看有没有Linux 常用命令的文档",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Linux 常用命令\"}}"
+  },
+  {
+    "instruction": "OK",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "找点东西",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "订单物流信息不更新怎么办",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "搜索：Redis 缓存策略",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Redis 缓存策略\"}}"
+  },
+  {
+    "instruction": "如何保持健康",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我计算 2 ** 10",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"2 ** 10\"}}"
+  },
+  {
+    "instruction": "订单怎么样了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "周末愉快",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查查物流信息",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "你用的是哪个模型",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "我不确定明天能不能参加会议",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "发送邮件到 manager@team.org，预算审批",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@team.org\", \"subject\": \"预算审批\", \"content\": \"以上内容供参考。\"}}"
+  },
+  {
+    "instruction": "帮我给 manager@team.org 发预算审批",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@team.org\", \"subject\": \"预算审批\", \"content\": \"请查收附件。\"}}"
+  },
+  {
+    "instruction": "我昨天发了一封邮件给经理但没回复",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "有没有外星人",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "请问退货流程是什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "算一下 7 * 8 * 9",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"7 * 8 * 9\"}}"
+  },
+  {
+    "instruction": "最近怎么样",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "算个数",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "邮件系统是不是挂了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "那个表达式帮我算算",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "哈喽",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "好久不见",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "在 2026-06-23 14:00 安排技术方案讨论",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-23\", \"time\": \"14:00\", \"topic\": \"技术方案讨论\"}}"
+  },
+  {
+    "instruction": "用简单的话解释什么是云计算",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "在知识库里查Docker 部署",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 部署\"}}"
+  },
+  {
+    "instruction": "帮我邮件发送周报",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱和具体周报内容。\"}"
+  },
+  {
+    "instruction": "你会写代码吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "Python是什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "搜索功能用一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "如何做好时间管理",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我约 2026-06-24 15:00 项目评审",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-24\", \"time\": \"15:00\", \"topic\": \"项目评审\"}}"
+  },
+  {
+    "instruction": "计算器",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "这个订单我能享受到优惠吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我求值",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "帮我查个东西",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "约个时间讨论技术方案",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间。\"}"
+  },
+  {
+    "instruction": "我的快递呢",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "算算 7 * 8 * 9",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"7 * 8 * 9\"}}"
+  },
+  {
+    "instruction": "晚上好",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "比特币是什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "找一下资料",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "怎么用正则表达式搜索",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "安排个技术分享会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和具体主题。\"}"
+  },
+  {
+    "instruction": "帮我给 manager@team.org 发客户反馈汇总",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@team.org\", \"subject\": \"客户反馈汇总\", \"content\": \"请查收附件。\"}}"
+  },
+  {
+    "instruction": "明天会下雨吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我搜索一下Python 多线程教程",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python 多线程教程\"}}"
+  },
+  {
+    "instruction": "帮我做数学题",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "怎么做饭",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "搜索引擎的原理是什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "能不能帮我看看这封邮件是什么意思",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "有件事要你帮忙",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "给我查",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "查订单 ORD-2024-001 是否已完成",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-001\"}}"
+  },
+  {
+    "instruction": "怎么学编程",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "为什么支付成功但订单没生成",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "追踪一下 D45678",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"D45678\"}}"
+  },
+  {
+    "instruction": "帮我看看这个是不是正品",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "我需要你给我一些信息",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "请帮我检索推荐系统算法",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"推荐系统算法\"}}"
+  },
+  {
+    "instruction": "帮我查点东西，具体什么我还没想好",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请告诉我您想查什么内容。\"}"
+  },
+  {
+    "instruction": "88 / 4 + 6 的结果是多少",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"88 / 4 + 6\"}}"
+  },
+  {
+    "instruction": "我邮箱密码忘了怎么办",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "谢谢你的帮助",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "发个邮件通知",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "怎么选择编程语言",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我查一下订单 D45678 的状态",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"D45678\"}}"
+  },
+  {
+    "instruction": "这个项目什么时候能结束",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我在知识库里找找",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "包裹查一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "邮件告知一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "在 2026-07-09 10:00 安排年度总结",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-09\", \"time\": \"10:00\", \"topic\": \"年度总结\"}}"
+  },
+  {
+    "instruction": "这个订单能不能取消",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "搜索太慢了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "节日快乐",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "下个月我准备休假",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你能识别图片吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我搜索一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "帮我评价一下最近买的东西",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我约个代码审查的会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和时间。\"}"
+  },
+  {
+    "instruction": "帮我邮件回复一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、回复主题和内容。\"}"
+  },
+  {
+    "instruction": "帮我查订单",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "帮我预定会议室",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "查订单：PO-20240315-0056",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"PO-20240315-0056\"}}"
+  },
+  {
+    "instruction": "检索知识库",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "辛苦了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "给客户发通知",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱和通知内容。\"}"
+  },
+  {
+    "instruction": "请介绍一下自己",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "求解数学题",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "这个关键词搜不到结果",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我给 zhangsan@example.com 发活动通知",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"zhangsan@example.com\", \"subject\": \"活动通知\", \"content\": \"详见正文内容。\"}}"
+  },
+  {
+    "instruction": "我的订单到哪了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "帮我约 2026-07-08 15:00 预算评审",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-08\", \"time\": \"15:00\", \"topic\": \"预算评审\"}}"
+  },
+  {
+    "instruction": "帮我做数学题",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "帮我追踪订单",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "端午节是哪天",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "给团队发个通知",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、通知主题和内容。\"}"
+  },
+  {
+    "instruction": "帮我查查Linux 常用命令",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Linux 常用命令\"}}"
+  },
+  {
+    "instruction": "新年好",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "计算一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "这个订单号看起来像 A10293，但我不是要查询它",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "邮件发给合作伙伴",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人的完整邮箱地址、主题和内容。\"}"
+  },
+  {
+    "instruction": "发邮件给 ceo@startup.com，主题是客户反馈汇总",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"ceo@startup.com\", \"subject\": \"客户反馈汇总\", \"content\": \"详见正文内容。\"}}"
+  },
+  {
+    "instruction": "货到付款的订单怎么操作",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "人工智能和机器学习有什么区别",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我算一下 9999 / 3",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"9999 / 3\"}}"
+  },
+  {
+    "instruction": "发邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "帮我给经理发个邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人的完整邮箱地址、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "订单 B20456 我已经收到了，谢谢",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我预约 2026-06-21 15:00 的Sprint 回顾会议",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-21\", \"time\": \"15:00\", \"topic\": \"Sprint 回顾\"}}"
+  },
+  {
+    "instruction": "帮我找一下设计模式入门",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"设计模式入门\"}}"
+  },
+  {
+    "instruction": "我的订单怎么总是延迟",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查一下订单 B20456 的同时帮我算一下 100+200",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}"
+  },
+  {
+    "instruction": "邮箱快满了怎么办",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "88 / 4 + 6 帮我算出来",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"88 / 4 + 6\"}}"
+  },
+  {
+    "instruction": "算一道题",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "给 support@service.com 去邮件：预算审批",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"预算审批\", \"content\": \"以上内容供参考。\"}}"
+  },
+  {
+    "instruction": "有没有简单的方法算这个",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "快递到哪了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "翻译Hello World到中文",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "我想搜个东西，不过可能不需要工具",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您要搜索什么内容？\"}"
+  },
+  {
+    "instruction": "我不确定要不要用工具，帮我看看怎么搜东西",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您想搜索什么？我可以帮您在知识库中检索。\"}"
+  },
+  {
+    "instruction": "怎么用Excel做计算",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "有没有相关文档",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "用订单号能查到买家信息吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "怎么撤回已经发送的邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你有感情吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我定个需求沟通会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和时间。\"}"
+  },
+  {
+    "instruction": "去年这个时候我们还在讨论方案呢",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "计算一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "帮我做两件事，但我先想想第一件是什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请告诉我您具体需要什么帮助。\"}"
+  },
+  {
+    "instruction": "现在几点了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我定个下周的会议室",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "宇宙有多大",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "请查收附件中的报告",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我操作一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "帮我安排下周五的会议",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供具体日期（YYYY-MM-DD格式）、时间和会议主题。\"}"
+  },
+  {
+    "instruction": "能不能教我算这个",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "周末有什么安排吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "上次买的那个东西质量不行",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "算算",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "订单超过多长时间不能退款",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我发封邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "搜一下那个",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "解释一下梯度下降",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "检索 推荐系统算法",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"推荐系统算法\"}}"
+  },
+  {
+    "instruction": "帮我预约会议讨论项目进度",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和时间。\"}"
+  },
+  {
+    "instruction": "预约一个1v1沟通",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供日期、时间和参与人信息。\"}"
+  },
+  {
+    "instruction": "如何提高效率",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "安排会议讨论一下新功能",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和时间。\"}"
+  },
+  {
+    "instruction": "2 ** 10 的结果是多少",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"2 ** 10\"}}"
+  },
+  {
+    "instruction": "帮我在文档里找",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}"
+  },
+  {
+    "instruction": "什么是成功",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "邮件附件大小有限制吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我群发邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "计算题",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "查查物流信息",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "算一下这个月花了多少钱，顺便问有什么省钱技巧",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"__any__\"}}"
+  },
+  {
+    "instruction": "最大的海洋是哪个",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我查查 C37890",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"C37890\"}}"
+  },
+  {
+    "instruction": "hello",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "算一下 2 ** 10",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"2 ** 10\"}}"
+  },
+  {
+    "instruction": "这个商品有没有现货",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "定个会议",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "珠穆朗玛峰多高",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "上次搜索的内容我没保存",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "如何缓解压力",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "在知识库里查Git 分支管理",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Git 分支管理\"}}"
+  },
+  {
+    "instruction": "发个邮件通知",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "发个邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "什么是深度学习",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "心算和笔算哪个好",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "明天的会议准备得怎么样了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我安排个会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "帮我查一下订单 B20456 的状态",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}"
+  },
+  {
+    "instruction": "后天是几月几号",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查包裹",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "除了发邮件还能做什么，先帮我发个通知",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"__any__\", \"subject\": \"通知\", \"content\": \"__any__\"}}"
+  },
+  {
+    "instruction": "能量守恒是什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查订单：B20456",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}"
+  },
+  {
+    "instruction": "你觉得自己聪明吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我找一下Kubernetes 入门",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Kubernetes 入门\"}}"
+  },
+  {
+    "instruction": "帮我理解一下这个算式",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我搜搜",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}"
+  },
+  {
+    "instruction": "今天下午的会延到什么时候了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我求个值",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "发送邮件到 ceo@startup.com，周报",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"ceo@startup.com\", \"subject\": \"周报\", \"content\": \"请于周五前回复。\"}}"
+  },
+  {
+    "instruction": "你可靠吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "我既想搜索也想预约会议，但先搜机器学习入门吧",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"机器学习入门\"}}"
+  },
+  {
+    "instruction": "垃圾邮件太多了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查物流信息",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "物流跟踪",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "你叫什么名字",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "订单 ORD-2024-001 到哪了",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-001\"}}"
+  },
+  {
+    "instruction": "还有几天过年",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "写个通知",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你是AI吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "安排 2026-07-04 15:30 讨论技术方案讨论",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-04\", \"time\": \"15:30\", \"topic\": \"技术方案讨论\"}}"
+  },
+  {
+    "instruction": "请帮我检索Docker 部署",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 部署\"}}"
+  },
+  {
+    "instruction": "你什么时候更新的",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "约个下周一的会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供具体日期（YYYY-MM-DD格式）、时间和主题。\"}"
+  },
+  {
+    "instruction": "能做哪些事情",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我搜索 Python 教程，顺便发邮件给经理",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python 教程\"}}"
+  },
+  {
+    "instruction": "计算器这个工具怎么用",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "邮件签名怎么设置",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我搜索一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "人类登月是哪一年",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "煮鸡蛋要多久",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "追踪一下 TBA1029384756",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"TBA1029384756\"}}"
+  },
+  {
+    "instruction": "帮我通知一下大家",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、通知主题和具体内容。\"}"
+  },
+  {
+    "instruction": "下午3点帮我订会议室",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和主题。\"}"
+  },
+  {
+    "instruction": "搜索功能好像不太准",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我弄一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "查订单顺便讲个笑话",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"__any__\"}}"
+  },
+  {
+    "instruction": "这个邮箱地址有效吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "今天是几号",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "再过两天就是截止日期了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "邮件发一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "什么叫大语言模型",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查查资料",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}"
+  },
+  {
+    "instruction": "搜索 Docker 教程，另外你叫什么名字",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 教程\"}}"
+  },
+  {
+    "instruction": "搜索历史怎么清除",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "求 sqrt(144) 的值",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"sqrt(144)\"}}"
+  },
+  {
+    "instruction": "给我一些职业规划建议",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "安排 2026-06-22 15:30 讨论季度规划",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-22\", \"time\": \"15:30\", \"topic\": \"季度规划\"}}"
+  },
+  {
+    "instruction": "有没有更快的方法找资料",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "很棒",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "邮件通知一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人、主题和内容。\"}"
+  },
+  {
+    "instruction": "你是 AI 吗？帮我查订单 A10293",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}"
+  },
+  {
+    "instruction": "搜搜看",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "安排个交流会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "帮我翻译这封英文邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "推荐一部电影",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我理解一下这个公式",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "怎么设置邮件自动回复",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "Hi there",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我发邮件，另外今天心情不好怎么办",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"__any__\", \"subject\": \"__any__\", \"content\": \"__any__\"}}"
+  },
+  {
+    "instruction": "解释一下什么是对称加密",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "写个感谢信",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我计算",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "发邮件提醒一下大家",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱和提醒内容。\"}"
+  },
+  {
+    "instruction": "查一下我的快递到哪了，然后帮我算下大概还要几天",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"__any__\"}}"
+  },
+  {
+    "instruction": "这个会议取消吧",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "下周三下午约个讨论",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供具体日期（YYYY-MM-DD格式）、时间和主题。\"}"
+  },
+  {
+    "instruction": "你有什么功能",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你真厉害",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我预约下周的产品发布讨论",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供具体日期和时间。\"}"
+  },
+  {
+    "instruction": "帮我安排季度规划会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和时间。\"}"
+  },
+  {
+    "instruction": "能不能帮我处理个事",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？\"}"
+  },
+  {
+    "instruction": "帮我检索",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "安排个评审",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和时间。\"}"
+  },
+  {
+    "instruction": "我想投诉一个订单的问题",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "怎么学好数学",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "预定 2026-07-15 15:30 的客户演示",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-15\", \"time\": \"15:30\", \"topic\": \"客户演示\"}}"
+  },
+  {
+    "instruction": "约一个客户演示",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和时间。\"}"
+  },
+  {
+    "instruction": "给 ceo@startup.com 发关于活动通知的邮件",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"ceo@startup.com\", \"subject\": \"活动通知\", \"content\": \"如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "帮我搜",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "帮我执行一个任务",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "用计算器",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "怎么理财",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我概括这篇文章的主要内容",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "追踪包裹",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "帮我把会议纪要邮件出去",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱。\"}"
+  },
+  {
+    "instruction": "你能听见我说话吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "怎么才能变聪明",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "中国首都是哪",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你可以帮我干什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查文档，找到后邮件发我",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"__any__\"}}"
+  },
+  {
+    "instruction": "上周的例会内容你能发我一下吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "总结一下机器学习的核心思想",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我搜索 Nginx 配置，然后如果是周末就不发邮件了",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Nginx 配置\"}}"
+  },
+  {
+    "instruction": "太阳系有几颗行星",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "我想预约会议",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "帮我检索内容",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "我今天请假不去公司",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我预约个会议",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "怎么提高学习效率",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "用白话解释一下Transformer",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "发邮件给 admin@company.com，主题是系统升级通知",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"系统升级通知\", \"content\": \"如有问题请及时反馈。\"}}"
+  },
+  {
+    "instruction": "AI会取代人类吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "定一个明早的站会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供具体日期和精确时间。\"}"
+  },
+  {
+    "instruction": "订单怎么样了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "DNA是什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "今天星期几",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我查一下订单 TBA1029384756 的状态",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"TBA1029384756\"}}"
+  },
+  {
+    "instruction": "自由意志存在吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查文档：Python 多线程教程",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python 多线程教程\"}}"
+  },
+  {
+    "instruction": "百分比怎么算",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "有没有什么推荐的我不知道",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您想让我推荐什么？书籍、电影、技术资料？\"}"
+  },
+  {
+    "instruction": "搜一下文档库",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}"
+  },
+  {
+    "instruction": "算算",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "你的能力有哪些",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我写个邮件给HR",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人的完整邮箱地址、邮件主题和内容。\"}"
+  },
+  {
+    "instruction": "周末去哪玩",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "定个明天下午的会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议主题和具体时间（如14:00）。\"}"
+  },
+  {
+    "instruction": "帮我定个会议室讨论",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "你免费吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我在知识库里找找",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "人生的意义是什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "什么是面向对象编程",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你的训练数据是什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "我需要帮助",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "做一道算术题",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "搜索功能用一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "看看我的快递",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "时间过得好快",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "在 2026-07-05 09:30 安排年度总结",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-05\", \"time\": \"09:30\", \"topic\": \"年度总结\"}}"
+  },
+  {
+    "instruction": "算算 7 * 8 * 9",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"7 * 8 * 9\"}}"
+  },
+  {
+    "instruction": "怎么提高搜索效率",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我干个活",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "怎么读论文更高效",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查文档",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "帮我看看这个账算得对不对",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查订单状态",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "你有记忆吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "给我一些建议",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你会累吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "查文档：MySQL 索引优化",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"MySQL 索引优化\"}}"
+  },
+  {
+    "instruction": "帮我算个东西",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "帮我求值",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "帮我搜",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "这道题我不太明白",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "安排 2026-07-17 11:00 讨论预算评审",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-17\", \"time\": \"11:00\", \"topic\": \"预算评审\"}}"
+  },
+  {
+    "instruction": "给我讲个睡前故事",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "这个公式是什么意思",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "昨天我下了一个订单，体验还不错",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "光速是多少",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "发邮件给 zhangsan@example.com，主题是预算审批",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"zhangsan@example.com\", \"subject\": \"预算审批\", \"content\": \"以上内容供参考。\"}}"
+  },
+  {
+    "instruction": "预约 2026-07-13 的技术方案讨论，时间10:00",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-13\", \"time\": \"10:00\", \"topic\": \"技术方案讨论\"}}"
+  },
+  {
+    "instruction": "在吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "追踪包裹",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "帮我写道歉信",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "预约会议，以及推荐个好吃的餐厅",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"__any__\", \"time\": \"__any__\", \"topic\": \"__any__\"}}"
+  },
+  {
+    "instruction": "检索知识库",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "找一下资料",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "帮我写邮件通知项目延期",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱和具体延期原因。\"}"
+  },
+  {
+    "instruction": "前端和后端哪个好",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "下周一早上要早起",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "嗨",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "计算器",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "文档搜索",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "先帮我预约会议，如果时间冲突就发邮件通知",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"__any__\", \"time\": \"__any__\", \"topic\": \"__any__\"}}"
+  },
+  {
+    "instruction": "你的回答准确吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你能学习新东西吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "发周报给领导",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱和邮件内容。\"}"
+  },
+  {
+    "instruction": "帮我算一下 17 * 19",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"17 * 19\"}}"
+  },
+  {
+    "instruction": "帮我看看 PO-20240315-0056 的物流",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"PO-20240315-0056\"}}"
+  },
+  {
+    "instruction": "开了一天的会好累",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "怎么减肥",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "今天周五了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我验算一下这个结果",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "数学计算对我来说很难",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "约个会议",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "约个周五下午的会议",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供具体日期、时间和主题。\"}"
+  },
+  {
+    "instruction": "下周开个会",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供具体日期、时间、主题。\"}"
+  },
+  {
+    "instruction": "怎么把邮件归档",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "发一封请假邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱和具体请假内容。\"}"
+  },
+  {
+    "instruction": "帮我约架构讨论",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和时间。\"}"
+  },
+  {
+    "instruction": "模糊搜索和精确搜索有什么区别",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "搜一下那个",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "能不能根据文件名搜索",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "人为什么要工作",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我给 support@service.com 发项目进度汇报",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"项目进度汇报\", \"content\": \"请查收附件。\"}}"
+  },
+  {
+    "instruction": "这个数据是怎么算出来的",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "水的沸点是多少度",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "邮件收到了吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "发送邮件到 ceo@startup.com，项目进度汇报",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"ceo@startup.com\", \"subject\": \"项目进度汇报\", \"content\": \"请查收附件。\"}}"
+  },
+  {
+    "instruction": "有什么好吃的推荐",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "给客户发个邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人的完整邮箱地址、主题和内容。\"}"
+  },
+  {
+    "instruction": "预定 2026-07-05 16:00 的代码审查",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-05\", \"time\": \"16:00\", \"topic\": \"代码审查\"}}"
+  },
+  {
+    "instruction": "帮我查查 G98765",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"G98765\"}}"
+  },
+  {
+    "instruction": "帮我搜资料，搜到后约个会讨论",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"__any__\"}}"
+  },
+  {
+    "instruction": "帮我查一下订单",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "预约一个产品评审",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期和时间。\"}"
+  },
+  {
+    "instruction": "你和ChatGPT有什么区别",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我查查资料",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "查包裹",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "发邮件给 admin@company.com，主题是周报",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"周报\", \"content\": \"请查收附件。\"}}"
+  },
+  {
+    "instruction": "你支持哪些语言",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "为什么搜出来的都是不相关的内容",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我起草一封邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人、主题和内容。\"}"
+  },
+  {
+    "instruction": "什么是RESTful API",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "今天状态不好，帮我随便做点什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您需要什么具体的帮助？\"}"
+  },
+  {
+    "instruction": "能不能帮我催一下卖家发货",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我查资料还要发邮件",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体想查什么资料、给谁发邮件？\"}"
+  },
+  {
+    "instruction": "那个讲座是几点的",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "上次的邮件你能转发给我吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "下午好",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "安排 2026-06-29 09:30 讨论季度规划",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-29\", \"time\": \"09:30\", \"topic\": \"季度规划\"}}"
+  },
+  {
+    "instruction": "远程办公有什么技巧",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "快递到哪了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "用计算器",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "邮件通知功能好用吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我安排下周二的培训",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供具体日期、时间和培训主题。\"}"
+  },
+  {
+    "instruction": "什么叫数据库索引",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "下单后怎么修改收货地址",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我查订单",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "看下我的订单",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "能帮我处理个事情吗",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "查物流",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "查订单：C37890",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"C37890\"}}"
+  },
+  {
+    "instruction": "先算一下 999/3，然后查订单 A10293",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"999 / 3\"}}"
+  },
+  {
+    "instruction": "搜个东西",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}"
+  },
+  {
+    "instruction": "帮我预约 2026-07-18 14:00 的季度规划会议",
+    "output": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-18\", \"time\": \"14:00\", \"topic\": \"季度规划\"}}"
+  },
+  {
+    "instruction": "追踪一下 G98765",
+    "output": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"G98765\"}}"
+  },
+  {
+    "instruction": "查一下关于Transformer 架构详解的资料",
+    "output": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Transformer 架构详解\"}}"
+  },
+  {
+    "instruction": "求解",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "计算题",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "早上好",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "我的订单到哪了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "发邮件给 admin@company.com，主题是项目进度汇报",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"项目进度汇报\", \"content\": \"请查收附件。\"}}"
+  },
+  {
+    "instruction": "数学计算",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}"
+  },
+  {
+    "instruction": "下午茶时间到了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你们用的是什么搜索引擎",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "有个需求",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？我可以帮您搜索资料、查订单、预约会议、发邮件或做计算。\"}"
+  },
+  {
+    "instruction": "快递查一下",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "帮我算一下 15 + 28 / 2",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"15 + 28 / 2\"}}"
+  },
+  {
+    "instruction": "发送邮件到 support@service.com，系统升级通知",
+    "output": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"系统升级通知\", \"content\": \"请查收附件。\"}}"
+  },
+  {
+    "instruction": "好的",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "精度要求多少",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "你的速度怎么样",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "为什么我的邮件被拦截了",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我写个邀请函",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "搜点东西",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}"
+  },
+  {
+    "instruction": "帮我写句座右铭",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "看下订单信息",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "帮我查一下订单",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}"
+  },
+  {
+    "instruction": "什么是过拟合",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "晚上加班到几点",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "计算 sqrt(144) 等于多少",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"sqrt(144)\"}}"
+  },
+  {
+    "instruction": "算一下 1000 - 345",
+    "output": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1000 - 345\"}}"
+  },
+  {
+    "instruction": "有什么好的学习方法",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  },
+  {
+    "instruction": "帮我邮件回复",
+    "output": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、回复主题和内容。\"}"
+  },
+  {
+    "instruction": "你们的售后政策是什么",
+    "output": "{\"tool\": \"none\", \"arguments\": {}}"
+  }
+]
