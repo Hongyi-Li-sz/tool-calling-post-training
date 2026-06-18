@@ -4,7 +4,7 @@
 
 Tool Calling（工具调用）是 LLM Agent 的核心能力——模型需要根据用户意图，准确选择工具并以规范的 JSON 格式输出参数。小模型（<1B）在指令遵循和格式化输出方面不够稳定，常出现 JSON 格式错误、工具选择错误、参数缺失等问题。
 
-本项目通过 **SFT（监督微调）+ DPO（偏好优化）** 的后训练方案，将 Qwen2.5-0.5B 的 **JSON 合法率从 82% 提升至 100%，完全正确率从 28% 提升至 54%**。
+本项目通过 **SFT（监督微调）+ DPO（偏好优化）** 的后训练方案，经过 V1/V2 两轮数据驱动迭代，将 Qwen2.5-0.5B 的 **完全正确率从 18% 提升至 52%（200 条评测集，提升约 3x）**，过度追问率从 84% 降至 2.1%。
 
 ## 项目目标
 
@@ -16,10 +16,10 @@ Tool Calling（工具调用）是 LLM Agent 的核心能力——模型需要根
 ## 方法
 
 ```
-Base Model (Qwen2.5-0.5B) → SFT (监督微调) → DPO (偏好优化) → Evaluation (自动评测)
-         ↓                        ↓                    ↓                ↓
-    JSON 合法 82%           JSON 合法 100%       rewards/margin    错误分类 ×7
-    完全正确 28%            完全正确 54%          4.55              分析报告
+V1: Base → SFT-v1 → DPO-v1          (50条评测 → 发现过度追问问题)
+V2: Base → SFT-v2 → DPO-v2          (200条评测 → 精准修复，52% 完全正确率)
+
+V1 教训: DPO 通用数据引入过度追问     V2 突破: Bad Case 驱动精准数据迭代
 ```
 
 ## 工具设计
@@ -38,7 +38,16 @@ Base Model (Qwen2.5-0.5B) → SFT (监督微调) → DPO (偏好优化) → Eval
 
 ## 数据构造
 
-### SFT 数据（573 条）
+### 两轮迭代
+
+| 版本 | SFT 数据 | DPO 数据 | 策略 |
+|------|---------|---------|------|
+| V1 | 573 条 | 760 对 | 模板批量生成，通用覆盖 |
+| V2 | 600 条 | 313 对 | Bad Case 驱动，精准修复 |
+
+> V2 不是 V1 的叠加。每个版本都是从 Base Model 独立训练。
+
+### V1 SFT 数据（573 条）
 
 采用模板 + 随机参数填充生成，覆盖 5 种场景：
 
@@ -69,7 +78,9 @@ Base Model (Qwen2.5-0.5B) → SFT (监督微调) → DPO (偏好优化) → Eval
 
 ## 训练配置
 
-### SFT 训练
+V1 和 V2 使用相同的训练超参数，区别仅在于训练数据和模型版本。
+
+### SFT（V1 和 V2 共用配置）
 
 | 参数 | 值 |
 |------|-----|
@@ -77,25 +88,29 @@ Base Model (Qwen2.5-0.5B) → SFT (监督微调) → DPO (偏好优化) → Eval
 | 量化 | 4-bit QLoRA (NF4) |
 | LoRA | rank=8, alpha=16 |
 | Epochs | 8 |
-| 有效 batch size | 2 |
+| Batch size | 2 |
 | Learning rate | 5e-5 (cosine) |
-| 可训练参数 | 4,399,104 (~1%) |
-| 训练时间 | 140s (RTX 4090) |
-| Final loss | 0.43 |
+| 可训练参数 | ~440 万 (~1%) |
 
-### DPO 训练
+| 版本 | 数据 | 训练时间 | Final loss |
+|------|------|---------|-----------|
+| SFT-v1 | 573 条 | 140s | 0.43 |
+| SFT-v2 | 600 条 | 778s | 0.09 |
+
+### DPO（V1 和 V2 共用配置）
 
 | 参数 | 值 |
 |------|-----|
 | 框架 | TRL DPOTrainer |
-| 基准模型 | SFT merged |
 | LoRA | rank=8, alpha=16 |
 | Epochs | 3 |
 | DPO beta | 0.1 |
 | Learning rate | 5e-6 (cosine) |
-| 训练时间 | 455s (RTX 4090) |
-| Final loss | 0.14 |
-| Rewards margin | 4.55 |
+
+| 版本 | 数据 | 基准模型 | 训练时间 | Rewards margin |
+|------|------|---------|---------|---------------|
+| DPO-v1 | 760 对 | SFT-v1 | 455s | 4.55 |
+| DPO-v2 | 313 对 | SFT-v2 | 188s | 5.03 |
 
 ## 实验结果
 
@@ -136,33 +151,36 @@ Base → SFT-v1 → SFT-v2 → DPO-v2
 ```
 .
 ├── data/
-│   ├── sft/train.json        # 573 条 SFT 训练数据
-│   ├── dpo/train.json        # 760 对 DPO 偏好数据
-│   └── eval/test_set.json    # 50 条标注评测集
+│   ├── sft/
+│   │   ├── train.json            # V1: 573 条 SFT 数据
+│   │   └── train_v2.json         # V2: 600 条修复型 SFT 数据
+│   ├── dpo/
+│   │   ├── train.json            # V1: 760 对 DPO 数据
+│   │   └── train_v2.json         # V2: 313 对精准 DPO 数据
+│   └── eval/
+│       ├── test_set.json         # V1: 50 条评测集
+│       └── test_set_v2.json      # V2: 200 条评测集
 ├── configs/
-│   └── sft.yaml              # SFT 训练超参数
+│   └── sft.yaml
 ├── src/
-│   ├── build_sft_data.py     # SFT 数据构造脚本
-│   ├── build_dpo_data.py     # DPO 数据构造脚本
-│   ├── train_sft.py          # SFT 训练脚本
-│   ├── train_dpo.py          # DPO 训练脚本
-│   ├── infer.py              # 单模型推理脚本
-│   ├── eval_compare.py       # Base vs SFT 对比
-│   ├── eval_three_way.py     # Base vs SFT vs DPO 三方对比
-│   └── evaluate.py           # 自动评测（4指标 + 7错误分类）
-├── models/                   # 模型权重（.gitignore）
-├── outputs/
-│   ├── sft/adapter/          # SFT LoRA adapter (~17MB)
-│   └── dpo/adapter/          # DPO LoRA adapter (~17MB)
+│   ├── build_sft_data.py / build_sft_v2.py
+│   ├── build_dpo_data.py / build_dpo_v2.py
+│   ├── train_sft.py / train_dpo.py
+│   ├── infer.py / evaluate.py / evaluate_v2.py
+│   ├── eval_compare.py / eval_three_way.py
+│   └── build_eval_v2.py
+├── models/                       # (gitignored)
+├── outputs/                      # (gitignored)
 ├── reports/
-│   ├── error_analysis.md     # Bad Case 深度分析报告
-│   ├── evaluation_full.json  # 完整评测数据
-│   └── bad_cases_*.json      # 三模型 bad cases 详情
-├── tools_schema.json         # 5 个工具的 JSON Schema 定义
-├── requirements.txt
-├── CLAUDE.md
-├── PROGRESS.md               # 7 天进度记录
-└── README.md
+│   ├── v1_summary.md / v2_comparison.md
+│   ├── error_analysis.md / sft_vs_dpo.md
+│   └── v2_eval_summary.json / v2_eval_by_category.csv
+├── app.py                        # Gradio Demo
+├── tools_schema.json
+├── plan.txt / plan_v2.txt
+├── README.md / CLAUDE.md
+├── PROGRESS.md / PROGRESS_v2.md
+└── requirements.txt
 ```
 
 ## 快速开始
@@ -207,26 +225,24 @@ python src/evaluate.py
 ## Gradio Demo
 
 ```bash
-# 启动交互式 Demo
 python app.py
-# 访问 http://localhost:7860
-
-# 支持 5 个模型版本切换，10 个典型样例
+# 访问 http://localhost:7861
 ```
 
 功能：
-- 5 个模型版本一键切换（Base / SFT-v1 / DPO-v1 / SFT-v2 / DPO-v2）
-- 实时显示原始输出 + JSON 解析 + Tool + Arguments
+- 3 个模型一键切换（Base / SFT-v2 / DPO-v2）
+- 实时显示原始输出 + JSON 合法性 + 工具名 + 参数
 - 10 个预设样例覆盖典型场景
 
 ## 下一步优化
 
-- **数据层面**: 增加参数追问型数据（当前仅 7%），减少过度追问
-- **训练层面**: 迭代 DPO 数据，针对性修复"过度追问"回退
-- **功能层面**: 支持多工具并行调用、多轮参数补全
-- **评估层面**: 引入 GPT-4 作为 judge 进行语义级评测
-- **部署层面**: Gradio Demo、上传 adapter 到 HuggingFace
+- **DPO JSON 回退**: 过度追问抑制过于激进，需平衡 JSON 格式与追问抑制
+- **参数追问准确率**: 26.7% 仍偏低，需更多多轮对话型训练数据
+- **语义干扰**: 虽有突破（0→23.3%）但绝对值仍低，需更真实的数据
+- **多工具并行**: 支持一次输出多个工具调用
+- **更大模型**: 尝试 Qwen2.5-1.5B 提升语义理解上限
+- **HuggingFace**: 上传 adapter 供社区使用
 
 ## 面试亮点
 
-> 基于 Qwen2.5-0.5B 构建中文 Tool Calling 后训练项目，设计 5 类业务工具及 JSON Schema，通过模板生成构造 573 条 SFT 指令数据和 760 对 DPO 偏好数据，使用 QLoRA 完成监督微调与偏好优化。SFT 模型 JSON 合法率从 82% 提升至 100%，完全正确率从 28% 提升至 54%。实现了支持 4 项指标 + 7 类错误的自动评测脚本，并对三阶段模型进行了系统性 Bad Case 分析，识别出"过度追问"是 DPO 的主要副作用、参数追问是三模型共同盲区。
+> 基于 Qwen2.5-0.5B 构建中文 Tool Calling 后训练项目，设计 5 类业务工具及 JSON Schema。通过 V1/V2 两轮数据驱动迭代完成 SFT + DPO 训练：V1 模板生成 573 条 SFT + 760 对 DPO 跑通流程并暴露过度追问问题；V2 基于 Bad Case 分析精准构造 600 条修复型 SFT + 313 对 DPO 偏好数据。最终 DPO-v2 完全正确率 52%（200 条评测集），过度追问率从 84% 降至 2.1%。实现 7 项指标分场景自动评测脚本 + Gradio 交互 Demo，完整验证了"DPO 效果取决于偏好数据是否对准模型真实弱点"。
