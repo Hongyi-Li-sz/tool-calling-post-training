@@ -1,0 +1,1880 @@
+[
+  {
+    "prompt": "咖啡和茶哪个好",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "怎么练口语",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "今天星期几",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "帮我查一下订单",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"unknown\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "查快递 B20456",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"express@corp.cn\", \"subject\": \"快递 B20456\", \"content\": \"查快递\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "我昨天发了一封邮件给经理但没回复",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@corp.cn\", \"subject\": \"跟进\", \"content\": \"跟进邮件。\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "计算 123 * 456",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"123 * 456\"}}",
+    "rejected": "{tool: \"calculator\", arguments: {\"expression\": \"123 * 456\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "北京在哪里",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您想知道具体哪个区？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "好的",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问还需要其他帮助吗？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "如何找到人生目标",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "我不想开会",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"09:00\", \"topic\": \"会议\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "包裹查一下",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"package\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "怎么学编程",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "算一下 7*8*9",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"7 * 8 * 9\"}}",
+    "rejected": "{tool: \"calculator\", arguments: {\"expression\": \"7 * 8 * 9\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "邮件发送一下",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"send@corp.cn\", \"subject\": \"发送\", \"content\": \"发送内容\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "查 SO-240315-001",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"SO-240315-001\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"SO-240315-001\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "约个时间讨论",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"10:00\", \"topic\": \"讨论\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "写个邮件给老板",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"boss@corp.cn\", \"subject\": \"邮件\", \"content\": \"内容\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "帮我写个邮件给HR",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人的完整邮箱地址、邮件主题和内容。\"}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"申请\", \"content\": \"请假申请\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "算 256+512",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"256 + 512\"}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"256+512\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "邮件太多看不过来",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"inbox@corp.cn\", \"subject\": \"整理\", \"content\": \"整理邮件\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "怎么让自己更有动力",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "搜索功能好像不太准",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"搜索功能\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "为什么我的订单还没发货",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"pending\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "早上好",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请补充更多信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "给我点正能量",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "检索 Nginx 配置",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Nginx 配置\"}}",
+    "rejected": "{tool: \"search_docs\", arguments: {\"query\": \"Nginx 配置\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "前端和后端哪个好",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "你最喜欢哪部电影",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "搜一下 Docker 怎么部署",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 部署\"}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"Docker 部署\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "邮件收到了吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"unknown@example.com\", \"subject\": \"邮件确认\", \"content\": \"确认收到邮件。\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "下班后要不要一起去吃饭",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"18:00\", \"topic\": \"吃饭\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "推荐一部电影",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您喜欢什么类型的电影？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "查订单 ORD-2024-0892",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-0892\"}}",
+    "rejected": "{tool: \"query_order\", arguments: {\"order_id\": \"ORD-2024-0892\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "安排会议",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"10:00\", \"topic\": \"会议\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "月底了要写月报",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@corp.cn\", \"subject\": \"月报\", \"content\": \"月报内容\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "如何看待加班文化",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "给 wangwu@dev.io 发技术方案",
+    "chosen": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"技术方案\", \"content\": \"详见技术方案内容。\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"技术方案\", \"content\": \"详见技术方案内容。\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "发邮件给 admin@company.com 关于系统升级",
+    "chosen": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"系统升级\", \"content\": \"请查收系统升级通知。\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"系统升级\", \"content\": \"请查收系统升级通知。\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "有什么好的搜索技巧",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"搜索技巧\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "订单被拒了怎么办",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"rejected\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "昨天我下了一个订单，体验还不错",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"recent\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "Python是什么",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您想了解 Python 的哪些方面？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "邮件通知功能好用吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"邮件功能\", \"content\": \"询问邮件功能。\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "你觉得读书有用吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "怎么变自律",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "很有意思",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "如何理财",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "早上起不来怎么办",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "成功怎么定义",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "查订单状态",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"N/A\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "算个数",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"0\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "发邮件给 manager@team.org 汇报进度",
+    "chosen": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"manager@team.org\", \"subject\": \"进度汇报\", \"content\": \"汇报内容\"}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"进度汇报\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "分享一个笑话",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "你会写代码吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "周末去哪玩",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供您所在的城市。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "做事拖延怎么办",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "帮我搜",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"搜索\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "运气可以改变吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "给 ceo@startup.com 发年度汇报",
+    "chosen": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"ceo@startup.com\", \"subject\": \"年度汇报\", \"content\": \"详见附件。\"}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"10:00\", \"topic\": \"年度汇报\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "推荐一本书",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "怎么克服懒惰",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "我今天有点累，不想开会",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"09:00\", \"topic\": \"会议\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "帮忙处理一下",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？\"}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"help\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "我不太会算这个账",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"account\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "发个通知",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、通知主题和内容。\"}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"all@corp.cn\", \"subject\": \"通知\", \"content\": \"通知内容\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "怎么才能变聪明",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "预定 2026-09-15 14:30 的需求评审",
+    "chosen": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-09-15\", \"time\": \"14:30\", \"topic\": \"需求评审\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-09-15\", \"time\": \"14:30\", \"topic\": \"需求评审\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "给 support@service.com 发服务通知",
+    "chosen": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"服务通知\", \"content\": \"请查看服务通知内容。\"}}",
+    "rejected": "{tool: \"send_email\", arguments: {\"recipient\": \"support@service.com\", \"subject\": \"服务通知\", \"content\": \"请查看服务通知内容。\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "AI会取代人类吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您想了解哪个行业的AI影响？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "搜索 Python 教程",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Python 教程\"}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"Python 教程\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "有什么想聊的吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "算 17 * 19 + 23",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"17 * 19 + 23\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"17 * 19 + 23\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "你可以上网吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "有没有更快的方法找资料",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"快速找资料的方法\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "你最擅长什么",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "预约 2026-11-15 的性能讨论",
+    "chosen": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-11-15\", \"time\": \"11:00\", \"topic\": \"性能讨论\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-11-15\", \"time\": \"11:00\", \"topic\": \"性能讨论\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "检索 Nginx 配置",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Nginx 配置\"}}",
+    "rejected": "好的，我来帮你处理。",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "上次开会讨论的方案你还记得吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"开会讨论的方案\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "怎么把邮箱里的垃圾邮件过滤掉",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"spam@filter.com\", \"subject\": \"过滤\", \"content\": \"filter\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "搜索 Docker 教程",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 教程\"}}",
+    "rejected": "{tool: \"search_docs\", arguments: {\"query\": \"Docker 教程\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "晚安",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "有什么新鲜事",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "查订单 A10293",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"订单 A10293\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "你的生日是哪天",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "搜 Nginx 反向代理",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Nginx 反向代理\"}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"Nginx 反向代理\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "努力和天赋哪个重要",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "查查资料",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"资料\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "中午吃什么",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您的口味偏好是什么？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "给 hr@corp.cn 发请假邮件",
+    "chosen": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"请假申请\", \"content\": \"您好，我因身体不适需要请假一天。\"}}",
+    "rejected": "好的，我来帮你处理。",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "上次搜索的内容我没保存",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"上次搜索的内容\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "怎么减肥",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供您的身高体重信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "查下单 B20456",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}",
+    "rejected": "好的，我来帮你处理。",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "预定 2026-09-15 14:30 的需求评审",
+    "chosen": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-09-15\", \"time\": \"14:30\", \"topic\": \"需求评审\"}}",
+    "rejected": "{tool: \"book_meeting\", arguments: {\"date\": \"2026-09-15\", \"time\": \"14:30\", \"topic\": \"需求评审\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "明天开会讨论",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"10:00\", \"topic\": \"讨论\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "订单查询",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"query\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "看下物流",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"logistics\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "检索一下",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"检索\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "给 hr@corp.cn 发请假邮件",
+    "chosen": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"请假申请\", \"content\": \"您好，我因身体不适需要请假一天。\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"请假申请\", \"content\": \"您好，我因身体不适需要请假一天。\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "请问退货流程是什么",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"return\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "给 support@service.com 发服务通知",
+    "chosen": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"服务通知\", \"content\": \"请查看服务通知内容。\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"support@service.com\", \"subject\": \"服务通知\", \"content\": \"请查看服务通知内容。\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "帮我定个会",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"09:00\", \"topic\": \"例会\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "你真厉害",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "计算一下 3.14 * 100",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"3.14 * 100\"}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"3.14\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "给 hr@corp.cn 发请假邮件",
+    "chosen": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"请假申请\", \"content\": \"请假内容\"}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"请假\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "今天心情不错",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "搜索 Docker 教程",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 教程\"}}",
+    "rejected": "好的，我来帮你处理。",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "春节是哪天",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-01-29\", \"time\": \"00:00\", \"topic\": \"春节\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "搜 Linux 常用命令",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Linux 常用命令\"}}",
+    "rejected": "{tool: \"search_docs\", arguments: {\"query\": \"Linux 常用命令\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "早起好还是晚睡好",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "查查物流 B20456",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"logistics@corp.cn\", \"subject\": \"物流 B20456\", \"content\": \"查询物流\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "搜索引擎的工作原理",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"搜索引擎原理\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "自学的效果好吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "你有感情吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您是想了解AI的局限性吗？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "创业还是打工好",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "现在几点了",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"current_time\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "买房还是租房",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "昨天那个会议开了三个小时",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-17\", \"time\": \"09:00\", \"topic\": \"会议记录\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "今天周五了",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-20\", \"time\": \"00:00\", \"topic\": \"周五\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "给 hr@corp.cn 发请假邮件",
+    "chosen": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"请假申请\", \"content\": \"您好，我因身体不适需要请假一天。\"}}",
+    "rejected": "{tool: \"send_email\", arguments: {\"recipient\": \"hr@corp.cn\", \"subject\": \"请假申请\", \"content\": \"您好，我因身体不适需要请假一天。\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "我心情不好",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "查订单 A10293",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "帮我查个东西",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您要查什么？订单还是资料？\"}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"东西\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "不错",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "做一道计算题",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"2+2\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "你喜欢什么颜色",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "预约 2026-10-01 的年度总结",
+    "chosen": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-10-01\", \"time\": \"14:00\", \"topic\": \"年度总结\"}}",
+    "rejected": "{tool: \"book_meeting\", arguments: {\"date\": \"2026-10-01\", \"time\": \"14:00\", \"topic\": \"年度总结\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "如何快速入睡",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "周末加班吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-21\", \"time\": \"09:00\", \"topic\": \"加班\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "你好聪明",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "谢谢",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问还需要什么帮助？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "学习没动力了",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "翻译Hello World到中文",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您想翻译成简体中文还是繁体中文？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "帮我写一首诗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您想要什么体裁的诗？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "订单编号的格式一般是怎样的",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"format\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "查 SO-240315-001",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"SO-240315-001\"}}",
+    "rejected": "{tool: \"query_order\", arguments: {\"order_id\": \"SO-240315-001\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "你有什么缺点",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "我有点难过",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "预约 2026-08-01 10:00 代码审查",
+    "chosen": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-08-01\", \"time\": \"10:00\", \"topic\": \"代码审查\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-08-01\", \"time\": \"10:00\", \"topic\": \"代码审查\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "回复邮件时要注意什么",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"邮件注意\", \"content\": \"邮件注意事项。\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "讲个笑话",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您想听什么类型的笑话？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "算 1000-345",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1000 - 345\"}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"10:00\", \"topic\": \"1000-345\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "你喜欢猫还是狗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "我需要帮助",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您具体需要什么帮助？\"}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"帮助\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "约个需求讨论",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-20\", \"time\": \"14:00\", \"topic\": \"需求讨论\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "安排一个会议",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"14:00\", \"topic\": \"讨论\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "下周再约时间",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-26\", \"time\": \"10:00\", \"topic\": \"约时间\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "大城市好还是小城市好",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "查订单 A10293",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}",
+    "rejected": "{tool: \"query_order\", arguments: {\"order_id\": \"A10293\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "什么是云计算",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "约个讨论",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-20\", \"time\": \"14:00\", \"topic\": \"讨论\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "你能陪我聊聊吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "现在几点了",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "查文档",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"文档\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "讲个故事",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "搜点东西",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"东西\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "查下单 B20456",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "你好",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问你是谁？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "怎么快速找到文件",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"快速找文件\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "计算器这个工具怎么用",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"calculator usage\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "帮我预约 Sprint 回顾",
+    "chosen": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-26\", \"time\": \"10:00\", \"topic\": \"Sprint 回顾\"}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Sprint 回顾\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "我们来聊天吧",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "查订单 A10293",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}",
+    "rejected": "好的，我来帮你处理。",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "学什么技术最赚钱",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "计算 123*456",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"123 * 456\"}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"123*456\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "算 17 * 19 + 23",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"17 * 19 + 23\"}}",
+    "rejected": "{tool: \"calculator\", arguments: {\"expression\": \"17 * 19 + 23\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "再见",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "嗨",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您需要什么帮助？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "明天上午开会",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议主题和具体时间。\"}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"09:00\", \"topic\": \"会议\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "今天过得怎么样",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "心算怎么练",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"心算\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "数据怎么分析",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"数据分析\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "搜索引擎怎么优化",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"搜索引擎优化\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "下班时间到了",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"18:00\", \"topic\": \"下班\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "今天的会议改到什么时候了",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"00:00\", \"topic\": \"会议时间\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "明天星期几",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"00:00\", \"topic\": \"星期查询\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "帮我安排个会",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"10:00\", \"topic\": \"会议\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "怎么提高专注力",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "请查收附件中的报告",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"team@corp.cn\", \"subject\": \"报告\", \"content\": \"附件报告。\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "统计一下数量",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"统计数量\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "搜一下那个",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"那个\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "推荐一个课程",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "晚上好",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "约下周三的代码审查",
+    "chosen": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-25\", \"time\": \"14:00\", \"topic\": \"代码审查\"}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"代码审查\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "圣诞节是哪天",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-12-25\", \"time\": \"00:00\", \"topic\": \"圣诞节\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "帮我搜索一下",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"搜索\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "帮我算一下",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1+1\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "算一下 7*8*9",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"7 * 8 * 9\"}}",
+    "rejected": "好的，我来帮你处理。",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "预约 2026-11-15 的性能讨论",
+    "chosen": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-11-15\", \"time\": \"11:00\", \"topic\": \"性能讨论\"}}",
+    "rejected": "{tool: \"book_meeting\", arguments: {\"date\": \"2026-11-15\", \"time\": \"11:00\", \"topic\": \"性能讨论\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "要不要读研",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "搜 Linux 常用命令",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Linux 常用命令\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Linux 常用命令\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "我买的东西质量有问题怎么投诉",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"complaint\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "快给我打气",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "求解",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"x\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "预约 2026-08-01 10:00 代码审查",
+    "chosen": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-08-01\", \"time\": \"10:00\", \"topic\": \"代码审查\"}}",
+    "rejected": "好的，我来帮你处理。",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "检索 Nginx 配置",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Nginx 配置\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Nginx 配置\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "帮我预约个会议",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"10:00\", \"topic\": \"会议\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "发邮件",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"邮件\", \"content\": \"内容\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "预约 2026-08-01 10:00 代码审查",
+    "chosen": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-08-01\", \"time\": \"10:00\", \"topic\": \"代码审查\"}}",
+    "rejected": "{tool: \"book_meeting\", arguments: {\"date\": \"2026-08-01\", \"time\": \"10:00\", \"topic\": \"代码审查\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "为什么我的订单总是延迟发货",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"delayed\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "国庆节放几天",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-10-01\", \"time\": \"00:00\", \"topic\": \"国庆节\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "最近好吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "怎么准备技术面试",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "如何高效学习",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "求个值",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"x\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "帮我预约明天的项目评审",
+    "chosen": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"14:00\", \"topic\": \"项目评审\"}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"project@corp.cn\", \"subject\": \"项目评审\", \"content\": \"预约会议。\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "检索知识库",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词或问题。\"}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"知识库\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "查查快递",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"express\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "计算 sqrt(144)",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"sqrt(144)\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"sqrt(144)\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "搜不到东西",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"搜不到\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "为什么我搜的关键词没有结果",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"关键词 没有结果\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "发周报给领导",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱和邮件内容。\"}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"leader@corp.cn\", \"subject\": \"周报\", \"content\": \"本周工作内容\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "什么是成功",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "查一下订单 D45678",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"D45678\"}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"D45678\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "这个计算结果靠谱吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"verify\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "快乐是什么",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "给我讲点有趣的",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "预定 2026-09-15 14:30 的需求评审",
+    "chosen": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-09-15\", \"time\": \"14:30\", \"topic\": \"需求评审\"}}",
+    "rejected": "好的，我来帮你处理。",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "今天天气怎么样",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供城市名称。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "查订单 ORD-2024-0892",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-0892\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"ORD-2024-0892\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "你怎么看人类",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "你是谁",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您是想了解我的功能还是我的身份？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "算一下 7*8*9",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"7 * 8 * 9\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"7 * 8 * 9\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "查下单 B20456",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"B20456\"}}",
+    "rejected": "{tool: \"query_order\", arguments: {\"order_id\": \"B20456\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "搜 PyTorch 基础教程",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"PyTorch 基础教程\"}}",
+    "rejected": "{tool: \"search_docs\", arguments: {\"query\": \"PyTorch 基础教程\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "你喜欢运动吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "帮我起草邮件",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"draft@corp.cn\", \"subject\": \"邮件\", \"content\": \"起草\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "推荐好用的app",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "午饭时间到了",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"12:00\", \"topic\": \"午饭\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "数学建模怎么学",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"数学建模\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "算算看",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"0\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "你有什么爱好",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "结婚要不要买房",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "有什么好书",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "今天是几号",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"今天的日期\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "你的训练数据有什么",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "搜索 Docker 教程",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 教程\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 教程\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "物流跟踪",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"tracking\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "给我一个建议",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "这个月还有多少天",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"days_in_month\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "邮件通知一下",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人、主题和内容。\"}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"team@corp.cn\", \"subject\": \"通知\", \"content\": \"请查看。\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "OK",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您需要我继续做什么？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "帮我做计算",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"calc\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "这个算错了",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"error\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "这个订单能不能取消",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"cancel\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "帮我通知团队",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"team@corp.cn\", \"subject\": \"通知\", \"content\": \"通知内容\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "好久没聊天了",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "帮我定会议室",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"09:00\", \"topic\": \"定会议室\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "幸福是什么",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "远程办公效率高吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "工作几年再创业合适吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "你能做什么",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "跳槽好还是内部晋升好",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "计算 sqrt(144)",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"sqrt(144)\"}}",
+    "rejected": "{tool: \"calculator\", arguments: {\"expression\": \"sqrt(144)\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "帮我找个东西",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供搜索关键词。\"}",
+    "rejected": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"东西\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "这个会议取消吧",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"10:00\", \"topic\": \"取消会议\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "邮件发不出去",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"test\", \"content\": \"test\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "今天是端午节吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"端午节\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "怎么网购",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "算下 1024/8",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1024 / 8\"}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"1024/8\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "上次订的那个东西到哪了",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"上次的\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "算算",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供需要计算的数学表达式。\"}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"1\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "拖延症怎么破",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "如何提高效率",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您指的是工作效率还是学习效率？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "如何在面试中表现出色",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "星座靠谱吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "计算 123 * 456",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"123 * 456\"}}",
+    "rejected": "好的，我来帮你处理。",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "查物流",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"latest\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "你叫什么名字",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "发邮件给 admin@company.com 关于系统升级",
+    "chosen": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"系统升级\", \"content\": \"请查收系统升级通知。\"}}",
+    "rejected": "{tool: \"send_email\", arguments: {\"recipient\": \"admin@company.com\", \"subject\": \"系统升级\", \"content\": \"请查收系统升级通知。\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "你有记忆吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "这个订单号看起来像 A10293，但我不是要查询它",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "怎么学好英语",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您目前的英语水平如何？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "我的订单到哪了",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供订单号。\"}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"last_order\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "给客户发邮件",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"client@corp.cn\", \"subject\": \"客户邮件\", \"content\": \"邮件内容\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "计算 123 * 456",
+    "chosen": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"123 * 456\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"123 * 456\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "比特币值得投资吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "发邮件给 admin@company.com 关于系统升级",
+    "chosen": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"admin@company.com\", \"subject\": \"系统升级\", \"content\": \"请查收系统升级通知。\"}}",
+    "rejected": "好的，我来帮你处理。",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "发邮件给 team@corp.cn 通知会议变更",
+    "chosen": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"team@corp.cn\", \"subject\": \"会议变更通知\", \"content\": \"详见内容。\"}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-20\", \"time\": \"14:00\", \"topic\": \"会议变更\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "预约明天上午的需求评审",
+    "chosen": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"10:00\", \"topic\": \"需求评审\"}}",
+    "rejected": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"需求评审\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "帮我预约一下",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"10:00\", \"topic\": \"预约\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "好无聊",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "我无聊了",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "数学好难",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"difficulty\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "发邮件通知",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"all@corp.cn\", \"subject\": \"通知\", \"content\": \"内容\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "查订单 A10293",
+    "chosen": "{\"tool\": \"query_order\", \"arguments\": {\"order_id\": \"A10293\"}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-19\", \"time\": \"10:00\", \"topic\": \"订单 A10293\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "今天穿了什么颜色衣服",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "哈喽",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您是客户还是客服？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "帮我发封邮件",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供收件人邮箱、邮件主题和内容。\"}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"unknown@example.com\", \"subject\": \"通知\", \"content\": \"请查看。\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "给 wangwu@dev.io 发技术方案",
+    "chosen": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"wangwu@dev.io\", \"subject\": \"技术方案\", \"content\": \"详见技术方案内容。\"}}",
+    "rejected": "{tool: \"send_email\", arguments: {\"recipient\": \"wangwu@dev.io\", \"subject\": \"技术方案\", \"content\": \"详见技术方案内容。\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "今天运气不错",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "搜 PyTorch 基础教程",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"PyTorch 基础教程\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"PyTorch 基础教程\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "搜 Docker 教程",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"Docker 教程\"}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"docker@corp.cn\", \"subject\": \"Docker 教程\", \"content\": \"搜索Docker\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "人活着是为了什么",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "这封邮件是垃圾邮件吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"spam@check.com\", \"subject\": \"spam?\", \"content\": \"check\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "地球绕太阳一圈多久",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您指的是公转周期还是自转周期？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "年终总结怎么写",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"send_email\", \"arguments\": {\"recipient\": \"hr@corp.cn\", \"subject\": \"年终总结\", \"content\": \"总结内容\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "推荐一个纪录片",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "有点沮丧",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "怎么学好数学",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "介绍一下你自己",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您想了解哪方面？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "你有什么功能",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您想使用什么功能？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "预约 2026-10-01 的年度总结",
+    "chosen": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-10-01\", \"time\": \"14:00\", \"topic\": \"年度总结\"}}",
+    "rejected": "好的，我来帮你处理。{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-10-01\", \"time\": \"14:00\", \"topic\": \"年度总结\"}}",
+    "error_type": "json_format"
+  },
+  {
+    "prompt": "搜一搜 大模型微调方法",
+    "chosen": "{\"tool\": \"search_docs\", \"arguments\": {\"query\": \"大模型微调方法\"}}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-07-01\", \"time\": \"10:00\", \"topic\": \"大模型微调\"}}",
+    "error_type": "tool_selection"
+  },
+  {
+    "prompt": "帮我做个决定",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "2024是不是闰年",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"calculator\", \"arguments\": {\"expression\": \"2024 % 4\"}}",
+    "error_type": "semantic_interference"
+  },
+  {
+    "prompt": "人为什么要工作",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "你喜欢音乐吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "人生哲理是什么",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "刷题有用吗",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多上下文信息。\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "约个会",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供会议日期、时间和主题。\"}",
+    "rejected": "{\"tool\": \"book_meeting\", \"arguments\": {\"date\": \"2026-06-20\", \"time\": \"15:00\", \"topic\": \"约会\"}}",
+    "error_type": "must_clarify"
+  },
+  {
+    "prompt": "什么是区块链",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请问您想了解区块链的哪个方面？\"}",
+    "error_type": "anti_overclarify"
+  },
+  {
+    "prompt": "有没有外星人",
+    "chosen": "{\"tool\": \"none\", \"arguments\": {}}",
+    "rejected": "{\"tool\": \"none\", \"arguments\": {}, \"need_clarification\": true, \"question\": \"请提供更多细节以便我更好地帮助你。\"}",
+    "error_type": "anti_overclarify"
+  }
+]
