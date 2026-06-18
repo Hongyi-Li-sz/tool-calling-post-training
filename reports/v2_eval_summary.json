@@ -83,6 +83,34 @@
         "should_clarify": 38
       },
       "model": "dpo"
+    },
+    {
+      "total": 200,
+      "json_valid": 198,
+      "json_valid_rate": 99.0,
+      "tool_correct": 151,
+      "tool_accuracy": 75.5,
+      "argument_exact_match": 46,
+      "argument_exact_match_rate": 23.0,
+      "clarification_accuracy": 42.2,
+      "clarify_total": 45,
+      "clarify_correct": 19,
+      "over_clarification_rate": 74.6,
+      "over_clarify_count": 44,
+      "unnecessary_tool_call_rate": 32.5,
+      "unnecessary_tool_call_count": 37,
+      "fully_correct": 80,
+      "fully_correct_rate": 40.0,
+      "bad_cases": 120,
+      "error_counts": {
+        "wrong_param_value": 28,
+        "wrong_tool": 9,
+        "unnecessary_clarify": 44,
+        "should_reject": 11,
+        "should_clarify": 26,
+        "json_parse_error": 2
+      },
+      "model": "sft_v2"
     }
   ]
 }
